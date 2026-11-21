@@ -1,0 +1,57 @@
+# Shared loader, quality filters, and metadata columns for all PDB training datasets
+# NOTE: Named mapping merge by key
+
+defaults:
+  - backend_blob
+  - _self_
+
+loader:
+  blob_dir: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/pdb/2026_10_03_tmol_plip_cath/blob
+  record_id_colname: path
+  assembly_id_colname: assembly_id
+  parser_args:
+    extra_fields: [ig_region]
+
+filters:
+  _target_: rfproteina.utils.hydra.non_null_values
+  mapping:
+    # Date cutoff
+    deposition_date: "deposition_date < '2024-01-01'"
+
+    # Structure quality
+    resolution: "resolution < 9.0"
+    protein_ligand_quality: "passes_protein_ligand_quality_validation.isnull() or passes_protein_ligand_quality_validation == True"
+    bonds: "passes_bond_filters == True"
+    ligand_identity: "passes_ligand_identity_filters == True"
+
+    # Exclude enormous assemblies
+    polymer_pn_unit_count: "num_polymer_pn_units <= 300"
+
+columns_to_load:
+  _target_: rfproteina.utils.hydra.flatten_unique_values
+  mapping:
+    common:
+      - example_id
+      - pdb_id
+      - assembly_id
+      - altloc_seed
+      - path
+      - deposition_date
+      - resolution
+      - num_polymer_pn_units
+      - all_pn_unit_iids_after_processing
+      - method
+
+      # Query-chain type counts, not the total number of chains in the complex.
+      - n_prot
+      - n_nuc
+      - n_ligand
+      - n_peptide
+
+      - passes_protein_ligand_quality_validation
+      - passes_bond_filters
+      - passes_ligand_identity_filters
+      - n_standard_amino_acid_residues
+      - n_dna_residues
+      - n_rna_residues
+      - n_other_heavy_atoms

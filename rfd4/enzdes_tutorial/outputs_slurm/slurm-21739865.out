@@ -1,0 +1,117 @@
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 142.22it/s]
+sizzling... 🔥                                 0/10 0:00:00 • -:--:-- 0.00it/s 
+Error executing job with overrides: ['inference_experiment=inference_on_user_inputs', 'generation=inverse_folding', 'inputs=/cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/scaffold_n25/best/rank1_M0732_1xs1_theozyme_rep2_generated.cif', 'num_replicates=10', 'batch_size=1', 'precision=bf16-mixed', 'generation.model.local_latents.simulation_step_params.tsr_k=2.0', 'metrics/refolding_oracles=of3', 'metrics_tags=[design,3d_coordinate_conditioning,ame_refolding]', 'out_dir=/cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/inverse_folding_n10_ll2.0_refold', 'run_name_=s3invfold']
+Traceback (most recent call last):
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/utils/verbosity.py", line 166, in wrapped
+    return function(cfg, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/generate.py", line 781, in main_hydra
+    run_generation(cfg, job_id=job_id)
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/utils/verbosity.py", line 166, in wrapped
+    return function(cfg, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/generate.py", line 724, in run_generation
+    trainer.validate(model, dataloader)  # validation_step automatically saves outputs
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 702, in validate
+    return call._call_and_handle_interrupt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 745, in _validate_impl
+    results = self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1079, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1116, in _run_stage
+    return self._evaluation_loop.run()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/loops/utilities.py", line 179, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 146, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 441, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 329, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/lightning/pytorch/strategies/strategy.py", line 412, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/proteina.py", line 999, in validation_step
+    return self._validation_step(batch, batch_idx, dataloader_idx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/proteina.py", line 1119, in _validation_step
+    generation_list = self.predict_step(batch, batch_idx)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/proteina.py", line 1780, in predict_step
+    return strategy.generate(self, batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/search/vanilla.py", line 214, in generate
+    batch = model.add_clean_samples(batch)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/proteina.py", line 755, in add_clean_samples
+    batch["x_1"] = {dm: self._get_clean_sample(batch, dm) for dm in self.fm.data_modes}
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/proteina.py", line 785, in _get_clean_sample
+    return self.autoencoder.encode(batch)["z_latent"]  # [b, n_tokens, latent_dim]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/partial_autoencoder/autoencoder.py", line 138, in encode
+    return self.encoder(batch)  # z_latent, mean, log_scale
+           ^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/partial_autoencoder/encoder.py", line 138, in forward
+    seqs = self.transformer_layers[i](seqs, pair_rep, c, attn_mask)  # [b, n, token_dim]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/nn/modules/attn_n_transition.py", line 111, in forward
+    x = self._apply_mha(x, pair_rep, cond, mask)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/nn/modules/attn_n_transition.py", line 85, in _apply_mha
+    x_attn = self.mhba(x, pair_rep if self.use_attn_pair_bias else None, cond, mask)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/nn/modules/pair_bias_attn.py", line 328, in forward
+    x = self.mha(node_feats=x, pair_feats=pair_rep, mask=pair_mask)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/gomest/miniconda3/envs/pd_hackaton/lib/python3.12/site-packages/rfproteina/nn/modules/pair_bias_attn.py", line 181, in forward
+    o = F.scaled_dot_product_attention(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Invalid backend
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

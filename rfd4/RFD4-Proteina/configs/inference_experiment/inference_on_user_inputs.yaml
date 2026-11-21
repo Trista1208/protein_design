@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - /generation: inference_base
+  - /metrics: all_metrics # Will be subsetted according to metrics_tags
+  - _self_
+
+inputs: ??? # json/yaml/cif path or cif directory
+
+generation:
+  val_set_name_override: ${inputs} # Useful for labeling individual datasets used in a sweep
+  dataset:
+    num_replicates: ${num_replicates} # Number of times to replicate each example
+    transform:
+      metrics_tags: ${metrics_tags} # If specified, determines which metrics are computed during inference
+
+global_prefix: null # If specified, paths to output structures and metrics dataframes will be prefixed with this string

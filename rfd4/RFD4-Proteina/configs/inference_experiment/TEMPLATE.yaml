@@ -1,0 +1,107 @@
+# @package _global_
+#
+# ============================================================================
+# TEMPLATE: Inference experiment config
+# ============================================================================
+#
+# Copy this file and fill in the values for your experiment.
+# All inference configs compose inference_on_user_inputs as the base.
+#
+# Three ways to run inference:
+#
+#   Pattern A -- Self-contained config in inference_experiment/ :
+#     rfproteina/generate.py \
+#         inference_experiment=my_experiment
+#
+#   Pattern B -- CLI overrides:
+#     rfproteina/generate.py \
+#         ckpt_path=/path/to/checkpoints ckpt_name=model.ckpt \
+#         inputs=/path/to/my_design.json out_dir=outputs/quick_test
+#
+#   Pattern C -- Config file anywhere on the filesystem:
+#     Place your .yaml anywhere, but note TWO differences from a config that
+#     lives in inference_experiment/ :
+#
+#       1. Add a hydra.searchpath entry so Hydra can find the base configs:
+#
+#            hydra:
+#              searchpath:
+#                - file://${oc.env:PROJECT_ROOT}/configs
+#
+#       2. Inherit from the base inference config in defaults:
+#
+#            defaults:
+#              - inference
+#              - _self_
+#
+#     Then run:
+#       rfproteina/generate.py \
+#           --config-path /absolute/path/to/your/config/dir \
+#           --config-name your_config_name (no .yaml suffix)
+#
+#     The searchpath entry roots at configs/, so inference.yaml and all its
+#     nested refs (inference_experiment, /generation, /metrics, ...) resolve.
+#     PROJECT_ROOT is always set when generate.py runs.
+#
+# For SLURM:
+#   # In-tree config (Pattern A): selected as a config group on the default
+#   # inference config, just like generate.py.
+#   ./scripts/launch_generate.sh \
+#       inference_experiment=my_experiment \
+#       gen_njobs=4
+#
+#   # External config (Pattern C): same two Hydra flags as generate.py.
+#   ./scripts/launch_generate.sh \
+#       --config-path /abs/path/to/config/dir --config-name my_experiment \
+#       gen_njobs=4
+#
+# ============================================================================
+
+defaults:
+  - inference_on_user_inputs
+  - _self_
+
+# --- Input ---
+inputs: ???                           # Path to annotated CIF or directory of CIFs (preferred) or JSON input
+# subset_to_examples: null            # Optional: filter to specific examples by name
+
+# --- Output ---
+out_dir: ???
+run_name: my_experiment
+
+# --- Replication ---
+num_replicates: 10                    # Number of samples per input example
+batch_size: 10                        # Batch size for generation
+
+# --- Sampling transforms (optional) ---
+# Transforms that run once per replicate, so each of the `num_replicates` designs from a
+# single input file can start from a different condition instead of reusing one guess.
+# Annotated-CIF and condition_spec JSON/YAML inputs only (the legacy contig-JSON dialect raises).
+#
+# Write one as an AtomWorks `Transform` whose `forward(data)` edits `data["atom_array"]` in
+# place -- e.g. jitter a conditioning coordinate, or redraw it from a measured distribution.
+# It runs after expandable segments are realized (so residue positions are final) and before
+# featurization, and `_target_` args are instantiated by Hydra. Put your module in the
+# git-ignored `src/rfproteina/transforms/sampling/` so it stays local (see the guide):
+#
+# generation:
+#   dataset:
+#     sampling_transforms:
+#       - _target_: rfproteina.transforms.sampling.my_sampler.MySamplingTransform
+#         chain_id: A
+#         scale: 1.0
+
+# --- Search (optional, omit for vanilla single-pass generation) ---
+# search:
+#   n_branch: 2
+#   beam_width: 3
+#   checkpoints:
+#     "40":
+#       metrics: [clash_metrics]
+#       use_clean_prediction: true
+#       rewards:
+#         clash_metrics.frac_atoms_clashing_1p5A: {weight: -1.0}
+#     "60":
+#       metrics: [oracle]
+#       rewards:
+#         oracle.plddt_coi: {weight: 1.0}

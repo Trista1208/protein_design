@@ -1,0 +1,8 @@
+- inference_experiment=inference_on_user_inputs
+- inputs=/cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/M0732_1xs1_theozyme.cif
+- precision=16-mixed
+- num_replicates=25
+- batch_size=1
+- metrics_tags=[design,unindexed,3d_coordinate_conditioning]
+- out_dir=/cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/scaffold_n25
+- run_name_=s2design

@@ -1,0 +1,11 @@
+# Heavy unconditional with light motif scaffolding:
+# 80% unconditional, 5% folding, 5% inverse folding, 10% motif scaffolding.
+
+defaults:
+  - all_off
+  - _self_
+
+unconditional:    {frequency: 80.0}
+folding:          {frequency: 5.0}
+inverse_folding:  {frequency: 5.0}
+motif_scaffold:   {frequency: 10.0}

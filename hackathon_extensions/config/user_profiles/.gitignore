@@ -1,0 +1,5 @@
+# Ignore sensitive credential files and user profile YAML/JSON files
+*.yaml
+*.yml
+*.json
+!.gitkeep

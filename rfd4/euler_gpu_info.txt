@@ -1,0 +1,76 @@
+================================================================================
+ETH EULER CLUSTER — GPU & ENVIRONMENT REFERENCE (USER: gomest)
+================================================================================
+
+1. HACKATHON SLURM RESERVATIONS & PARTITIONS
+   - UNIX Group Access : bsse-wicky-euler-hackathon (no -A account flag needed)
+   - Partition         : gpu.120h
+   - Pre-Event Res.    : ws_49734_pre
+       * Window        : 2026-11-20 14:00 to 2026-11-20 20:00
+       * Nodes         : eu-lo-g3-043 (1 node, 128 cores)
+   - Main Event Res.   : ws_49734_gpu
+       * Window        : 2026-11-21 08:00 to 2026-11-22 20:00
+       * Nodes         : eu-lo-g2-[023,026,034], eu-lo-g3-043 (4 nodes, 328 cores)
+   - Note              : Reservations have MAGNETIC flag set; pass
+                         --reservation=ws_49734_gpu --partition=gpu.120h explicitly.
+
+2. VERIFIED GPU HARDWARE & DRIVER SPECS (eu-lo-g3-043 / eu-lo-g2-*)
+   - GPU Model         : NVIDIA GeForce RTX 2080 Ti
+   - Architecture      : Turing (Compute Capability 7.5 / sm_75)
+   - VRAM per GPU      : 11,264 MiB (11 GB) -> keep batch_size=1 or 2 to avoid OOM
+   - Precision Note    : No native hardware BF16 on Turing; use FP16 or FP32
+   - Host Driver       : 580.178.04 (Supports up to CUDA 13.0)
+
+3. PYTHON & STORAGE PATHS
+   - Scratch Workspace : /cluster/scratch/gomest
+   - Conda Environment : pd_hackaton (Python 3.12, rfd4-proteina[all-cuda13])
+   - Activate Command  : eval "$(conda shell.bash hook)" && conda activate pd_hackaton
+   - Cache Env Vars    : export HF_HOME=/cluster/scratch/gomest/.cache/huggingface
+                         export TORCH_HOME=/cluster/scratch/gomest/.cache/torch
+                         (Keep caches/envs off $HOME to avoid Euler file/size quotas)
+
+4. STANDARD SLURM SUBMISSION TEMPLATE (sbatch)
+   #!/bin/bash
+   #SBATCH --job-name=<name>
+   #SBATCH --reservation=ws_49734_gpu
+   #SBATCH --partition=gpu.120h
+   #SBATCH --gpus=1
+   #SBATCH --cpus-per-task=8
+   #SBATCH --mem-per-cpu=4G
+   #SBATCH --time=02:00:00
+   #SBATCH --output=/cluster/scratch/gomest/slurm-%j.out
+
+   eval "$(conda shell.bash hook)"
+   conda activate pd_hackaton
+   export HF_HOME=/cluster/scratch/gomest/.cache/huggingface
+   <command>
+
+5. QUICK INTERACTIVE TEST (5 MIN)
+   srun --reservation=ws_49734_gpu --partition=gpu.120h --gpus=1 --time=00:05:00 nvidia-smi
+================================================================================
+
+6. VERIFIED GPU PARTITIONS & NODES FOR USER gomest (sshare / sinfo verified)
+   - Account Hierarchy : es_workshop (RawShares=100 across gpu/, gpuhe/, gpupr/)
+   - Time Tiers        : Append .4h (4h), .24h (48h), .120h (15d/5d), or .bulk
+
+   A. gpu.* (Standard GPU — Account: gpu/es_workshop)
+      - Public Nodes : eu-g3-[062-066,083-084] (Quadro RTX 6000, 24 GB)
+                       eu-g3-[068-077] (NVIDIA TITAN RTX, 24 GB)
+      - Reserved Only: eu-lo-g2-[023,026,034], eu-lo-g3-043 (RTX 2080 Ti, 11 GB)
+
+   B. gpuhe.* (High-End GPU — Account: gpuhe/es_workshop)
+      - Public Nodes : eu-g6-[001-080] (NVIDIA RTX 4090, 24 GB)
+                       eu-g4-[001-030] (NVIDIA RTX 3090, 24 GB)
+                       eu-g3-[062-066,083-084] (Quadro RTX 6000, 24 GB)
+                       eu-g3-[068-077] (NVIDIA TITAN RTX, 24 GB)
+      - Submit Flag  : #SBATCH -p gpuhe.4h -A gpuhe/es_workshop --gpus=rtx_4090:1
+
+   C. gpupr.* (Premium A100 — Account: gpupr/es_workshop)
+      - Nodes        : eu-a65-[05-07], eu-ts-[01-02] (A100 PCIe 80 GB)
+                       eu-a65-[02-04] (A100 PCIe 40 GB; eu-a65-04 up to .24h)
+      - Submit Flag  : #SBATCH -p gpupr.4h -A gpupr/es_workshop --gpus=a100_80gb:1
+
+   D. cuda13pr.* (CUDA 13 High-VRAM — Account: es_workshop)
+      - Nodes        : eu-g7-[001-010] (NVIDIA RTX PRO 6000, 96 GB)
+      - Submit Flag  : #SBATCH -p cuda13pr.4h -A es_workshop --gpus=1
+================================================================================

@@ -1,0 +1,90 @@
+verbose: true # Include routine warnings and detailed diagnostic output.
+
+run_name_: ae_z16
+compress_outputs: true # Compress validation structure samples.
+
+hardware:
+  ncpus_per_task_train_: 16  # Number of CPUs per task during training
+  accelerator: gpu
+  ngpus_per_node_: 1  # Number of GPUs per node
+  nnodes_: 1  # Number of nodes
+
+defaults:
+  - nn_ae: nn_130m_unified
+  - datasets: ae_pdb_datasets
+  - design_tasks/global_design_task_kwargs@datasets.global_design_task_kwargs  # need this at global level
+  - dataloaders: default  
+  - callbacks: autoencoder
+  - _self_
+  
+  # Experiment configs override specific hyperparameters
+  - experiment_ae: sota
+  
+  # Debug configs for quick testing
+  - optional debug: null
+
+# Optional pre-training checkpoint to start from.
+pretrain_ckpt_path:
+
+# Override batch size from dataloader config
+dataloaders:
+  train:
+    dataloader_params:
+      batch_size: 12  # Adjust based on GPU memory
+
+# Loss
+loss:
+  balanced_fraction: 0.25
+  kl:
+    weight: 1e-4
+    anneal: false
+    patience: 10000
+  struct:
+    type: l2
+    # type: l2cut_0.01
+    weight: 1.0
+    # Permute chemically equivalent ground-truth atoms onto the prediction before scoring;
+    # `_align` decides the labelling in a superimposed frame rather than the raw one.  Turn on
+    # together with dataset.transform.precompute_atom_permutation, or the loss will raise.
+    atom_permutation: false
+    atom_permutation_align: false
+  seq:
+    weight: 1.0
+  atom_presence:
+    weight: 1.0
+
+
+# Precision
+force_precision_f32: False  # If false will use bf16-mixed precision
+
+# Optimization (aligned with training_proteina where applicable)
+opt:
+  lr: 0.0001
+  gradient_clip_val: 1.0
+  muon_exclude_param_patterns:  # Kept on Adam (Muon also never sees non-2D params: norms, biases)
+    - '_factory\.'  # FeatureFactory input embeddings (init_repr_factory, cond_factory, pair_rep_factory)
+    - '^encoder\.latent_decoder_mean_n_log_scale\.'  # encoder output head
+    - '^decoder\.(logit_linear|struct_linear|atom_presence_linear)\.'  # decoder output heads
+  muon_adjust_lr_fn: "match_rms_adamw"
+  muon_grouped: true  # Batch equal-shaped FP32 Muon updates; false selects native Muon.
+  max_epochs: 10000000
+  accumulate_grad_batches: 1
+  dist_strategy: ddp
+  steps_per_epoch: 2000
+  val_every_n_epochs: 10
+  val_start_epoch: 0
+
+# wandb logging and checkpoints
+log:
+  wandb_project: ae_training
+  wandb_entity: ${oc.env:WANDB_ENTITY,null}
+  tags: ["ae"]
+  log_wandb: True  # whether to log to wandb
+  log_every_n_steps: 10  # wandb logging frequency
+  checkpoint: True  # whether to store checkpoints
+  checkpoint_every_n_epochs: 10  # Save top-k checkpoint every N epochs (matches val frequency)
+  last_ckpt_every_n_epochs: 1    # Save last.ckpt every N epochs (for resume)
+  
+
+seed: 42
+torch_deterministic: false  # Locks cuDNN/cuBLAS to deterministic algorithms; significantly reduces throughput

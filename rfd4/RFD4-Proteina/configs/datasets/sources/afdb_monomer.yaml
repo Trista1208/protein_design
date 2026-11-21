@@ -1,0 +1,19 @@
+# AFDB single-chain predictions, Genie3 subset. 32-512 residues, ~1.19M rows.
+# Length gating belongs to the consumer, which knows its own crop budget.
+
+defaults:
+  - backend_blob
+  - _self_
+
+name: afdb_monomer
+data: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/afdb_genie3_subset/examples.parquet
+memory_map: true
+
+loader:
+  blob_dir: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/afdb_genie3_subset/blob
+  record_id_colname: path
+
+columns_to_load:
+  - example_id
+  - path
+  - n_standard_amino_acid_residues

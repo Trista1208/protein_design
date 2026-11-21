@@ -1,0 +1,9 @@
+- inference_experiment=inference_on_user_inputs
+- generation=inverse_folding
+- inputs=/cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/scaffold_n25/best/rank1_M0732_1xs1_theozyme_rep2_generated.cif
+- num_replicates=10
+- batch_size=1
+- generation.model.local_latents.simulation_step_params.tsr_k=2.0
+- metrics_tags=[design,3d_coordinate_conditioning]
+- out_dir=/cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/inverse_folding_n10_ll2.0
+- run_name_=s3invfold

@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+        files: \.ipynb$
+        args: [--keep-id]
+  - repo: local
+    hooks:
+      - id: make-format
+        name: Run `make format`
+        entry: make format
+        language: system
+        pass_filenames: false

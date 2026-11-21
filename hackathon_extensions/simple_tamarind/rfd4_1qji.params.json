@@ -1,0 +1,19 @@
+{
+  "base_url": "https://app.tamarind.bio/api",
+  "key_file": ".tamarind_key",
+  "type": "rfd4-proteina",
+  "jobName": "rfd4_1qji_test",
+  "files": {
+    "pdbFile": "../../test_pipeline/PDB_1QJI_theozyme_HEHHMY.cif"
+  },
+  "settings": {
+    "task": "enzyme-design",
+    "numDesigns": 1,
+    "ligandCode": "ZN,PKF",
+    "motifResidues": {"A": "92,93,96,102,147,149"},
+    "catalyticAtomPicks": "A92:NE2,CD2,CG,CB,ND1,CE1 A93:OE1,OE2,CD,CG A96:NE2,CD2,CG,CB,ND1,CE1 A102:NE2,CD2,CG,CB,ND1,CE1 A147:SD,CE,CG A149:OH,CZ,CE1,CD1,CE2,CG,CB,CD2",
+    "unindexMotif": true,
+    "minScaffoldLength": 120,
+    "maxScaffoldLength": 150
+  }
+}

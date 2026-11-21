@@ -1,0 +1,30 @@
+defaults:
+  - /recycle_strategy@generation: medium/midpeak
+  - _self_
+
+dataset:
+  _target_: rfproteina.inference_utils.datasets.DesignProblemDataset
+  dir_path_or_file_paths: ${oc.env:PROJECT_ROOT}/data/benchmarks/small_molecule_binder/disco_figure_2c
+  subset_to_keys:
+    - s-adenosylmethionine_final_0
+    - heme_b_final_0
+    - chlorophyll_a_final_0
+    - vitamin_b12_final_0
+    - biotin_final_0
+    - estradiol_final_0
+    - cholesterol_final_0
+    - NAD_final_0
+    - PLP_final_0
+    - retinal_final_0
+    - staurosporine_final_0
+    - colchicine_final_0
+
+  num_replicates: 100
+
+  transform:
+    _target_: rfproteina.datapipes.pipeline.build_design_validation_pipeline
+    metrics_tags:
+      - has_small_molecule
+      - design
+      - sm_binder_refolding
+      - disco_refolding

@@ -1,0 +1,1025 @@
+Example: M0732_1xs1_theozyme_rep0
+Structure: M0732_1xs1_theozyme_rep0_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep0/M0732_1xs1_theozyme_rep0_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              235.0
+  amino_acid_composition.ala_fraction                                                    0.1021
+  amino_acid_composition.val_fraction                                                    0.0638
+  amino_acid_composition.gly_fraction                                                    0.0298
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.4851
+  sse_distribution.sheet_fraction                                                        0.1489
+  sse_distribution.loop_fraction                                                          0.366
+  sse_distribution.num_ss_elements                                                         23.0
+  sse_distribution.helix_fraction_coi                                                    0.4851
+  sse_distribution.sheet_fraction_coi                                                    0.1489
+  sse_distribution.loop_fraction_coi                                                      0.366
+  sse_distribution.num_ss_elements_coi                                                     23.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2415
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3104
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep1
+Structure: M0732_1xs1_theozyme_rep1_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep1/M0732_1xs1_theozyme_rep1_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              232.0
+  amino_acid_composition.ala_fraction                                                    0.0603
+  amino_acid_composition.val_fraction                                                    0.0819
+  amino_acid_composition.gly_fraction                                                    0.0216
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5302
+  sse_distribution.sheet_fraction                                                        0.2241
+  sse_distribution.loop_fraction                                                         0.2457
+  sse_distribution.num_ss_elements                                                         30.0
+  sse_distribution.helix_fraction_coi                                                    0.5302
+  sse_distribution.sheet_fraction_coi                                                    0.2241
+  sse_distribution.loop_fraction_coi                                                     0.2457
+  sse_distribution.num_ss_elements_coi                                                     30.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3285
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3782
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep2
+Structure: M0732_1xs1_theozyme_rep2_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep2/M0732_1xs1_theozyme_rep2_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              233.0
+  amino_acid_composition.ala_fraction                                                    0.2833
+  amino_acid_composition.val_fraction                                                    0.0601
+  amino_acid_composition.gly_fraction                                                    0.0343
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5708
+  sse_distribution.sheet_fraction                                                        0.1159
+  sse_distribution.loop_fraction                                                         0.3133
+  sse_distribution.num_ss_elements                                                         31.0
+  sse_distribution.helix_fraction_coi                                                    0.5708
+  sse_distribution.sheet_fraction_coi                                                    0.1159
+  sse_distribution.loop_fraction_coi                                                     0.3133
+  sse_distribution.num_ss_elements_coi                                                     31.0
+  design_motif_allatom_rmsd.rmsd                                                          0.187
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.2393
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep3
+Structure: M0732_1xs1_theozyme_rep3_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep3/M0732_1xs1_theozyme_rep3_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              239.0
+  amino_acid_composition.ala_fraction                                                    0.0711
+  amino_acid_composition.val_fraction                                                    0.0586
+  amino_acid_composition.gly_fraction                                                    0.0418
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.6444
+  sse_distribution.sheet_fraction                                                        0.0921
+  sse_distribution.loop_fraction                                                         0.2636
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                    0.6444
+  sse_distribution.sheet_fraction_coi                                                    0.0921
+  sse_distribution.loop_fraction_coi                                                     0.2636
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3016
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3842
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep4
+Structure: M0732_1xs1_theozyme_rep4_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep4/M0732_1xs1_theozyme_rep4_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              235.0
+  amino_acid_composition.ala_fraction                                                    0.1277
+  amino_acid_composition.val_fraction                                                    0.0511
+  amino_acid_composition.gly_fraction                                                    0.0426
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                           0.8
+  sse_distribution.sheet_fraction                                                         0.017
+  sse_distribution.loop_fraction                                                          0.183
+  sse_distribution.num_ss_elements                                                         26.0
+  sse_distribution.helix_fraction_coi                                                       0.8
+  sse_distribution.sheet_fraction_coi                                                     0.017
+  sse_distribution.loop_fraction_coi                                                      0.183
+  sse_distribution.num_ss_elements_coi                                                     26.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3868
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4818
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep5
+Structure: M0732_1xs1_theozyme_rep5_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep5/M0732_1xs1_theozyme_rep5_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              224.0
+  amino_acid_composition.ala_fraction                                                    0.0446
+  amino_acid_composition.val_fraction                                                    0.0357
+  amino_acid_composition.gly_fraction                                                    0.0357
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.8527
+  sse_distribution.sheet_fraction                                                           0.0
+  sse_distribution.loop_fraction                                                         0.1473
+  sse_distribution.num_ss_elements                                                         21.0
+  sse_distribution.helix_fraction_coi                                                    0.8527
+  sse_distribution.sheet_fraction_coi                                                       0.0
+  sse_distribution.loop_fraction_coi                                                     0.1473
+  sse_distribution.num_ss_elements_coi                                                     21.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3158
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3724
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep6
+Structure: M0732_1xs1_theozyme_rep6_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep6/M0732_1xs1_theozyme_rep6_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              250.0
+  amino_acid_composition.ala_fraction                                                     0.064
+  amino_acid_composition.val_fraction                                                      0.02
+  amino_acid_composition.gly_fraction                                                      0.02
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                         0.796
+  sse_distribution.sheet_fraction                                                           0.0
+  sse_distribution.loop_fraction                                                          0.204
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                     0.796
+  sse_distribution.sheet_fraction_coi                                                       0.0
+  sse_distribution.loop_fraction_coi                                                      0.204
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2237
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.2824
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep7
+Structure: M0732_1xs1_theozyme_rep7_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep7/M0732_1xs1_theozyme_rep7_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              250.0
+  amino_acid_composition.ala_fraction                                                     0.324
+  amino_acid_composition.val_fraction                                                       0.1
+  amino_acid_composition.gly_fraction                                                     0.064
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                         0.552
+  sse_distribution.sheet_fraction                                                         0.144
+  sse_distribution.loop_fraction                                                          0.304
+  sse_distribution.num_ss_elements                                                         36.0
+  sse_distribution.helix_fraction_coi                                                     0.552
+  sse_distribution.sheet_fraction_coi                                                     0.144
+  sse_distribution.loop_fraction_coi                                                      0.304
+  sse_distribution.num_ss_elements_coi                                                     36.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2957
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3819
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep8
+Structure: M0732_1xs1_theozyme_rep8_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep8/M0732_1xs1_theozyme_rep8_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              221.0
+  amino_acid_composition.ala_fraction                                                    0.0814
+  amino_acid_composition.val_fraction                                                    0.0407
+  amino_acid_composition.gly_fraction                                                    0.0181
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5339
+  sse_distribution.sheet_fraction                                                        0.1629
+  sse_distribution.loop_fraction                                                         0.3032
+  sse_distribution.num_ss_elements                                                         25.0
+  sse_distribution.helix_fraction_coi                                                    0.5339
+  sse_distribution.sheet_fraction_coi                                                    0.1629
+  sse_distribution.loop_fraction_coi                                                     0.3032
+  sse_distribution.num_ss_elements_coi                                                     25.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2287
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.2918
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep9
+Structure: M0732_1xs1_theozyme_rep9_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep9/M0732_1xs1_theozyme_rep9_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              229.0
+  amino_acid_composition.ala_fraction                                                     0.214
+  amino_acid_composition.val_fraction                                                     0.083
+  amino_acid_composition.gly_fraction                                                    0.0437
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5066
+  sse_distribution.sheet_fraction                                                        0.1485
+  sse_distribution.loop_fraction                                                          0.345
+  sse_distribution.num_ss_elements                                                         28.0
+  sse_distribution.helix_fraction_coi                                                    0.5066
+  sse_distribution.sheet_fraction_coi                                                    0.1485
+  sse_distribution.loop_fraction_coi                                                      0.345
+  sse_distribution.num_ss_elements_coi                                                     28.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3768
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4772
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep10
+Structure: M0732_1xs1_theozyme_rep10_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep10/M0732_1xs1_theozyme_rep10_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              245.0
+  amino_acid_composition.ala_fraction                                                    0.1102
+  amino_acid_composition.val_fraction                                                    0.0653
+  amino_acid_composition.gly_fraction                                                    0.0367
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.8204
+  sse_distribution.sheet_fraction                                                           0.0
+  sse_distribution.loop_fraction                                                         0.1796
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                    0.8204
+  sse_distribution.sheet_fraction_coi                                                       0.0
+  sse_distribution.loop_fraction_coi                                                     0.1796
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2564
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3177
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep11
+Structure: M0732_1xs1_theozyme_rep11_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep11/M0732_1xs1_theozyme_rep11_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              224.0
+  amino_acid_composition.ala_fraction                                                    0.1384
+  amino_acid_composition.val_fraction                                                    0.0982
+  amino_acid_composition.gly_fraction                                                    0.0446
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5179
+  sse_distribution.sheet_fraction                                                         0.183
+  sse_distribution.loop_fraction                                                         0.2991
+  sse_distribution.num_ss_elements                                                         29.0
+  sse_distribution.helix_fraction_coi                                                    0.5179
+  sse_distribution.sheet_fraction_coi                                                     0.183
+  sse_distribution.loop_fraction_coi                                                     0.2991
+  sse_distribution.num_ss_elements_coi                                                     29.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3651
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4767
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep12
+Structure: M0732_1xs1_theozyme_rep12_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep12/M0732_1xs1_theozyme_rep12_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              247.0
+  amino_acid_composition.ala_fraction                                                    0.0729
+  amino_acid_composition.val_fraction                                                    0.0405
+  amino_acid_composition.gly_fraction                                                    0.0283
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.7854
+  sse_distribution.sheet_fraction                                                        0.0202
+  sse_distribution.loop_fraction                                                         0.1943
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                    0.7854
+  sse_distribution.sheet_fraction_coi                                                    0.0202
+  sse_distribution.loop_fraction_coi                                                     0.1943
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2688
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3205
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep13
+Structure: M0732_1xs1_theozyme_rep13_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep13/M0732_1xs1_theozyme_rep13_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              234.0
+  amino_acid_composition.ala_fraction                                                    0.2863
+  amino_acid_composition.val_fraction                                                    0.1709
+  amino_acid_composition.gly_fraction                                                    0.0427
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                         0.453
+  sse_distribution.sheet_fraction                                                         0.235
+  sse_distribution.loop_fraction                                                          0.312
+  sse_distribution.num_ss_elements                                                         34.0
+  sse_distribution.helix_fraction_coi                                                     0.453
+  sse_distribution.sheet_fraction_coi                                                     0.235
+  sse_distribution.loop_fraction_coi                                                      0.312
+  sse_distribution.num_ss_elements_coi                                                     34.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2904
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3409
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep14
+Structure: M0732_1xs1_theozyme_rep14_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep14/M0732_1xs1_theozyme_rep14_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              221.0
+  amino_acid_composition.ala_fraction                                                    0.0995
+  amino_acid_composition.val_fraction                                                    0.0452
+  amino_acid_composition.gly_fraction                                                    0.0362
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.7421
+  sse_distribution.sheet_fraction                                                           0.0
+  sse_distribution.loop_fraction                                                         0.2579
+  sse_distribution.num_ss_elements                                                         23.0
+  sse_distribution.helix_fraction_coi                                                    0.7421
+  sse_distribution.sheet_fraction_coi                                                       0.0
+  sse_distribution.loop_fraction_coi                                                     0.2579
+  sse_distribution.num_ss_elements_coi                                                     23.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2647
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.2944
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep15
+Structure: M0732_1xs1_theozyme_rep15_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep15/M0732_1xs1_theozyme_rep15_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              241.0
+  amino_acid_composition.ala_fraction                                                    0.2282
+  amino_acid_composition.val_fraction                                                    0.0788
+  amino_acid_composition.gly_fraction                                                    0.0498
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5643
+  sse_distribution.sheet_fraction                                                         0.166
+  sse_distribution.loop_fraction                                                         0.2697
+  sse_distribution.num_ss_elements                                                         33.0
+  sse_distribution.helix_fraction_coi                                                    0.5643
+  sse_distribution.sheet_fraction_coi                                                     0.166
+  sse_distribution.loop_fraction_coi                                                     0.2697
+  sse_distribution.num_ss_elements_coi                                                     33.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3133
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3908
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep16
+Structure: M0732_1xs1_theozyme_rep16_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep16/M0732_1xs1_theozyme_rep16_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              221.0
+  amino_acid_composition.ala_fraction                                                    0.2308
+  amino_acid_composition.val_fraction                                                     0.086
+  amino_acid_composition.gly_fraction                                                    0.0226
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.8371
+  sse_distribution.sheet_fraction                                                           0.0
+  sse_distribution.loop_fraction                                                         0.1629
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                    0.8371
+  sse_distribution.sheet_fraction_coi                                                       0.0
+  sse_distribution.loop_fraction_coi                                                     0.1629
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3311
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4294
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep17
+Structure: M0732_1xs1_theozyme_rep17_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep17/M0732_1xs1_theozyme_rep17_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              232.0
+  amino_acid_composition.ala_fraction                                                    0.0431
+  amino_acid_composition.val_fraction                                                     0.056
+  amino_acid_composition.gly_fraction                                                    0.0216
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.6552
+  sse_distribution.sheet_fraction                                                        0.1638
+  sse_distribution.loop_fraction                                                          0.181
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                    0.6552
+  sse_distribution.sheet_fraction_coi                                                    0.1638
+  sse_distribution.loop_fraction_coi                                                      0.181
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2077
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.2571
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep18
+Structure: M0732_1xs1_theozyme_rep18_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep18/M0732_1xs1_theozyme_rep18_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              241.0
+  amino_acid_composition.ala_fraction                                                    0.3237
+  amino_acid_composition.val_fraction                                                    0.0747
+  amino_acid_composition.gly_fraction                                                    0.0373
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.6349
+  sse_distribution.sheet_fraction                                                        0.1245
+  sse_distribution.loop_fraction                                                         0.2407
+  sse_distribution.num_ss_elements                                                         33.0
+  sse_distribution.helix_fraction_coi                                                    0.6349
+  sse_distribution.sheet_fraction_coi                                                    0.1245
+  sse_distribution.loop_fraction_coi                                                     0.2407
+  sse_distribution.num_ss_elements_coi                                                     33.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3365
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4139
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep19
+Structure: M0732_1xs1_theozyme_rep19_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep19/M0732_1xs1_theozyme_rep19_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              231.0
+  amino_acid_composition.ala_fraction                                                    0.0649
+  amino_acid_composition.val_fraction                                                    0.0519
+  amino_acid_composition.gly_fraction                                                     0.026
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.6667
+  sse_distribution.sheet_fraction                                                        0.0866
+  sse_distribution.loop_fraction                                                         0.2468
+  sse_distribution.num_ss_elements                                                         21.0
+  sse_distribution.helix_fraction_coi                                                    0.6667
+  sse_distribution.sheet_fraction_coi                                                    0.0866
+  sse_distribution.loop_fraction_coi                                                     0.2468
+  sse_distribution.num_ss_elements_coi                                                     21.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2955
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.3665
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep20
+Structure: M0732_1xs1_theozyme_rep20_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep20/M0732_1xs1_theozyme_rep20_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              239.0
+  amino_acid_composition.ala_fraction                                                    0.3264
+  amino_acid_composition.val_fraction                                                    0.0921
+  amino_acid_composition.gly_fraction                                                    0.0502
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.6736
+  sse_distribution.sheet_fraction                                                        0.1046
+  sse_distribution.loop_fraction                                                         0.2218
+  sse_distribution.num_ss_elements                                                         29.0
+  sse_distribution.helix_fraction_coi                                                    0.6736
+  sse_distribution.sheet_fraction_coi                                                    0.1046
+  sse_distribution.loop_fraction_coi                                                     0.2218
+  sse_distribution.num_ss_elements_coi                                                     29.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2078
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.2636
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep21
+Structure: M0732_1xs1_theozyme_rep21_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep21/M0732_1xs1_theozyme_rep21_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              234.0
+  amino_acid_composition.ala_fraction                                                    0.0342
+  amino_acid_composition.val_fraction                                                    0.0427
+  amino_acid_composition.gly_fraction                                                    0.0385
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5214
+  sse_distribution.sheet_fraction                                                        0.1709
+  sse_distribution.loop_fraction                                                         0.3077
+  sse_distribution.num_ss_elements                                                         27.0
+  sse_distribution.helix_fraction_coi                                                    0.5214
+  sse_distribution.sheet_fraction_coi                                                    0.1709
+  sse_distribution.loop_fraction_coi                                                     0.3077
+  sse_distribution.num_ss_elements_coi                                                     27.0
+  design_motif_allatom_rmsd.rmsd                                                          0.377
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4577
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep22
+Structure: M0732_1xs1_theozyme_rep22_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep22/M0732_1xs1_theozyme_rep22_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              247.0
+  amino_acid_composition.ala_fraction                                                    0.0729
+  amino_acid_composition.val_fraction                                                    0.0486
+  amino_acid_composition.gly_fraction                                                    0.0243
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                         0.498
+  sse_distribution.sheet_fraction                                                        0.1862
+  sse_distribution.loop_fraction                                                         0.3158
+  sse_distribution.num_ss_elements                                                         30.0
+  sse_distribution.helix_fraction_coi                                                     0.498
+  sse_distribution.sheet_fraction_coi                                                    0.1862
+  sse_distribution.loop_fraction_coi                                                     0.3158
+  sse_distribution.num_ss_elements_coi                                                     30.0
+  design_motif_allatom_rmsd.rmsd                                                         0.2861
+  design_unindexed_motif_allatom_rmsd.rmsd                                                 0.36
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep23
+Structure: M0732_1xs1_theozyme_rep23_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep23/M0732_1xs1_theozyme_rep23_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              246.0
+  amino_acid_composition.ala_fraction                                                    0.2602
+  amino_acid_composition.val_fraction                                                    0.0772
+  amino_acid_composition.gly_fraction                                                    0.0407
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.6382
+  sse_distribution.sheet_fraction                                                        0.0813
+  sse_distribution.loop_fraction                                                         0.2805
+  sse_distribution.num_ss_elements                                                         25.0
+  sse_distribution.helix_fraction_coi                                                    0.6382
+  sse_distribution.sheet_fraction_coi                                                    0.0813
+  sse_distribution.loop_fraction_coi                                                     0.2805
+  sse_distribution.num_ss_elements_coi                                                     25.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3149
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4011
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+
+Example: M0732_1xs1_theozyme_rep24
+Structure: M0732_1xs1_theozyme_rep24_generated.cif
+Location relative to run: inference_samples/M0732_1xs1_theozyme_rep24/M0732_1xs1_theozyme_rep24_generated.cif
+  amino_acid_composition.n_generated_unknown_residues                                       0.0
+  amino_acid_composition.n_standard_residues                                              232.0
+  amino_acid_composition.ala_fraction                                                     0.319
+  amino_acid_composition.val_fraction                                                    0.0905
+  amino_acid_composition.gly_fraction                                                    0.0474
+  bond_length_metrics.bond_length.frac_unreasonable                                         0.0
+  bond_length_metrics.bond_length.frac_unreasonable.within_residue                          0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain            0.0
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.polymer_polymer              
+  bond_length_metrics.bond_length.frac_unreasonable.between_chain.nonpolymer_to_polymer        
+  clash_metrics.frac_atoms_clashing_1p5A                                                    0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A                              0.0
+  clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A                               0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A                      0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A                       0.0
+  clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A                        0.0
+  sequence_adherence.sequence_adherence                                                     1.0
+  sequence_adherence.n_violations                                                           0.0
+  sequence_probability_adherence.zero_adherence                                             1.0
+  sequence_probability_adherence.one_adherence                                              1.0
+  sequence_probability_adherence.n_zero_conditions                                         55.0
+  sequence_probability_adherence.n_zero_violations                                          0.0
+  sequence_probability_adherence.n_one_conditions                                           1.0
+  sequence_probability_adherence.n_one_violations                                           0.0
+  sse_distribution.helix_fraction                                                        0.5603
+  sse_distribution.sheet_fraction                                                        0.1509
+  sse_distribution.loop_fraction                                                         0.2888
+  sse_distribution.num_ss_elements                                                         30.0
+  sse_distribution.helix_fraction_coi                                                    0.5603
+  sse_distribution.sheet_fraction_coi                                                    0.1509
+  sse_distribution.loop_fraction_coi                                                     0.2888
+  sse_distribution.num_ss_elements_coi                                                     30.0
+  design_motif_allatom_rmsd.rmsd                                                         0.3793
+  design_unindexed_motif_allatom_rmsd.rmsd                                               0.4537
+  unindexed_insertion_mapping.n_unmapped_tokens                                             0.0
+  unindexed_insertion_mapping.n_sequence_mismatches                                         0.0
+  pre_oracle_pass                                                                           1.0
+

@@ -1,0 +1,122 @@
+amino_acid_composition:
+  _target_: rfproteina.metrics.amino_acid_composition.AminoAcidCompositionMetric
+  aggregation: [mean]
+
+bond_length_metrics:
+  _target_: rfproteina.metrics.design_metrics.BondLengthMetric
+  verbose: True
+  required_tags_any: ["design"]
+  prohibited_tags: ["small_molecule_only", "structure_prediction"]
+
+clash_metrics:
+  _target_: rfproteina.metrics.design_metrics.ClashMetric
+  threshold: 1.5
+  required_tags_any: ["design", "structure_prediction"]
+  prohibited_tags: ["small_molecule_only"]
+
+hotspot_obedience:
+  _target_: rfproteina.metrics.hotspots.HotspotObedience
+  max_hotspot_distance: 4.5
+  required_tags_any: ["hotspot_conditioning"]
+
+rasa_adherence:
+  _target_: rfproteina.metrics.rasa_metrics.RasaAdherenceMetric
+  required_tags_any: ["rasa_conditioning"]
+
+centroid_conditioning_adherence:
+  _target_: rfproteina.metrics.centroid_metrics.CentroidConditioningAdherenceMetric
+  required_tags_any: ["centroid_conditioning"]
+
+interchain_interactions:
+  _target_: rfproteina.metrics.interaction_metrics.InterchainInteractionMetric
+  required_tags_any: ["interchain_interactions"]
+  prohibited_tags: ["small_molecule_only", "structure_prediction"]
+
+# Always compute sequence adherence for the pre-oracle filter, regardless of metric tags.
+# Reports NaN when nothing was sequence-conditioned
+sequence_adherence:
+  _target_: rfproteina.metrics.sequence_adherence_metric.SequenceAdherenceMetric
+
+sequence_probability_adherence:
+  _target_: rfproteina.metrics.sequence_adherence_metric.SequenceProbabilityAdherenceMetric
+
+sse_distribution:
+  _target_: rfproteina.metrics.sse_metrics.SecondaryStructureDistribution
+  required_tags_any: ["design"]
+  prohibited_tags: ["small_molecule_only", "structure_prediction"]
+
+sse_accuracy:
+  _target_: rfproteina.metrics.sse_metrics.SecondaryStructureAccuracy
+  required_tags_any: ["design"]
+  prohibited_tags: ["small_molecule_only", "structure_prediction"]
+
+posebusters_metrics:
+  _target_: rfproteina.metrics.posebusters_metrics.PoseBustersMetric
+  atom_array_input_key: predicted_atom_array
+  required_tags_any: ["small_molecule_only"]  # Only run for small molecule validation
+
+chiral_accuracy:
+  _target_: rfproteina.metrics.chiral_metric.ChiralAccuracy
+  subset_mask: is_ligand
+  required_tags_any: ["has_small_molecule"]
+
+# NOTE: We align the predicted AtomArray to itself, but using coords_with_insertion as the ground-truth, so this is
+# equivalent to aligning directly to the ground-truth input motif.
+# subdivide_by_annotation groups the RMSD computation per CoordinateGroup so per-group RMSDs are
+# atom-weighted and reported together.
+design_motif_allatom_rmsd:
+  _target_: rfproteina.metrics.gt_structure_comparison.StructureComparisonMetric
+  align_mask: "sa_mask('SA_CRDSRC')"
+  subset_mask: "sa_mask('SA_CRDSRC')"
+  subdivide_by_annotation: condition_CoordinateGroup_1_atom
+  gt_coord_annotation_name: annotation_coords-with-insertion_1_atom
+  metric_type: rmsd
+  aggregation: [median]
+  input_kwarg_names:
+    ground_truth_atom_array: predicted_atom_array
+    predicted_atom_array: predicted_atom_array
+  required_tags_any: ["3d_coordinate_conditioning", "unindexed", "internal_coordinate_conditioning"]
+
+design_unindexed_motif_allatom_rmsd:
+  _target_: rfproteina.metrics.gt_structure_comparison.StructureComparisonMetric
+  align_mask: "sa_mask('SA_CRDSRC') & is_unindexed_insertion"
+  subset_mask: "sa_mask('SA_CRDSRC') & is_unindexed_insertion"
+  subdivide_by_annotation: condition_CoordinateGroup_1_atom
+  gt_coord_annotation_name: annotation_coords-with-insertion_1_atom
+  metric_type: rmsd
+  aggregation: [median]
+  input_kwarg_names:
+    ground_truth_atom_array: predicted_atom_array
+    predicted_atom_array: predicted_atom_array
+  required_tags_all: ["unindexed"]
+
+unindexed_insertion_mapping:
+  _target_: rfproteina.metrics.unindexed_insertion_metric.UnindexedInsertionMappingMetric
+  required_tags_all: ["unindexed"]
+
+contact_molecular_surface:
+  _target_: rfproteina.metrics.physics.contact_ms.metric.ContactMolecularSurfaceMetric
+  required_tags_any: ["cms"]
+
+sequence_similarity_to_input:
+  _target_: rfproteina.metrics.design_metrics.SequenceSimilarityToInput
+  required_tags_any: ["partial_diffusion"]
+
+# The structural companion to sequence_similarity_to_input: under partial diffusion the input is the
+# structure being re-noised, so CA RMSD to it says how much of that backbone the output kept.
+# Returns nothing (rather than a wrong number) if the CA counts differ, e.g. after an insertion.
+ca_rmsd_to_input:
+  _target_: rfproteina.metrics.gt_structure_comparison.StructureComparisonMetric
+  align_mask: "is_protein & (atom_name == 'CA')"
+  subset_mask: "is_protein & (atom_name == 'CA')"
+  metric_type: rmsd
+  aggregation: [median]
+  required_tags_any: ["partial_diffusion"]
+
+cath_metric:
+  _target_: rfproteina.metrics.cath_metric.CathMetric
+  required_tags_any: ["cath"]
+  # foldseek: full C/A/T/H, but only for folds precisely matching a T-level fold in the CATH foldseekdb -- ~3.7 s/call on one CPU core.
+  # proteina_classifier: NVIDIA Proteina's GearNet classifier, C/A/T only, always answers -- ~0.2 s/call
+  # foldseek_with_fallback: foldseek first, classifier only where foldseek finds no match.
+  annotator: foldseek_with_fallback

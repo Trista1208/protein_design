@@ -1,0 +1,94 @@
+# Default configs for inference through generate.py
+# The defaults are geared more towards ease-of-use by designers, so running with
+# the existing analysis scripts will necessitate overrides
+
+defaults:
+  - _self_
+  - inference_experiment: inference_on_user_inputs # Default for design
+  - recycle_strategy: thinking_medium
+
+# NOTE: The experiment configs can override values specified in this config
+
+inference_backend: native # native (torch.compile / eager per compile_lengths) | bioir (whole workflow through BioIR)
+
+# Used only with inference_backend=bioir.
+bioir:
+  dtype: bfloat16
+  attention_backend: null # null selects BioIR's own attention default
+  cuda_graph: true
+  cuda_graph_max_tokens: 511 # graph requests under 512 tokens; longer ones run the trunk eagerly (null: BioIR's limit)
+  max_graphs: null # null: one slot per (batch, tokens) shape for a full batch and its tail
+  # Consume random draws in the native backend's order so a fixed seed gives both
+  # backends the same noise and their designs can be compared one to one. Off by
+  # default: production draws with plain torch.randn and skips a draw nothing reads.
+  match_reference_rng: false
+
+run_name_: inference
+verbose: false # Set true for routine warnings and detailed diagnostic output.
+
+hf_ckpt_path: nvidia/RFD4-Proteina  # HF repo or local model bundle; overrides ckpt_path/name. Set null for a native checkpoint.
+hf_ckpt_revision: a06e2509c7033b010fc43614e9fd840303588502  # Pin a Hub commit for reproducible model/AE loading.
+
+out_dir: null  # If null, defaults to ./runs/<run_name>. For production, set to an external
+               # path (e.g. /shared/runs/experiment_name). SLURM scripts set this
+               # automatically. All outputs (samples, metrics) go under this directory.
+
+# Current SOTA; generation and regression tooling resolve the immutable checkpoint from here.
+# Regenerate the inference baselines when advancing it; use CLI overrides for one-off checkpoints.
+ckpt_name: rfd4-proteina-flow-release-2026-10-19.ckpt
+ckpt_path: ${oc.env:DATA_PATH}/flow_checkpoints
+adapter_path: null  # Local PEFT adapter directory; load onto the exact base/AE pair used for fine-tuning.
+
+# Only applies when a pre-oracle design filter is active (i.e. its tag gate matched).
+# Determines whether to delete structure files for designs that fail this filter
+delete_failing_pre_oracle: True
+
+autoencoder_ckpt_path: ${oc.env:DATA_PATH}/ae_checkpoints/rfd4-proteina-ae-release-2026-10-19.ckpt
+
+num_replicates: 1 # Number of times to replicate each example
+
+# Token counts to pad batches to for torch.compile. Multiples of 16; null disables.
+compile_lengths: [128, 160, 192, 224, 256, 288, 320, 352, 384, 448, 512, 640, 768, 896, 1024]
+
+# Network settings that may change after training without touching the weights; null keeps the checkpoint's
+# value. Example: nn.torch_compile_mode=reduce-overhead nn.tri_mult_backend=cuequivariance
+nn:
+  torch_compile_mode: null
+  torch_compile_fullgraph: null
+  tri_mult_backend: null
+  attention_type: null
+
+precision: bf16-mixed
+
+batch_size: 1
+subset_to_examples: null # If specified, only run inference on these example indices
+prevalidate_inputs: false # Whether to sanity-check each unique input once prior to generation (fail fast on bad inputs).
+seed: null # Will set a random seed if null
+torch_deterministic: false  # Locks cuDNN/cuBLAS to deterministic algorithms; significantly reduces throughput
+skip_existing: true # If true, skip examples whose output structure files already exist in the output directory
+save_chain_of_interest: false # If true, write per-design chain-of-interest CIFs (only needed for foldseek clustering).
+compress_outputs: false # Compress persistent structure outputs, including refolds and CIF trajectories.
+metrics_tags: [] # If specified, determines which metrics are computed during inference
+
+search:
+  checkpoints: null # Set checkpoint policies to enable beam search.
+  save_states: false
+  resume_from: null
+  resume_seed: null
+
+num_workers: 4  # Number of dataloader workers
+
+hardware:
+  accelerator: gpu
+  ngpus_per_node_: 1
+  nnodes_: 1
+
+# Cluster job settings (used by launch_infer_from_local.sh)
+ncpus_: 24  # Number of CPUs per task
+gen_njobs: 1  # Number of parallel generation jobs per config
+eval_njobs: 1  # Number of parallel evaluation jobs per config
+job_id: null  # Set by launch_generate.sh; used to disambiguate per-job output files
+
+hydra:
+  run:
+    dir: ./hydra_outputs

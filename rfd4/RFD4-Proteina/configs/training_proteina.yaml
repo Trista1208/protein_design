@@ -1,0 +1,188 @@
+verbose: true # Include routine warnings and detailed diagnostic output.
+
+# Example training config using the new rf3-style dataset infrastructure
+# Combines PDB interfaces (50%) with AFDB monomer distillation (50%)
+
+run_name_: test_no_val_datasets
+
+# Output directory for all run artifacts (checkpoints, samples, metrics).
+# If null, defaults to ./runs/<run_name_>/. For production, set to an external path.
+out_dir: null
+compress_outputs: true # Compress validation structures, refolds, and CIF trajectories.
+
+# NOTE: order of defaults determines the order in which configs override each other (higher up items are overridden by lower items)
+defaults:
+  - design_tasks/global_design_task_kwargs@datasets.global_design_task_kwargs  # need this at global level
+  - dataloaders: default
+  - nn: local_latents_score_nn_160M_atom37
+  - generation: inference_base
+  - optional recycle_strategy: null
+  - metrics: all_metrics # includes refolding
+  - callbacks: all_tasks
+  # We must keep _self_ before experiment and debug to ensure that the experiment and debug configs can override
+  - _self_
+
+  # experiment configs allow for version control of specific hyperparameters
+  # e.g. best hyperparameters for given model and datamodule
+  # Canonical recipe.
+  - experiment: sota
+
+
+  # debug configs to add onto any experiment for quickly testing or debugging code
+  - optional debug: null
+
+datasets:
+  # Must be overidden for training; validation is not strictly necessary
+  train: ???
+
+nn:
+  recycle:
+    grad: last  # Backpropagate through only the final recycle.
+
+# Checkpoint loading (mutually exclusive):
+# - pretrain_ckpt_path: Start new run from saved weights (resets optimizer/scheduler/step/epoch/RNG)
+# - resume_ckpt_path: Resume interrupted run (restores full Lightning state)
+pretrain_ckpt_path:
+resume_ckpt_path:
+hf_ckpt_path: null  # Local/HF initialization for new runs; full checkpoint resume takes precedence.
+hf_ckpt_revision: null  # Pin a full Hub commit; normal HF cache/authentication settings apply.
+hf_bundle_overrides: {}  # Optional nn/flowmatcher/AE/featurization changes; bundle values are defaults.
+
+# Only applies when a pre-oracle design filter is active (i.e. its tag gate matched).
+# Determines whether to delete structure files for designs that fail this filter
+delete_failing_pre_oracle: True
+
+# Weight loading policies (ONLY honored on the pretrain_ckpt_path path).
+# When null, the checkpoint is loaded with strict=True: any key or shape mismatch
+# against the configured architecture is a hard error. Set this (with an explicit
+# fallback_policy) to deliberately load a checkpoint across an architecture change.
+weight_loading: null
+# Example:
+#   _target_: rfproteina.utils.weights.WeightLoadingConfig
+#   default_policy: copy          # copy checkpoint weights by default
+#   fallback_policy: reinit       # reinit if copy fails (missing/shape mismatch)
+#   param_policies:
+#     "score_network.seq_emb.new_feature_emb.*": zero_init
+#     "score_network.pair_emb.resized_layer.*": copy_and_zero_pad
+
+# Parameter freezing (ONLY honored on the pretrain_ckpt_path path).
+# When null, no parameters are frozen.
+parameter_freezing: null
+# Example:
+#   _target_: rfproteina.utils.weights.ParameterFreezingConfig
+#   freeze_by_default: false
+#   param_policies:
+#     "score_network.trunk.*": true   # freeze backbone
+
+# Hardware configuration
+# (Workers are controlled in dataloader section)
+hardware:
+  accelerator: gpu
+  ngpus_per_node_: 1
+  nnodes_: 1
+
+# TODO: Move these into "model" or other appropriate section, following the train.yaml approach in RF3
+# Modalities to use
+product_flowmatcher:
+  bb_ca:
+    zero_com_noise: True
+    guidance_enabled: True
+    dim: 3
+    stochastic_centering_mode: "x_0"
+    stochastic_centering_scale: 0.2
+  local_latents:
+    zero_com_noise: False
+    guidance_enabled: True
+    dim: null  # Overwritten by autoencoder
+    stochastic_centering_mode: "none"
+    stochastic_centering_scale: null
+
+
+autoencoder_ckpt_path: ${oc.env:DATA_PATH}/ae_checkpoints/2026_09_04_release_ae_z16_400k-ema.ckpt
+
+# Loss
+loss:
+  signed_volume_weight: 2.5  # Auxiliary ligand stereochemistry loss; zero disables it.
+  sequence_prediction:
+    enabled: true
+    t_min: 0.0
+    t_max: 1.0
+  t_distribution:
+    bb_ca:
+      name: mix_unif_beta
+      p1: 1.9
+      p2: 1.0
+      p3: 0.02
+    local_latents:
+      name: mix_unif_beta
+      p1: 1.0
+      p2: 1.5
+      p3: 0.2
+    shared_groups:
+
+# Precision
+# Options: "32" (full precision), "bf16-mixed" (default), "fp8" (requires Transformer Engine)
+# Note: force_precision_f32 is deprecated, use precision instead
+precision: "bf16-mixed"
+force_precision_f32: False  # Deprecated: use precision: "32" instead
+
+# Training
+training:
+  exploration_k: 1  # Number of noise candidates per processed example; 1 preserves baseline training.
+  exploration_losses: [bb_ca, local_latents]  # Losses summed to select the winning candidate.
+  # Trunk recycle depth is sampled per step and clamped to [1, n_recycle_max].
+  n_recycle_max: 1
+  n_recycle_sampler: uniform  # uniform (U{1..n_recycle_max}) | poisson (Poisson(n_recycle_lambda), clamped)
+  n_recycle_lambda: 3.0  # Poisson mean when n_recycle_sampler=poisson
+  n_recycle_sync: false  # derive the draw from global_step so all ranks pick the same depth (no DDP straggler)
+  n_recycle_val_loss: 1  # fixed depth for validation-loss forwards; generation uses its recycle schedule
+  motif_conditioning: False
+
+# LoRA fine-tuning configuration
+# Set r to a positive integer (e.g., 8, 16, 32) to enable LoRA
+# Leave as null to disable LoRA (train full model)
+lora:
+  r: null  # LoRA rank (null = disabled, typical values: 8, 16, 32, 64)
+  lora_alpha: 64.0  # LoRA scaling factor
+  lora_dropout: 0.0  # Dropout for LoRA layers
+  train_bias: none  # Keep base biases frozen.
+  target_modules: [to_qkv, to_out_node]  # Denoiser attention projections, relative to model.nn.
+
+# Optimization
+opt:
+  lr: 0.0001
+  # Independent linear ramps to opt.lr, counted in optimizer updates; 0 disables warmup.
+  muon_warmup_steps: 0
+  adam_warmup_steps: 0
+  gradient_clip_val: 1.0       # Max gradient norm
+  max_epochs: 10000000
+  accumulate_grad_batches: 1
+  dist_strategy: ddp
+  steps_per_epoch: 2000       # Defines epoch length in steps (not full dataset)
+  val_every_n_epochs: 10      # Validate at end of every N epochs
+  val_start_epoch: 0          # Delay validation until this epoch (0 = start immediately)
+  compute_val_loss: false     # Global off-switch for per-dataset compute_loss (validation_loss_* logging)
+  foldseek_timeout_minutes: 25  # Wall-clock budget for Foldseek diversity clustering per validation epoch
+  muon_exclude_param_patterns:  # Kept on Adam (Muon also never sees non-2D params: norms, biases)
+    - '_factory\.'  # FeatureFactory input embeddings (init_repr_factory, cond_factory, pair ones)
+    - '^nn\.(local_latents_linear|ca_linear|insertion_q_proj|insertion_k_proj)\.'  # output heads
+  muon_adjust_lr_fn: "match_rms_adamw" # Either "original" or "match_rms_adamw"
+  muon_grouped: true  # Batch equal-shaped FP32 Muon updates; false selects native Muon.
+
+# Logging and checkpoints
+log:
+  wandb_project: latent_training
+  wandb_entity: ${oc.env:WANDB_ENTITY,null}
+  tags: []
+  log_wandb: True
+  log_every_n_steps: 10
+  checkpoint: True
+  checkpoint_every_n_epochs: 10  # Save top-k checkpoint every N epochs (matches val frequency)
+  last_ckpt_every_n_epochs: 1    # Save last.ckpt every N epochs (for resume)
+
+seed: 42
+torch_deterministic: false  # Locks cuDNN/cuBLAS to deterministic algorithms; significantly reduces throughput
+
+hydra:
+  run:
+    dir: ./hydra_outputs

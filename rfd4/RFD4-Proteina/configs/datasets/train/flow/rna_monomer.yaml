@@ -1,0 +1,9 @@
+# RNA monomers for the flow model.
+
+defaults:
+  - /datasets/train/pipeline_defaults@dataset
+  - /datasets/sources/rna_monomer@dataset
+  - /design_tasks/presets@dataset.transform.design_tasks: rna_design
+  - _self_
+
+probability: 1.0

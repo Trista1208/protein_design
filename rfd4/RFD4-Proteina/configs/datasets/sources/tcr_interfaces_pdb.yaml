@@ -1,0 +1,12 @@
+# PDB interfaces restricted to TCR / peptide-MHC pairs; same table and columns as the
+# antibody source, gated on `ig_type == 'tcr'`.
+
+defaults:
+  - antibody_interfaces_pdb
+  - _self_
+
+name: tcr_interfaces_pdb
+
+filters:
+  mapping:
+    ig_type: "ig_type == 'tcr'"
