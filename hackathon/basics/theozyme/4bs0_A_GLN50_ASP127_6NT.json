@@ -1,0 +1,12 @@
+{
+  "source": "PDB 4BS0 chain A (HG3.17 + 6-nitrobenzotriazole)",
+  "base": "A:ASP127",
+  "donor": "A:GLN50",
+  "ligand": "A:6NT:1305",
+  "distances_A": {
+    "ASP127.OD2__6NT.N3": 2.532,
+    "ASP127.OD2__6NT.N2": 3.532,
+    "GLN50.NE2__6NT.N1": 3.102
+  },
+  "note": "OD2\u2013N3 ~2.5 \u00c5 is the crystal contact of the catalytic carboxylate to the triazole. NE2\u2013N1 ~3.1 \u00c5 is the Gln donor to 6NT. These are experimental HG3.17 numbers, not DFT transition-state coordinates. Do not submit 4BS0 as a design (TM / identity gates)."
+}

@@ -2,6 +2,8 @@
 
 This repository is a portable protein-design skill pack. It is not tied to a single IDE.
 
+For the DBSSE × Perlin Kemp eliminase hackathon, follow `hackathon/README.md` (English) or `hackathon/README.zh.md` (Chinese) before sampling.
+
 When the user asks to design, edit, filter, or campaign on proteins:
 
 1. Read `skills/README.md`.

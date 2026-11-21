@@ -1,0 +1,17 @@
+# Molecules for this challenge (confirm atom numbering with organizers if they ship files)
+
+# True substrate — Kemp elimination
+name: 5-nitrobenzisoxazole
+role: chemistry / wet-lab assay
+smiles: O=[N+]([O-])c1ccc2onc(c2c1)
+
+# Transition-state analogue — official in-silico scoring ligand
+name: 6-nitrobenzotriazole
+role: TSA for Boltz-2 scoring (approximation of the DFT transition state)
+smiles: O=[N+]([O-])c1ccc2[nH]nnc2c1
+pdb_resname: 6NT
+pdb_example: 4BS0 chain A residue 1305 (occupancy 1.0; chain B is disordered)
+
+# Do not optimize against the product
+name: 3-cyano-4-nitrophenol (phenolate)
+role: product — not the scoring ligand

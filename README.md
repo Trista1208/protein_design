@@ -1,4 +1,15 @@
-# Computational protein design skills
+# Computational protein design
+
+[English](README.md) · [中文](README.zh.md)
+
+Portable **Agent Skills** plus a live campaign plan for the DBSSE × Perlin Bio hackathon: **design a de novo Kemp eliminase**.
+
+- **Hackathon plan (English):** [hackathon/README.md](hackathon/README.md)
+- **黑客松计划（中文）：** [hackathon/README.zh.md](hackathon/README.zh.md)
+
+---
+
+## Skills
 
 Portable **Agent Skills** (plain markdown) for proposing, critiquing, and running realistic computational protein design campaigns.
 

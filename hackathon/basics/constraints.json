@@ -1,0 +1,35 @@
+{
+  "challenge": "DBSSE × Perlin Bio 2026 — de novo Kemp eliminase",
+  "hard_gates": {
+    "max_length": 260,
+    "alphabet": "ACDEFGHIKLMNPQRSTVWY",
+    "max_identity_to_published": 0.70,
+    "max_tm_to_published": 0.70,
+    "boltz2_seeds_for_official_score": 5
+  },
+  "catalytic_contract": {
+    "base": "ASP",
+    "hbond_donor": "GLN",
+    "scoring_ligand": "6-nitrobenzotriazole",
+    "scoring_ligand_pdb": "6NT",
+    "true_substrate": "5-nitrobenzisoxazole",
+    "true_substrate_pdb_example": "7EPO ligand H5J",
+    "crystal_teacher": {
+      "pdb": "4BS0",
+      "chain": "A",
+      "base": "ASP127",
+      "donor": "GLN50",
+      "ligand": "6NT 1305",
+      "ASP127_OD2__6NT_N3_A": 2.53,
+      "GLN50_NE2__6NT_N1_A": 3.10,
+      "n_CA_within_12A_of_ASP127_CA_excluding_self": 47
+    },
+    "note": "Crystal numbers are HG3.17/6NT, not DFT TS. Use as theozyme only; never submit 4BS0."
+  },
+  "disqualify_if": [
+    "length > 260",
+    "sequence identity > 70% to a published enzyme",
+    "backbone TM-score > 0.7 to a published structure",
+    "Baker-lab Kemp eliminase or close copy (KE07, HG3, HG3.17, …)"
+  ]
+}
