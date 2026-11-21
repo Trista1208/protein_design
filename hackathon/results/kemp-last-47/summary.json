@@ -1,0 +1,10 @@
+{
+  "name": "gln12_seq2",
+  "model": 1,
+  "closer_Asp_O_to_N3": 3.777625322341919,
+  "GLN_NE2_to_N1": 3.692995309829712,
+  "under_3_5": false,
+  "length": 136,
+  "sequence": "AVMTLTQLAPDLAAGTNPANGDLQVLVGLTGQSPLLVRIRSNPNDPSIDILENTSDEELTVLHINLSGVSTEEAVAIARELAARREELRAYEVDGRDTVDTSPENIVQGRRAVVDGHEIRYIVARLAPGQSLSVAA",
+  "note": "Nearest Boltz model to both contacts under 3.5 A. Asp 3.78 A, Gln 3.69 A."
+}

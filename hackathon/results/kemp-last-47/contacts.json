@@ -1,0 +1,83 @@
+[
+  {
+    "name": "gln12_seq2",
+    "model": 0,
+    "sequence": "AVMTLTQLAPDLAAGTNPANGDLQVLVGLTGQSPLLVRIRSNPNDPSIDILENTSDEELTVLHINLSGVSTEEAVAIARELAARREELRAYEVDGRDTVDTSPENIVQGRRAVVDGHEIRYIVARLAPGQSLSVAA",
+    "closer_Asp_O_to_N3": 7.546407222747803,
+    "GLN_NE2_to_N1": 2.7543277740478516,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/gln12_seq2/boltz/boltz_results_kemp/predictions/kemp/kemp_model_0.cif"
+  },
+  {
+    "name": "gln12_seq2",
+    "model": 1,
+    "sequence": "AVMTLTQLAPDLAAGTNPANGDLQVLVGLTGQSPLLVRIRSNPNDPSIDILENTSDEELTVLHINLSGVSTEEAVAIARELAARREELRAYEVDGRDTVDTSPENIVQGRRAVVDGHEIRYIVARLAPGQSLSVAA",
+    "closer_Asp_O_to_N3": 3.777625322341919,
+    "GLN_NE2_to_N1": 3.692995309829712,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/gln12_seq2/boltz/boltz_results_kemp/predictions/kemp/kemp_model_1.cif"
+  },
+  {
+    "name": "gln12_seq2",
+    "model": 2,
+    "sequence": "AVMTLTQLAPDLAAGTNPANGDLQVLVGLTGQSPLLVRIRSNPNDPSIDILENTSDEELTVLHINLSGVSTEEAVAIARELAARREELRAYEVDGRDTVDTSPENIVQGRRAVVDGHEIRYIVARLAPGQSLSVAA",
+    "closer_Asp_O_to_N3": 2.9012062549591064,
+    "GLN_NE2_to_N1": 5.041318893432617,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/gln12_seq2/boltz/boltz_results_kemp/predictions/kemp/kemp_model_2.cif"
+  },
+  {
+    "name": "ref_seq2",
+    "model": 0,
+    "sequence": "ALEVRPATAEELAALAAAMEAHSAEIAAIWRNGELVTAVTYFSETDQQHYIVALLRLGDKDYLVQMGLIDGKLAYVGYYEFVDGVITEIHIVIVNPELFNRKPADARKTAATIYELQKAGTLTSEKIAAAAGITLPTTAAQILEALPDAEVVDVGGIPLPVSAEL",
+    "closer_Asp_O_to_N3": 8.52658748626709,
+    "GLN_NE2_to_N1": 4.845412731170654,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/ref_seq2/boltz/boltz_results_kemp/predictions/kemp/kemp_model_0.cif"
+  },
+  {
+    "name": "ref_seq2",
+    "model": 1,
+    "sequence": "ALEVRPATAEELAALAAAMEAHSAEIAAIWRNGELVTAVTYFSETDQQHYIVALLRLGDKDYLVQMGLIDGKLAYVGYYEFVDGVITEIHIVIVNPELFNRKPADARKTAATIYELQKAGTLTSEKIAAAAGITLPTTAAQILEALPDAEVVDVGGIPLPVSAEL",
+    "closer_Asp_O_to_N3": 9.336834907531738,
+    "GLN_NE2_to_N1": 4.931659698486328,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/ref_seq2/boltz/boltz_results_kemp/predictions/kemp/kemp_model_1.cif"
+  },
+  {
+    "name": "ref_seq2",
+    "model": 2,
+    "sequence": "ALEVRPATAEELAALAAAMEAHSAEIAAIWRNGELVTAVTYFSETDQQHYIVALLRLGDKDYLVQMGLIDGKLAYVGYYEFVDGVITEIHIVIVNPELFNRKPADARKTAATIYELQKAGTLTSEKIAAAAGITLPTTAAQILEALPDAEVVDVGGIPLPVSAEL",
+    "closer_Asp_O_to_N3": 11.023134231567383,
+    "GLN_NE2_to_N1": 6.706928253173828,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/ref_seq2/boltz/boltz_results_kemp/predictions/kemp/kemp_model_2.cif"
+  },
+  {
+    "name": "pocket3",
+    "model": 0,
+    "sequence": "DPRGKKVELSEEDRAAFEEGLKKANLEELLDKEWEVYLSKDVIGGKEVDKIIAVTEYEGKTYLLQLLRVDGELIAVLVDVVETKGEPRIEVTVLSYRIPPAFGSKAPAIAAIYEAMQKEPLLLNLVSQDGNVSIFKGKLTVNGKTYNFTMTVYWEDGVPISQILTDDNGNG",
+    "closer_Asp_O_to_N3": 5.416494369506836,
+    "GLN_NE2_to_N1": 4.978018760681152,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/pocket3/boltz/boltz_results_kemp/predictions/kemp/kemp_model_0.cif"
+  },
+  {
+    "name": "pocket3",
+    "model": 1,
+    "sequence": "DPRGKKVELSEEDRAAFEEGLKKANLEELLDKEWEVYLSKDVIGGKEVDKIIAVTEYEGKTYLLQLLRVDGELIAVLVDVVETKGEPRIEVTVLSYRIPPAFGSKAPAIAAIYEAMQKEPLLLNLVSQDGNVSIFKGKLTVNGKTYNFTMTVYWEDGVPISQILTDDNGNG",
+    "closer_Asp_O_to_N3": 5.6782002449035645,
+    "GLN_NE2_to_N1": 4.282800197601318,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/pocket3/boltz/boltz_results_kemp/predictions/kemp/kemp_model_1.cif"
+  },
+  {
+    "name": "pocket3",
+    "model": 2,
+    "sequence": "DPRGKKVELSEEDRAAFEEGLKKANLEELLDKEWEVYLSKDVIGGKEVDKIIAVTEYEGKTYLLQLLRVDGELIAVLVDVVETKGEPRIEVTVLSYRIPPAFGSKAPAIAAIYEAMQKEPLLLNLVSQDGNVSIFKGKLTVNGKTYNFTMTVYWEDGVPISQILTDDNGNG",
+    "closer_Asp_O_to_N3": 5.943438529968262,
+    "GLN_NE2_to_N1": 4.310396194458008,
+    "under_3_5": false,
+    "cif": "/mnt/work/projects/dejvid_ori/results/kemp-last-47/pocket3/boltz/boltz_results_kemp/predictions/kemp/kemp_model_2.cif"
+  }
+]
