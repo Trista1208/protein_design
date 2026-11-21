@@ -1,0 +1,86 @@
+{
+  "run_mode": "project",
+  "pipeline_completed": true,
+  "protein_length": 171,
+  "ligand": "6NT",
+  "rfd3": {
+    "partial_t_angstrom": 5.0,
+    "source": "kemp-18/bridge/kemp.pdb",
+    "fixed": [
+      "A41",
+      "A65"
+    ]
+  },
+  "ligandmpnn": {
+    "sequence": "SMVGVEVEMTPEERAALEEALTAANLGHLLDQIFRWYELEDEIGGLRMRKVIGLVRHEGRLLLLQLLFVDDQVIAVHLATLDPVDHAEVVLRTLWATVPASLGAAGRALQGLHDAQAREPLVFRLASRDGDRLVHRGELTVDGVTYRFEATVVLEDGLAVSFRVRSLQPVT",
+    "length": 171,
+    "fixed": [
+      {
+        "original": "G50",
+        "id": "A65",
+        "position": 65,
+        "amino_acid": "Q"
+      },
+      {
+        "original": "G127",
+        "id": "A41",
+        "position": 41,
+        "amino_acid": "D"
+      }
+    ],
+    "ligandmpnn_scores": {
+      "id": "1",
+      "T": "0.1",
+      "seed": "3",
+      "overall_confidence": "0.4408",
+      "ligand_confidence": "0.4362",
+      "seq_rec": "0.3254"
+    }
+  },
+  "msa": {
+    "kemp_design": {
+      "depth": 1,
+      "nonquery_rows": 0,
+      "query_length": 171
+    }
+  },
+  "boltz": {
+    "confidence": {
+      "confidence_score": 0.8844055533409119,
+      "ptm": 0.9047192335128784,
+      "iptm": 0.8750414848327637,
+      "ligand_iptm": 0.8750414848327637,
+      "protein_iptm": 0.0,
+      "complex_plddt": 0.8867465853691101,
+      "complex_iplddt": 0.7899747490882874,
+      "complex_pde": 0.5313299298286438,
+      "complex_ipde": 1.0961148738861084,
+      "chains_ptm": {
+        "0": 0.9072765707969666,
+        "1": 0.9244722127914429
+      },
+      "pair_chains_iptm": {
+        "0": {
+          "0": 0.9072765707969666,
+          "1": 0.38694968819618225
+        },
+        "1": {
+          "0": 0.8750414848327637,
+          "1": 0.9244722127914429
+        }
+      }
+    },
+    "contacts_angstrom": {
+      "G127_OD2_to_6NT_N3": 7.642233371734619,
+      "G50_NE2_to_6NT_N1": 9.236252784729004
+    },
+    "minimum_ligand_protein_distance_angstrom": 1.9381657838821411,
+    "ligand_protein_pairs_below_2_2_angstrom": 1,
+    "backbone_ca_rmsd_from_rfd3_angstrom": 1.6481606998284752
+  },
+  "interpretation": "Execution reached the final report. Review any validation warnings; geometry and confidence do not prove catalytic activity.",
+  "validation_passed": true,
+  "pipeline_execution_passed": true,
+  "status": "passed",
+  "validation_warnings": []
+}

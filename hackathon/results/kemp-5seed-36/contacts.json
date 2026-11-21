@@ -1,0 +1,32 @@
+[
+  {
+    "model": 0,
+    "ASP_OD2_to_6NT_N3": 5.6051859855651855,
+    "GLN_NE2_to_6NT_N1": 3.808022975921631,
+    "under_5": false
+  },
+  {
+    "model": 1,
+    "ASP_OD2_to_6NT_N3": 5.8825225830078125,
+    "GLN_NE2_to_6NT_N1": 3.870265483856201,
+    "under_5": false
+  },
+  {
+    "model": 2,
+    "ASP_OD2_to_6NT_N3": 4.706753253936768,
+    "GLN_NE2_to_6NT_N1": 3.890488386154175,
+    "under_5": true
+  },
+  {
+    "model": 3,
+    "ASP_OD2_to_6NT_N3": 7.382480144500732,
+    "GLN_NE2_to_6NT_N1": 5.744320869445801,
+    "under_5": false
+  },
+  {
+    "model": 4,
+    "ASP_OD2_to_6NT_N3": 9.129504203796387,
+    "GLN_NE2_to_6NT_N1": 5.832186698913574,
+    "under_5": false
+  }
+]

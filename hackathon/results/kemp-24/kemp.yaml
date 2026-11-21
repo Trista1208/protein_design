@@ -1,0 +1,9 @@
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: DPFAALLDAAAARPGRSALARLDAEALAAARARGIRGRYAVAKRLEDDAPAFAAWLRANQAPGEVMPGDRVAAAALETCGHQYPTPEALIRVVRDGVEYQLLFYATEEDARALRDRSDEVDHD
+    msa: /mnt/work/projects/dejvid_ori/results/kemp-24/msa/kemp.a3m
+- ligand:
+    id: B
+    ccd: 6NT

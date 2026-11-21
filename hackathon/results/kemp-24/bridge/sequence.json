@@ -1,0 +1,26 @@
+{
+  "sequence": "DPFAALLDAAAARPGRSALARLDAEALAAARARGIRGRYAVAKRLEDDAPAFAAWLRANQAPGEVMPGDRVAAAALETCGHQYPTPEALIRVVRDGVEYQLLFYATEEDARALRDRSDEVDHD",
+  "length": 123,
+  "fixed": [
+    {
+      "original": "G50",
+      "id": "A100",
+      "position": 100,
+      "amino_acid": "Q"
+    },
+    {
+      "original": "G127",
+      "id": "A123",
+      "position": 123,
+      "amino_acid": "D"
+    }
+  ],
+  "ligandmpnn_scores": {
+    "id": "1",
+    "T": "0.1",
+    "seed": "1",
+    "overall_confidence": "0.5040",
+    "ligand_confidence": "0.4557",
+    "seq_rec": "0.3967"
+  }
+}

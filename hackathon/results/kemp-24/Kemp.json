@@ -1,0 +1,19 @@
+{
+  "Kemp_HG3_17_base_donor": {
+    "input": "/mnt/work/projects/dejvid_ori/inputs/Theozyme_withORI.pdb",
+    "ligand": "6NT",
+    "contig": "120-180",
+    "unindex": "G50,G127",
+    "select_fixed_atoms": {
+      "G127": "OD1,CG,OD2",
+      "G50": "OE1,CD,NE2",
+      "6NT": "ALL"
+    },
+    "ori_token": [
+      25.568,
+      0.048,
+      -23.462
+    ],
+    "allow_ligand_on_existing_chain": true
+  }
+}
