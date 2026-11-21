@@ -7,13 +7,13 @@ from math import sqrt
 from typing import Iterator
 
 
-def parse_atoms(path: Path | str, chain: str | None = None) -> list[dict]:
+def parse_atoms(path: Path | str, chain: str | None = None, alts: tuple[str, ...] = (" ", "A")) -> list[dict]:
     atoms: list[dict] = []
     for line in Path(path).read_text().splitlines():
         if not line.startswith(("ATOM  ", "HETATM")):
             continue
         alt = line[16]
-        if alt not in (" ", "A"):
+        if alt not in alts:
             continue
         rec = {
             "record": line[:6].strip(),

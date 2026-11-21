@@ -15,11 +15,27 @@ No Boltz, no invented cutoffs. Sequence gates use the organizer numbers. Geometr
 | CA within 12 Å of ASP127 CA | **47** (excluding self) |
 | True substrate in `7EPO` | ligand **H5J** = 5-nitro-1,2-benzoxazole (different pocket: Glu/His — not our default motif) |
 
-Use `theozyme/4bs0_A_GLN50_ASP127_6NT.pdb` as the **teacher motif**. Do not submit 4BS0.
+Use `theozyme/4bs0_A_GLN50_ASP127_6NT.pdb` as the **crystal teacher motif**. It is atom-identical to Gln50, Asp127, and 6NT in `perlin_example/HG3_17_kemp_motif.pdb`. Do not submit 4BS0.
+
+## Perlin example files
+
+`perlin_example/` is the organizer RFD3 example. `theozyme/Theozyme_withORI.pdb` and `theozyme/Theozyme_noORI.pdb` are a second pose of the same three pieces (Gln 50, Asp 127, 6NT), with hydrogens. They match each other as a rigid body (pairwise distances agree to 0.001 Å) but sit in different frames. `withORI` also has one virtual atom, `ORI` on chain `z`, about 3.1 Å from 6NT C7A.
+
+| File | What it is |
+|---|---|
+| `perlin_example/HG3_17_kemp_motif.pdb` | 4BS0 heavy atoms for Trp44, Gln50, Asp127, and 6NT 1305 |
+| `perlin_example/Kemp.json` | Two RFD3 inputs. Smoke: contig `150-150`, unindex `A44,A50,A127`, fix Trp `CD1,NE1,CE2` plus the Asp carboxylate, the Gln amide, and all of 6NT. Full: contig `260-260`, unindex only `A50,A127`, same Asp/Gln/6NT atoms, no Trp |
+| `perlin_example/mmseqs_control.fasta` | Chicken lysozyme. A negative-control sequence for the identity search, not a design |
+| `theozyme/Theozyme_withORI.pdb` | Gln/Asp/6NT plus `ORI`. Close to the crystal, not identical: Gln OE1 differs by 1.04 Å; Asp OD2…6NT N3 is 2.48 Å; Gln NE2…6NT N1 is 3.33 Å |
+| `theozyme/Theozyme_noORI.pdb` | Same atoms and internal geometry as `withORI`, no `ORI`, different origin |
 
 ## Commands
 
 ```bash
+# 0) one-complex filter: hard gates, geometry, burial. Boltz metrics stay pending.
+python3 hackathon/basics/scripts/filter_design.py --self-test
+python3 hackathon/basics/scripts/filter_design.py design.pdb --chain A
+
 # 1) sequence hard gates (length ≤260, identity ≤70%)
 python3 hackathon/basics/scripts/validate_design.py --self-test
 python3 hackathon/basics/scripts/validate_design.py your_designs.fasta

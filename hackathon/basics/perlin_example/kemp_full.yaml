@@ -1,0 +1,26 @@
+# Kemp.json Kemp_HG3_17_base_donor. No Trp44.
+# 258 new residues + Gln50 + Asp127 = 260 protein residues, the length cap.
+# Run this only after the smoke spec parses.
+
+Kemp_HG3_17_base_donor:
+  input: HG3_17_kemp_motif.cif
+  contig: "SCAF:258-258,A50,A127,A1305"
+  conditions:
+    C_CRD:
+      true:
+        - select: "sel('A/GLN/50/[OE1,CD,NE2]')"
+        - select: "sel('A/ASP/127/[OD1,CG,OD2]')"
+        - select: "sel('A/6NT/1305')"
+    C_SEQ:
+      true:
+        - select: "sel('A/*/[50,127]')"
+        - select: "sel('A/6NT/1305')"
+    C_IDX:
+      false:
+        - select: "sel('A/GLN/50')"
+          group: gln50
+        - select: "sel('A/ASP/127')"
+          group: asp127
+    C_SEQ_PROB_CYS:
+      0.0:
+        - select: "res_name == 'SCAF'"

@@ -1,0 +1,26 @@
+{
+  "_comment": "Kemp eliminase motifs for RFD3. Ligand: 6NT = 6-nitrobenzotriazole, the stable transition-state ANALOGUE (a standard CCD ligand; works downstream in Boltz/AF3; crystal pose from PDB 4BS0 at 1.09 A). NOTE: the RFD3 native JSON format treats every key as a DesignInputSpecification field, so engine arguments (prevalidate_inputs, out_dir, ckpt_path, diffusion_batch_size) must be passed on the command line rather than in this file.",
+  "Kemp_HG3_17_smoke": {
+    "input": "HG3_17_kemp_motif.pdb",
+    "ligand": "6NT",
+    "contig": "150-150",
+    "unindex": "A44,A50,A127",
+    "select_fixed_atoms": {
+      "A127": "OD1,CG,OD2",
+      "A50": "OE1,CD,NE2",
+      "A44": "CD1,NE1,CE2",
+      "6NT": "ALL"
+    }
+  },
+  "Kemp_HG3_17_base_donor": {
+    "input": "HG3_17_kemp_motif.pdb",
+    "ligand": "6NT",
+    "contig": "260-260",
+    "unindex": "A50,A127",
+    "select_fixed_atoms": {
+      "A127": "OD1,CG,OD2",
+      "A50": "OE1,CD,NE2",
+      "6NT": "ALL"
+    }
+  }
+}

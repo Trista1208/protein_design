@@ -1,0 +1,29 @@
+# First GPU test. Same motif and fixed atoms as Kemp.json Kemp_HG3_17_smoke.
+# 147 new residues + Trp44 + Gln50 + Asp127 = 150 protein residues. 6NT is not counted.
+# Separate C_IDX groups: the model may place each catalytic residue anywhere.
+
+Kemp_HG3_17_smoke:
+  input: HG3_17_kemp_motif.cif
+  contig: "SCAF:147-147,A44,A50,A127,A1305"
+  conditions:
+    C_CRD:
+      true:
+        - select: "sel('A/TRP/44/[CD1,NE1,CE2]')"
+        - select: "sel('A/GLN/50/[OE1,CD,NE2]')"
+        - select: "sel('A/ASP/127/[OD1,CG,OD2]')"
+        - select: "sel('A/6NT/1305')"
+    C_SEQ:
+      true:
+        - select: "sel('A/*/[44,50,127]')"
+        - select: "sel('A/6NT/1305')"
+    C_IDX:
+      false:
+        - select: "sel('A/TRP/44')"
+          group: trp44
+        - select: "sel('A/GLN/50')"
+          group: gln50
+        - select: "sel('A/ASP/127')"
+          group: asp127
+    C_SEQ_PROB_CYS:
+      0.0:
+        - select: "res_name == 'SCAF'"
