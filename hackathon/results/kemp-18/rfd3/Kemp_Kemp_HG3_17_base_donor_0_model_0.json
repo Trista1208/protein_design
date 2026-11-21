@@ -1,0 +1,73 @@
+{
+    "diffused_index_map": {
+        "G50": "A65",
+        "G127": "A41"
+    },
+    "metrics": {
+        "join_point_rmsd_by_token": {
+            "G50": 0.5971837639808655,
+            "G127": 0.2990376353263855
+        },
+        "insertion.mae": 1.2871696949005127,
+        "insertion.rmcd": 0.9015700221061707,
+        "insertion_rmsd": 0.9433298707008362,
+        "join_point_rmsd": 0.4481106996536255,
+        "n_conjoined_residues": 0,
+        "max_ca_deviation": 0.06964826583862305,
+        "n_chainbreaks": 0,
+        "n_clashing.interresidue_clashes_w_sidechain": 0,
+        "n_clashing.interresidue_clashes_w_backbone": 0,
+        "n_clashing.ligand_clashes": 0,
+        "n_clashing.ligand_min_distance": 3.9479880332946777,
+        "non_loop_fraction": 0.6081871345029239,
+        "loop_fraction": 0.391812865497076,
+        "helix_fraction": 0.16374269005847952,
+        "sheet_fraction": 0.4444444444444444,
+        "num_ss_elements": 13,
+        "radius_of_gyration": 14.95156403272955,
+        "alanine_content": 0.1286549707602339,
+        "glycine_content": 0.06432748538011696,
+        "num_residues": 171,
+        "diffused_com": [
+            -1.7543647289276123,
+            1.3962713479995728,
+            -2.1679701805114746
+        ],
+        "fixed_com": [
+            -3.6490886211395264,
+            -1.0013021230697632,
+            1.0815972089767456
+        ]
+    },
+    "specification": {
+        "input": "/mnt/work/projects/dejvid_ori/inputs/Theozyme_withORI.pdb",
+        "contig": "120-180",
+        "unindex": "G50,G127",
+        "ligand": "6NT",
+        "allow_ligand_on_existing_chain": true,
+        "extra": {
+            "example": "Kemp_HG3_17_base_donor",
+            "task_name": "Kemp_Kemp_HG3_17_base_donor",
+            "sampled_contig": "171P",
+            "num_tokens_in": 174,
+            "num_residues_in": 174,
+            "num_chains": 1,
+            "num_atoms": 873,
+            "num_residues": 175,
+            "example_id": "Kemp_Kemp_HG3_17_base_donor_0"
+        },
+        "select_fixed_atoms": {
+            "G127": "OD1,CG,OD2",
+            "G50": "OE1,CD,NE2",
+            "6NT": "ALL"
+        },
+        "select_unfixed_sequence": false,
+        "ori_token": [
+            25.568,
+            0.048,
+            -23.462
+        ]
+    },
+    "ckpt_path": "/mnt/ref/data_weights/rfd3/rfd3_latest.ckpt",
+    "seed": 1
+}
