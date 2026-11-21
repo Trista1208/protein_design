@@ -1,0 +1,76 @@
+[
+  {
+    "sequence": 1,
+    "sequence_string": "DKRGKRVEMTEEEKEAFEKGLKKANLEELLNKEWTVYESEDVIGGKTVTIINAVTEYNGKIYIMQLLLVDGELVAILVDVVDTKGTPKIETTTLEYRIPAAFGSKAPAIAAVYAAMMEKPLLFNLVSQDGDVSIFRGTLEVDGRTLNFTMEVIWENGVPVAIQVTDDEGIG",
+    "changed_positions": [
+      21,
+      47,
+      49,
+      50,
+      52,
+      63,
+      64,
+      76,
+      163
+    ],
+    "ASP_OD2_to_6NT_N3": 7.1742777824401855,
+    "GLN_NE2_to_6NT_N1": 3.480236291885376,
+    "under_5": false,
+    "cysteines": 0
+  },
+  {
+    "sequence": 2,
+    "sequence_string": "DKRGKRVEMTEEEKEAFEKGLKKANLEELLNKEWTVYESEDVIGGKRVTLRIAVTEYNGKIYLMQLLLVDGELVAILVDVVDTKGTPKIETTTLEYRIPAAFGSKAPAIAAVYAAMMEKPLLFNLVSQDGDVSIFRGTLEVDGRTLNFTMEVIWENGVPVAIQVTDDEGIG",
+    "changed_positions": [
+      21,
+      47,
+      49,
+      50,
+      51,
+      64,
+      76,
+      163
+    ],
+    "ASP_OD2_to_6NT_N3": 8.822707176208496,
+    "GLN_NE2_to_6NT_N1": 3.238185167312622,
+    "under_5": false,
+    "cysteines": 0
+  },
+  {
+    "sequence": 3,
+    "sequence_string": "DKRGKRVEMTEEEKEAFEKGLKKANLEELLNKEWTVYESEDVIGGKRVTLRIAVTEYNGKIYLMQLLLVDGELVAILVDVVDTKGTPKIETTTLEYRIPAAFGSKAPAIAAVYAAMMEKPLLFNLVSQDGDVSIFRGTLEVDGRTLNFTMEVIWENGVPVAIQVTDDEGIG",
+    "changed_positions": [
+      21,
+      47,
+      49,
+      50,
+      51,
+      64,
+      76,
+      163
+    ],
+    "ASP_OD2_to_6NT_N3": 8.822707176208496,
+    "GLN_NE2_to_6NT_N1": 3.238185167312622,
+    "under_5": false,
+    "cysteines": 0
+  },
+  {
+    "sequence": 4,
+    "sequence_string": "DKRGKRVEMTEEEKEAFEKGLKKANLEELLNKEWTVYESEDVIGGKTVTLRISVTEYNGKIYLMQLLLVDGELVAILVDVVDTKGTPKIETTTLEYRIPAAFGSKAPAIAAVYAAMMEKPLLFNLVSQDGDVSIFRGTLEVDGRTLNFTMEVIWENGVPVAIQVTDDEGIG",
+    "changed_positions": [
+      21,
+      47,
+      49,
+      50,
+      51,
+      53,
+      64,
+      76,
+      163
+    ],
+    "ASP_OD2_to_6NT_N3": 12.008304595947266,
+    "GLN_NE2_to_6NT_N1": 4.327825546264648,
+    "under_5": false,
+    "cysteines": 0
+  }
+]

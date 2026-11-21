@@ -1,0 +1,13 @@
+{
+  "variant": "C21A",
+  "model": 3,
+  "sequence": "DKRGKRVEMTEEEKEAFEKGAKKANLEELLNKEWTVYESEDVIGGKKVRKIIAVTEYNGKIYLLQLLLVDGELVAVLVDVVDTKGTPKIETTTLEYRIPAAFGSKAPAIAAVYAAMMEKPLLFNLVSQDGDVSIFRGTLEVDGRTLNFTMEVIWENGVPVAIRVTDDEGIG",
+  "position_21": "A",
+  "ASP_OD2_to_6NT_N3": 4.857640743255615,
+  "GLN_NE2_to_6NT_N1": 3.835207939147949,
+  "under_5": true,
+  "complex_plddt": 0.8911668062210083,
+  "complex_ipde": 1.1708050966262817,
+  "ligand_iptm": 0.8585211038589478,
+  "cif": "/mnt/work/projects/dejvid_ori/results/kemp-finish-40/C21A/boltz/boltz_results_kemp/predictions/kemp/kemp_model_3.cif"
+}
