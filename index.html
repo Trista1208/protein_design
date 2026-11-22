@@ -1,0 +1,395 @@
+<title>Team Vmax · Kemp Eliminase</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: fixed 1920x1080 stage scaled to the window, EVKIWI HUD vocabulary —
+   dusty rose to lavender to teal gradient, glass panels, mono labels, chapter timeline. */
+:root{
+  --void:#EDEAF1; --glass:rgba(255,255,255,.52); --line:rgba(74,64,124,.20); --line2:rgba(74,64,124,.36);
+  --fg:#23263A; --dim:#4E5270; --faint:rgba(78,82,112,.66);
+  --kiwi:#7E76D4; --kiwi-bright:#564CAE; --ok:#3E8C86; --amber:#9C6326; --red:#A94B5D;
+  --display:"Chakra Petch",sans-serif; --body:"IBM Plex Sans",sans-serif; --mono:"IBM Plex Mono",monospace;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--void)}
+body{background:
+  radial-gradient(1400px 700px at 18% 58%, rgba(255,255,255,.55), rgba(255,255,255,0) 62%),
+  linear-gradient(180deg,#D7A6B5 0%,#C6B0D4 15%,#AFBFD0 30%,#A3BDC8 42%,#AEB8BF 54%,#C6C5CF 70%,#E6E4EB 86%,#F1EFF4 100%);
+  background-attachment:fixed}
+body{color:var(--fg);font-family:var(--body)}
+
+#space{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+.deck-viewport{position:fixed;inset:0;overflow:hidden;background:transparent;z-index:1}
+.deck-stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;transform-origin:0 0;background:transparent}
+.slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.slide.visible{visibility:visible;opacity:1;pointer-events:auto;z-index:1}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d,0) * 1s)}
+.slide.visible .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.2s!important}}
+
+/* chrome */
+.chrome{position:absolute;inset:0;z-index:5;pointer-events:none}
+.lock{position:absolute;left:72px;top:52px;display:flex;align-items:center;gap:14px}
+.lock b{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:.14em;color:var(--kiwi-bright)}
+.lock s{text-decoration:none;font-family:var(--mono);font-size:15px;letter-spacing:.2em;color:var(--faint)}
+.tagr{position:absolute;right:72px;top:58px;font-family:var(--mono);font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.tl{position:absolute;left:72px;right:72px;bottom:44px;height:56px}
+.tl .ch{display:flex;width:100%}
+.tl .ch span{flex:1;border-left:1px solid var(--line);padding:10px 0 0 12px;font-family:var(--mono);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);transition:color .5s var(--ease)}
+.tl .ch span.on{color:var(--kiwi-bright);border-left-color:var(--kiwi)}
+
+.lbl{font-family:var(--mono);font-size:18px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+h1{font-family:var(--display);font-weight:700;font-size:118px;line-height:.96;letter-spacing:-.01em}
+h2.title{font-family:var(--display);font-weight:600;font-size:68px;line-height:1.05;letter-spacing:-.005em}
+h3{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.15}
+p{font-size:22px;line-height:1.45;color:var(--dim)}
+.kb{color:var(--kiwi-bright)}
+.num{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.body{position:absolute;left:72px;top:230px;right:72px}
+
+/* slide 1 */
+.s1 .team{margin-top:54px;display:flex;align-items:center;gap:22px}
+.s1 .badge{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.14em;padding:10px 20px;border:1px solid var(--line2);border-radius:999px;color:var(--kiwi-bright);background:rgba(126,118,212,.06)}
+.s1 .names{font-family:var(--mono);font-size:22px;letter-spacing:.08em;color:var(--fg)}
+.hud{position:absolute;right:72px;top:250px;width:390px;text-align:right;display:grid;gap:44px}
+.hud .num{font-size:86px;line-height:1;color:var(--kiwi-bright)}
+.hud .num small{font-size:26px;color:var(--dim);margin-left:6px;font-family:var(--mono)}
+.hud .sub{font-family:var(--mono);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:8px}
+
+/* weights */
+.w{display:flex;align-items:center;gap:20px;margin-bottom:13px;font-family:var(--mono);font-size:19px;color:var(--dim)}
+.w .nm{flex:0 0 250px;text-transform:uppercase;letter-spacing:.1em;font-size:17px}
+.w .tr{flex:1;height:12px;background:rgba(126,118,212,.08);border-radius:2px;overflow:hidden}
+.w .tr i{display:block;height:100%;background:var(--kiwi-deep,#4e8a1e)}
+.w .tr i{background:rgba(126,118,212,.45)}
+.w.gate .tr i{background:var(--kiwi);box-shadow:0 0 18px rgba(126,118,212,.5)}
+.w.gate .nm{color:var(--kiwi-bright)}
+.w .vl{flex:0 0 60px;text-align:right;color:var(--fg)}
+
+/* contact window */
+.track{display:flex;align-items:center;gap:24px;margin-bottom:24px}
+.track .tk{flex:0 0 280px;font-family:var(--mono);font-size:17px;letter-spacing:.12em;color:var(--dim)}
+.track .bar{flex:1;height:28px;border-radius:5px;background:rgba(74,64,124,.10);position:relative}
+.track .bar i{position:absolute;top:0;bottom:0;left:25%;width:20%;background:var(--kiwi);border-radius:5px;
+  box-shadow:0 0 26px rgba(126,118,212,.45)}
+.axisrow{position:relative;height:34px;margin-left:304px}
+.axisrow span{position:absolute;font-family:var(--mono);font-size:16px;color:var(--faint);letter-spacing:.08em}
+.axisrow .a0{left:0}
+.axisrow .a2{left:25%;color:var(--kiwi-bright)}
+.axisrow .a36{left:45%;color:var(--kiwi-bright)}
+.axisrow .a8{right:0}
+
+/* steps */
+.steps{display:flex;gap:20px}
+.step{flex:1;padding:32px 26px;display:flex;flex-direction:column;gap:14px}
+.step .n{font-family:var(--mono);font-size:15px;letter-spacing:.2em;color:var(--kiwi-bright)}
+.step h3{font-size:27px}
+.step p{font-size:19px}
+
+/* seeds */
+.seeds{display:flex;gap:22px;align-items:flex-end;height:330px}
+.sd{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.sd i{display:block;background:linear-gradient(180deg,var(--kiwi),rgba(126,118,212,.35));border-radius:4px 4px 0 0}
+.sd.ref i{background:transparent;border:1px dashed var(--faint)}
+.sd em{font-family:var(--display);font-weight:600;font-style:normal;font-size:30px;text-align:center;padding-bottom:12px;color:var(--fg)}
+.sd.ref em{color:var(--dim)}
+.sd.ref i{border-color:rgba(78,82,112,.5)}
+.sdl{display:flex;gap:22px;margin-top:14px}
+.sdl span{flex:1;text-align:center;font-family:var(--mono);font-size:15px;letter-spacing:.16em;color:var(--faint)}
+
+.chip{display:inline-block;font-family:var(--mono);font-size:16px;letter-spacing:.14em;padding:9px 18px;border-radius:999px;border:1px solid var(--line2);color:var(--kiwi-bright);background:rgba(126,118,212,.06)}
+.chip.todo{border-color:rgba(255,200,87,.45);color:var(--amber);background:rgba(255,200,87,.06)}
+
+.ph{border:1.5px dashed var(--line2);border-radius:22px;background:rgba(126,118,212,.03);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;text-align:center;cursor:pointer;position:relative;overflow:hidden}
+.ph:hover,.ph:focus-visible{border-color:var(--kiwi);background:rgba(126,118,212,.07)}
+.ph .l{font-family:var(--mono);font-size:17px;letter-spacing:.1em;color:var(--dim);line-height:1.8}
+.ph .h{font-family:var(--mono);font-size:14px;letter-spacing:.2em;color:var(--kiwi-bright)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.ph.filled{border-style:solid}
+.ph.filled .l,.ph.filled .h{display:none}
+.slide aside{display:none}
+
+/* controls */
+.deck-controls{position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;align-items:center;
+  opacity:0;transition:opacity .35s var(--ease);pointer-events:none}
+.deck-controls.show,.deck-controls:hover,.deck-controls:focus-within{opacity:1;pointer-events:auto}
+.deck-controls button{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--dim);background:rgba(255,255,255,.80);
+  border:1px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer;backdrop-filter:blur(10px)}
+.deck-controls button:hover{border-color:var(--kiwi);color:var(--kiwi-bright)}
+.deck-controls button[aria-pressed="true"]{border-color:var(--kiwi);color:var(--kiwi-bright)}
+.notes{position:fixed;left:0;right:0;bottom:0;z-index:999;display:none;background:rgba(255,255,255,.93);border-top:1px solid var(--line);
+  padding:20px 26px 22px;backdrop-filter:blur(14px);max-height:38vh;overflow:auto}
+.notes.on{display:block}
+.notes h3{font-family:var(--mono);font-size:13px;letter-spacing:.22em;color:var(--kiwi-bright);margin-bottom:9px;font-weight:500}
+.notes p{font-size:16px;color:var(--fg);max-width:110ch;line-height:1.55}
+:focus-visible{outline:2px solid var(--kiwi);outline-offset:3px}
+</style>
+
+<div class="deck-viewport"><div class="deck-stage" id="stage">
+
+<!-- 1 -->
+<section class="slide s1">
+  <div class="chrome">
+    <div class="lock"><b>VMAX</b><s>DBSSE × PERLIN BIO</s></div>
+    <div class="tagr">Design a Catalyst · Basel 2026</div>
+  </div>
+  <div class="body" style="top:250px;width:1050px">
+    <p class="lbl reveal" style="--d:0">De novo Kemp eliminase</p>
+    <h1 class="reveal" style="--d:.1;margin-top:26px">A catalyst that<br>did not exist<br><span class="kb">on Friday.</span></h1>
+    <div class="team reveal" style="--d:.35">
+      <span class="badge">TEAM VMAX</span>
+      <span class="names">Jiaqi · Dejvid · Keyshav · Tiago · Nora</span>
+    </div>
+  </div>
+  <div class="hud">
+    <div class="reveal" style="--d:.2"><div class="num">0.887</div><div class="sub">Official score · 5 of 5 seeds</div></div>
+    <div class="reveal" style="--d:.3"><div class="num">150<small>aa</small></div><div class="sub">pLDDT 0.978</div></div>
+    <div class="reveal" style="--d:.4"><div class="num" style="color:var(--dim)">0.959</div><div class="sub">HG3.17 crystal · same pipeline</div></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="chrome"><div class="lock"><b>VMAX</b><s>THE RULE</s></div><div class="tagr">Scoring</div></div>
+  <div class="body">
+    <p class="lbl reveal" style="--d:0">Pass / fail before anything else</p>
+    <h2 class="title reveal" style="--d:.1;margin-top:20px">One zero term.<br>The whole design is <span class="kb">zero</span>.</h2>
+    <div style="display:flex;gap:56px;margin-top:62px;align-items:flex-start">
+      <div class="reveal" style="flex:1 1 1000px;--d:.25">
+        <div class="track"><span class="tk">ASP → LIGAND</span><span class="bar"><i></i></span></div>
+        <div class="track"><span class="tk">GLN → OXYANION</span><span class="bar"><i></i></span></div>
+        <div class="axisrow"><span class="a0">0 Å</span><span class="a2">2.0</span><span class="a36">3.6</span><span class="a8">8 Å</span></div>
+        <p style="margin-top:14px;font-family:var(--mono);font-size:16px;letter-spacing:.08em;color:var(--faint)">Both contacts land in the band, or the design scores nothing</p>
+      </div>
+      <div class="glass reveal" style="--d:.4;flex:0 0 560px;padding:40px 38px">
+        <p class="lbl" style="font-size:15px">The hard window</p>
+        <h3 style="margin-top:16px;font-size:46px">2.0 – 3.6 Å</h3>
+        <p style="margin-top:16px">Both heavy-atom contacts, or the term is zero.</p>
+        <p style="margin-top:26px;color:var(--kiwi-bright);font-family:var(--mono);font-size:17px">One seed is not a score</p>
+      </div>
+    </div>
+  </div>
+  <aside>Two of the scored terms are pass or fail. The aspartate contact and the glutamine contact both have to land between 2.0 and 3.6 Angstrom; outside that band the term is zero, and the score multiplies to zero with it. That is why we check whether the ligand is actually bound before reading any geometry, and why a single seed is never a score. Most of day two went into measurement rather than design.</aside>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="chrome"><div class="lock"><b>VMAX</b><s>METHOD</s></div><div class="tagr">Approach</div></div>
+  <div class="body">
+    <p class="lbl reveal" style="--d:0">Pipeline</p>
+    <h2 class="title reveal" style="--d:.1;margin-top:20px">Build the motif. Fix the chemistry.<br>Score <span class="kb">five times</span>.</h2>
+    <div class="steps" style="margin-top:58px">
+      <div class="step glass reveal" style="--d:.2"><span class="n">01</span><h3>Asp · Gln · 6NT</h3><p>The catalytic motif, not a fold.</p></div>
+      <div class="step glass reveal" style="--d:.28"><span class="n">02</span><h3>RFdiffusion3</h3><p>New backbone around it.</p></div>
+      <div class="step glass reveal" style="--d:.36"><span class="n">03</span><h3>LigandMPNN</h3><p>Asp and Gln fixed.</p></div>
+      <div class="step glass reveal" style="--d:.44"><span class="n">04</span><h3>Boltz-2 ×5</h3><p>Every seed scored alone.</p></div>
+      <div class="step glass reveal" style="--d:.52"><span class="n">05</span><h3>Hold or drop</h3><p>Rank by seeds passed.</p></div>
+    </div>
+    <div style="display:flex;gap:24px;margin-top:52px">
+      <div class="glass reveal" style="--d:.6;flex:1;padding:26px 30px;border-left:3px solid rgba(169,75,93,.7)">
+        <p class="lbl" style="font-size:14px;color:var(--red)">Failed</p>
+        <p style="margin-top:10px;color:var(--fg);font-size:24px">More samples of the same sequence. Partial diffusion. Full shell redesign.</p>
+      </div>
+      <div class="glass reveal" style="--d:.68;flex:1;padding:26px 30px;border-left:3px solid var(--kiwi)">
+        <p class="lbl" style="font-size:14px;color:var(--kiwi)">Worked</p>
+        <p style="margin-top:10px;color:var(--fg);font-size:24px">Keep the backbone that folds. Move <span class="kb">three pocket residues</span> so the Gln stays put.</p>
+      </div>
+    </div>
+  </div>
+  <aside>Ninety seconds. We generated de novo scaffolds and got one that folds at 0.98 confidence, but its pocket was not reproducible across seeds. The win was to freeze that backbone and change only one to three pocket residues, so the glutamine rotamer stops swinging between seeds. I23V plus M45Y is the pair that holds on all five. No HG3, no KE07, no published Kemp fold as a starting point.</aside>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="chrome"><div class="lock"><b>VMAX</b><s>RESULT</s></div><div class="tagr">Five-seed score</div></div>
+  <div class="body">
+    <p class="lbl reveal" style="--d:0">Parent ins080 · pocket variant</p>
+    <h2 class="title reveal" style="--d:.1;margin-top:20px">L2_pair_I23V_M45Y — <span class="kb">0.887, 5 of 5</span></h2>
+    <div style="display:flex;gap:52px;margin-top:54px;align-items:stretch">
+      <div class="reveal" style="flex:1 1 1060px;--d:.25">
+        <div class="seeds">
+          <div class="sd"><em>0.811</em><i style="height:81%"></i></div>
+          <div class="sd"><em>0.698</em><i style="height:70%"></i></div>
+          <div class="sd"><em>0.873</em><i style="height:87%"></i></div>
+          <div class="sd"><em>0.789</em><i style="height:79%"></i></div>
+          <div class="sd"><em>0.887</em><i style="height:89%"></i></div>
+          <div class="sd ref"><em>0.959</em><i style="height:96%"></i></div>
+        </div>
+        <div class="sdl"><span>SEED 1</span><span>SEED 2</span><span>SEED 3</span><span>SEED 4</span><span>SEED 5</span><span>HG3.17</span></div>
+        <div style="display:flex;gap:18px;margin-top:34px">
+          <span class="chip">I23L_V84L · 0.884 · 5/5</span>
+          <span class="chip">I23L_V84I · 0.876 · 5/5</span>
+        </div>
+      </div>
+      <div class="ph reveal" data-ph style="--d:.4;flex:0 0 520px" tabindex="0" role="button" aria-label="Add the active site figure or GIF">
+        <p class="l">[ FIGURE / GIF ]<br>cartoon + 6NT<br>Asp102 · Gln46</p><p class="h">CLICK OR DROP</p>
+      </div>
+    </div>
+  </div>
+  <aside>The core of the talk. All five seeds clear the contact window, so we quote this as 0.887, five of five — never as an average. The dashed bar is HG3.17, a published crystal structure, through the same pipeline at 0.959. Our own de novo models are the path that got us here, not the result: kemp_E52Q places both contacts at 2.68 and 2.76 Angstrom but on one Boltz sample out of three, and kemp_C21A sits at 4.86, outside the window. Neither carries a five-seed score.</aside>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="chrome"><div class="lock"><b>VMAX</b><s>SUBMISSION</s></div><div class="tagr">Five lab slots</div></div>
+  <div class="body">
+    <p class="lbl reveal" style="--d:0">What goes to the bench</p>
+    <h2 class="title reveal" style="--d:.1;margin-top:20px">One scaffold.<br><span class="kb">Five pocket packings.</span></h2>
+    <div style="display:flex;gap:24px;margin-top:58px;align-items:stretch">
+      <div class="glass reveal" style="--d:.2;flex:1;padding:36px 32px">
+        <p class="lbl" style="font-size:14px">Selection</p>
+        <h3 style="margin-top:14px">5/5 designs differing at I23 · V84 · M45</h3>
+        <p style="margin-top:14px">Reproducibility, not raw score.</p>
+      </div>
+      <div class="glass reveal" style="--d:.28;flex:1;padding:36px 32px">
+        <p class="lbl" style="font-size:14px">Gates</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px">
+          <span class="chip">LENGTH 150</span><span class="chip">5/5 · 0.887</span>
+          <span class="chip todo">IDENTITY</span><span class="chip todo">TM-SCORE</span>
+        </div>
+        <p style="margin-top:16px">Amber runs before we claim it.</p>
+      </div>
+      <div class="ph reveal" data-ph style="--d:.36;flex:1" tabindex="0" role="button" aria-label="Add the pocket packing figure">
+        <p class="l">[ FIGURE ]<br>I23 · V84 · M45<br>pocket packing</p><p class="h">CLICK OR DROP</p>
+      </div>
+    </div>
+    <h3 class="reveal" style="--d:.5;margin-top:60px;font-size:40px;color:var(--fg)">A score is a filter, <span class="kb">not a rate constant.</span></h3>
+  </div>
+  <aside>Last thirty seconds. Two points and stop. We submit five designs that are one scaffold with different pocket packing, chosen for holding across seeds rather than for the top number. And we are not yet claiming the identity and TM gates: the submission file marks the sequences eligible but its identity field reads 0.0 against an empty target, and the recorded gate is length only. We run both before we claim under 70 percent and under 0.7. Then close on the caveat.</aside>
+</section>
+
+</div></div>
+
+<div class="deck-controls">
+  <button id="notesBtn" aria-pressed="false" title="Speaker notes (N)">NOTES</button>
+  <button id="prevBtn" title="Previous">◀</button>
+  <button id="nextBtn" title="Next">▶</button>
+  <button id="fsBtn" title="Fullscreen (F)">FULL</button>
+</div>
+<div class="notes" id="notes"><h3>SPEAKER NOTES</h3><p id="notesText"></p></div>
+<input type="file" id="imgPicker" accept="image/*" hidden>
+
+<script>
+(function(){
+  /* ---- fixed stage scaling ---- */
+  var stage = document.getElementById('stage');
+  function fit(){
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    var x = (window.innerWidth - 1920 * s) / 2;
+    var y = (window.innerHeight - 1080 * s) / 2;
+    stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit); fit();
+
+  /* ---- chapters ---- */
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var NAMES = ['Team', 'The rule', 'Method', 'Result', 'Submission'];
+  slides.forEach(function(s, n){
+    var tl = document.createElement('div');
+    tl.className = 'tl';
+    var ch = document.createElement('div');
+    ch.className = 'ch';
+    NAMES.forEach(function(nm, k){
+      var sp = document.createElement('span');
+      sp.textContent = nm;
+      if (k === n) { sp.className = 'on'; }
+      ch.appendChild(sp);
+    });
+    tl.appendChild(ch);
+    var chrome = s.querySelector('.chrome');
+    if (chrome) { chrome.appendChild(tl); }
+  });
+
+  /* ---- navigation ---- */
+  var notes = document.getElementById('notes');
+  var notesText = document.getElementById('notesText');
+  var notesBtn = document.getElementById('notesBtn');
+  var i = 0;
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.classList.toggle('visible', k === i); });
+    var a = slides[i].querySelector('aside');
+    notesText.textContent = a ? a.textContent : 'No notes on this slide.';
+    try { location.hash = 'slide-' + (i + 1); } catch (e) {}
+  }
+  document.getElementById('prevBtn').addEventListener('click', function(){ go(i - 1); });
+  document.getElementById('nextBtn').addEventListener('click', function(){ go(i + 1); });
+  document.getElementById('fsBtn').addEventListener('click', function(){
+    if (document.fullscreenElement) { document.exitFullscreen && document.exitFullscreen(); }
+    else if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen().catch(function(){}); }
+  });
+  notesBtn.addEventListener('click', toggleNotes);
+  function toggleNotes(){
+    var on = notes.classList.toggle('on');
+    notesBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(i + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(i - 1); }
+    else if (e.key === 'Home') { go(0); }
+    else if (e.key === 'End') { go(slides.length - 1); }
+    else if (e.key === 'n' || e.key === 'N') { toggleNotes(); }
+    else if (e.key === 'f' || e.key === 'F') { document.getElementById('fsBtn').click(); }
+  });
+
+  /* ---- controls appear on movement, then fade ---- */
+  var ctrls = document.querySelector('.deck-controls');
+  var hideTimer = null;
+  function wake(){
+    ctrls.classList.add('show');
+    if (hideTimer) { clearTimeout(hideTimer); }
+    hideTimer = setTimeout(function(){
+      if (!notes.classList.contains('on')) { ctrls.classList.remove('show'); }
+    }, 2200);
+  }
+  ['mousemove','keydown','touchstart','click'].forEach(function(ev){
+    document.addEventListener(ev, wake, {passive:true});
+  });
+  wake();
+
+  /* ---- figure placeholders ---- */
+  var picker = document.getElementById('imgPicker');
+  var target = null;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ph]'), function(ph){
+    function open(){ target = ph; picker.value = ''; picker.click(); }
+    ph.addEventListener('click', open);
+    ph.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+    ph.addEventListener('dragover', function(e){ e.preventDefault(); });
+    ph.addEventListener('drop', function(e){
+      e.preventDefault();
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) { load(ph, e.dataTransfer.files[0]); }
+    });
+  });
+  picker.addEventListener('change', function(){
+    if (picker.files && picker.files[0] && target) { load(target, picker.files[0]); }
+  });
+  function load(ph, file){
+    if (!/^image\//.test(file.type)) return;
+    var r = new FileReader();
+    r.onload = function(){
+      var old = ph.querySelector('img');
+      if (old) { old.remove(); }
+      var img = document.createElement('img');
+      img.src = r.result;
+      img.alt = ph.getAttribute('aria-label') || 'Figure';
+      ph.appendChild(img);
+      ph.classList.add('filled');
+    };
+    r.readAsDataURL(file);
+  }
+
+  var m = (location.hash || '').match(/^#slide-(\d+)$/);
+  go(m ? parseInt(m[1], 10) - 1 : 0);
+  window.addEventListener('hashchange', function(){
+    var h = (location.hash || '').match(/^#slide-(\d+)$/);
+    if (h) { go(parseInt(h[1], 10) - 1); }
+  });
+})();
+</script>
