@@ -1,0 +1,21 @@
+# Run artefacts - regenerate with `make m0`/`make verify`/`make vram`
+outputs/
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Large third-party clones and model weights - see docs/SETUP.md to fetch
+tools/AIzymes/
+tools/ProteinMPNN/
+tools/LigandMPNN/
+tools/pSUFER/
+# tools/FieldTools.py is 35 KB and IS tracked - it is the AI.zymes component we keep
+
+# Build transcripts: keep the ones that document a non-obvious fix, drop the noise
+logs/*.log
+!logs/verify_all.log
+!logs/vram.log
+!logs/rosetta_fix.log
+
+# Organiser inputs that are not ours to redistribute
+*.pdb.gz

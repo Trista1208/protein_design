@@ -1,0 +1,11 @@
+Aggregate metrics across generated structures
+
+dataset                                       metric                                                   reduction   value   n
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  amino_acid_composition.n_generated_unknown_residues      mean          0.0  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  amino_acid_composition.n_standard_residues               mean        233.0  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  amino_acid_composition.ala_fraction                      mean       0.2674  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  amino_acid_composition.val_fraction                      mean       0.0627  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  amino_acid_composition.gly_fraction                      mean       0.0356  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  sequence_similarity_to_input.sequence_identity_to_input  mean       0.7197  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  ca_rmsd_to_input.rmsd                                    median        0.0  10
+rank1_M0732_1xs1_theozyme_rep2_generated.cif  pre_oracle_pass                                          mean          1.0  10

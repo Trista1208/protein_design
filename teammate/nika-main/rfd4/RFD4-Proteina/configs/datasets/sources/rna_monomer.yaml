@@ -1,0 +1,31 @@
+# Protenix-v2 RNA monomer predictions, selected for finite coordinates and no audited clashes <1.5 A.
+# Training additionally applies Ribonanza, pLDDT and source-eligibility filters.
+defaults:
+  - backend_blob
+  - _self_
+
+name: rna_monomer
+memory_map: true
+data: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/2026_09_21_rna_monomers/examples.parquet
+
+columns_to_load:
+  - example_id
+  - n_rna_residues
+  - mean_plddt
+  - source_training_eligible
+  - passes_structure_validation
+  - passes_bond_filters
+  - passes_ribonanza_filters
+  - passes_clash_filters
+
+filters:
+  - "source_training_eligible == True"
+  - "passes_structure_validation == True"
+  - "passes_bond_filters == True"
+  - "passes_ribonanza_filters == True"
+  - "passes_clash_filters == True"
+  - "mean_plddt > 75"
+  - "n_rna_residues <= 768"
+
+loader:
+  blob_dir: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/2026_09_21_rna_monomers/blob

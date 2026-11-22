@@ -1,0 +1,7 @@
+# Structure prediction (folding) only.
+
+defaults:
+  - all_off
+  - _self_
+
+folding: {frequency: 1.0}

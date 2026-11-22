@@ -1,0 +1,98 @@
+############################################################################
+# +--------------- Base inference config for RFD4-Proteina ----------------+
+############################################################################
+
+# Constant recycle depth used when no schedule is configured.
+# Fixed number of recycles to run at every step; only has an effect if n_recycle_schedule is null
+# TODO: Deprecate in favor of n_recycle_schedule, which allows per-step recycle counts
+n_recycle: 0
+
+# Optional [number_of_steps, recycle_depth] bands covering the trajectory; overrides n_recycle.
+n_recycle_schedule: null
+condition_on_recycle_remaining: true  # Provide the remaining-pass feature after the first pass, if trained.
+
+# Used for labeling output metrics if computed
+val_set_name_override: null
+
+args:
+  nsteps: 60
+
+  condition_decoder_on_sequence_prediction: true
+
+  # +---------- Guidance ----------+
+  # TODO: Audit guidance_w and CFG usage
+  guidance_w: 1.0   # classifier-free guidance weight, 1.0 for no CFG, 0.0 for excluding the main model
+
+
+  # +--------- Partial diffusion ----------+
+  # Start from a noised version of the input structure rather than pure noise.
+
+  # Run the final round(fraction * nsteps) intervals, with fraction in (0, 1]. Corruption
+  # uses that tail's first time. Mutually exclusive with the partial_t_* args below.
+  partial_trajectory_fraction_steps: null
+
+  # Advanced interface:
+  # Specify partial_t_backbone and/or partial_t_latent (floats in (0,1))
+  # to set each modality's starting t independently. Alternatively, set only one and use
+  # couple_partial_t=true to derive the other via the default schedule coupling.
+  # NOTE: partial_t near 0 means running most of the trajectory; near 1 means running very little of it.
+  # Also note that the bb_ca (log, p=2) and local_latents (power, p=2) schedules are nonlinear!
+  partial_t_backbone: null
+  partial_t_latent: null
+  couple_partial_t: false
+
+  # +--------- Inverse folding ----------+
+  # Inverse folding keeps the input backbone on independently resampled forward
+  # marginals while generating sequence latents. Prefer the `generation=inverse_folding`
+  # preset; these fields remain available for programmatic configuration.
+  inverse_folding: false
+  inverse_folding_method: resampled_forward_marginal
+
+  # +--------- Trajectory saving ----------+
+  save_trajectory_every: 0 # at which step interval to save trajectory snapshots of generation, 0 for no saving
+  bb_ca_only_trajectories: true # if true, save CA-only trajectory as XTC; if false, save all-atom trajectory as multi-model CIF (XTC requires fixed atom count per frame)
+  dump_noisy_trajectories: false # if true, also save the noisy x_t at each trajectory step alongside x_1
+
+# Model-specific sampling arguments
+model:
+  bb_ca:
+    schedule:
+      mode: log
+      p: 2.0
+      tail_steps: 10
+      tail_step_multiplier: 2
+    gt:
+      # Normal inference and search share matched-noise stochastic TSR.
+      # sc_scale_noise=0 is not equivalent: it removes noise but retains stochastic drift.
+      mode: "1/t"
+      p: 1.0
+      clamp_val: null
+    simulation_step_params:
+      sampling_mode: vf_tsr  # Options are: vf (plain flow matching), sc (using score), or vf_tsr (temporal score rescaling)
+      sc_scale_noise: 1.0  # injected noise variance multiplier
+      t_lim_ode: 0.95  # Switch to deterministic TSR above this modality time.
+      t_lim_ode_below: 0.02  # Use deterministic TSR below this modality time.
+      center_every_step: False  # Whether to center the sample every step
+      # tsr_k/tsr_sigma: only used when sampling_mode == vf_tsr. tsr_k controls how low the
+      # temperature goes (higher k = lower temp); tsr_sigma controls how fast you reach it
+      # (higher sigma = faster)
+      tsr_k: 16.0
+      tsr_sigma: 3.0
+  local_latents:
+    schedule:
+      mode: power
+      p: 2.0
+      tail_steps: 10
+      tail_step_multiplier: 2
+    gt:
+      mode: tan
+      p: 1.0
+      clamp_val: null
+    simulation_step_params:
+      sampling_mode: vf_tsr
+      sc_scale_noise: 1.0
+      t_lim_ode: 0.95
+      t_lim_ode_below: 0.02
+      center_every_step: False
+      tsr_k: 4.0
+      tsr_sigma: 12.0

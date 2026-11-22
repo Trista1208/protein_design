@@ -1,0 +1,812 @@
+[
+  {
+    "design_id": "L3_I23V_M45Y_V84I",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.84213,
+    "official_best": 0.882282,
+    "official_worst": 0.799777,
+    "per_replicate_total": [
+      0.821043,
+      0.84213,
+      0.882282,
+      0.799777,
+      0.879315
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9786107540130615,
+    "ipde_mean": 0.47092448472976683,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:54:07"
+  },
+  {
+    "design_id": "L_E_shell_I23L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.832968,
+    "official_best": 0.86167,
+    "official_worst": 0.767098,
+    "per_replicate_total": [
+      0.832968,
+      0.767098,
+      0.843188,
+      0.817074,
+      0.86167
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9792674541473388,
+    "ipde_mean": 0.4433152139186859,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_triple_I23L_M88F_V84L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.831596,
+    "official_best": 0.874841,
+    "official_worst": 0.780729,
+    "per_replicate_total": [
+      0.831596,
+      0.797377,
+      0.838907,
+      0.780729,
+      0.874841
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9759350061416626,
+    "ipde_mean": 0.5219992935657501,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_V84I_I23V",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.831248,
+    "official_best": 0.853574,
+    "official_worst": 0.762198,
+    "per_replicate_total": [
+      0.794239,
+      0.839636,
+      0.853574,
+      0.762198,
+      0.831248
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.976911199092865,
+    "ipde_mean": 0.498402339220047,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_M88F_M45Y",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.825073,
+    "official_best": 0.848685,
+    "official_worst": 0.777376,
+    "per_replicate_total": [
+      0.848685,
+      0.825073,
+      0.836115,
+      0.799532,
+      0.777376
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9779171586036682,
+    "ipde_mean": 0.485086715221405,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L3_M45Y_V84I_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.824908,
+    "official_best": 0.863004,
+    "official_worst": 0.781794,
+    "per_replicate_total": [
+      0.859364,
+      0.803989,
+      0.863004,
+      0.824908,
+      0.781794
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9756860613822937,
+    "ipde_mean": 0.5338297843933105,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T13:04:58"
+  },
+  {
+    "design_id": "L2_pair_I23V_M45Y",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.810589,
+    "official_best": 0.886562,
+    "official_worst": 0.697506,
+    "per_replicate_total": [
+      0.810589,
+      0.697506,
+      0.872514,
+      0.789027,
+      0.886562
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9784985423088074,
+    "ipde_mean": 0.492606645822525,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23L_V84L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.804401,
+    "official_best": 0.88391,
+    "official_worst": 0.744759,
+    "per_replicate_total": [
+      0.856189,
+      0.744759,
+      0.804401,
+      0.763203,
+      0.88391
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9778220653533936,
+    "ipde_mean": 0.44270005226135256,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23L_V84I",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "5/5",
+    "n_nonzero_replicates": 5,
+    "official_median": 0.769877,
+    "official_best": 0.87603,
+    "official_worst": 0.72493,
+    "per_replicate_total": [
+      0.812504,
+      0.72493,
+      0.769877,
+      0.726007,
+      0.87603
+    ],
+    "terms_zeroed_on_any_replicate": [],
+    "plddt_mean": 0.9782166361808777,
+    "ipde_mean": 0.45287657976150514,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_V84I_M45Y",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "4/5",
+    "n_nonzero_replicates": 4,
+    "official_median": 0.826256,
+    "official_best": 0.859225,
+    "official_worst": 0.821269,
+    "per_replicate_total": [
+      0.850435,
+      0.821269,
+      0.859225,
+      0.826256,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9800888419151306,
+    "ipde_mean": 0.4650235891342163,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_triple_I23L_V84I_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "4/5",
+    "n_nonzero_replicates": 4,
+    "official_median": 0.823516,
+    "official_best": 0.850842,
+    "official_worst": 0.797676,
+    "per_replicate_total": [
+      0.829388,
+      0.0,
+      0.797676,
+      0.850842,
+      0.823516
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9729204416275025,
+    "ipde_mean": 0.5493116021156311,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L3_I23V_M45Y_V84L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "4/5",
+    "n_nonzero_replicates": 4,
+    "official_median": 0.820484,
+    "official_best": 0.896651,
+    "official_worst": 0.814947,
+    "per_replicate_total": [
+      0.820484,
+      0.814947,
+      0.848196,
+      0.0,
+      0.896651
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "oxy"
+    ],
+    "plddt_mean": 0.9761163234710694,
+    "ipde_mean": 0.5055818617343902,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:57:16"
+  },
+  {
+    "design_id": "L_E_shell_V84I",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "4/5",
+    "n_nonzero_replicates": 4,
+    "official_median": 0.790692,
+    "official_best": 0.835871,
+    "official_worst": 0.778985,
+    "per_replicate_total": [
+      0.835871,
+      0.778985,
+      0.820481,
+      0.790692,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9773456215858459,
+    "ipde_mean": 0.48870792984962463,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23L_M88A",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELAQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "4/5",
+    "n_nonzero_replicates": 4,
+    "official_median": 0.638684,
+    "official_best": 0.808959,
+    "official_worst": 0.614787,
+    "per_replicate_total": [
+      0.806883,
+      0.0,
+      0.808959,
+      0.638684,
+      0.614787
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "oxy"
+    ],
+    "plddt_mean": 0.9752615451812744,
+    "ipde_mean": 0.653817105293274,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L_E_shell_I23V",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "3/5",
+    "n_nonzero_replicates": 3,
+    "official_median": 0.826288,
+    "official_best": 0.872968,
+    "official_worst": 0.826288,
+    "per_replicate_total": [
+      0.872968,
+      0.826288,
+      0.0,
+      0.0,
+      0.832384
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9769118428230286,
+    "ipde_mean": 0.5144525408744812,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_triple_V84I_I23V_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "3/5",
+    "n_nonzero_replicates": 3,
+    "official_median": 0.81056,
+    "official_best": 0.865695,
+    "official_worst": 0.81056,
+    "per_replicate_total": [
+      0.865695,
+      0.838791,
+      0.81056,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9697604537010193,
+    "ipde_mean": 0.6079186797142029,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L3_I23V_V84I_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "3/5",
+    "n_nonzero_replicates": 3,
+    "official_median": 0.81056,
+    "official_best": 0.865695,
+    "official_worst": 0.81056,
+    "per_replicate_total": [
+      0.865695,
+      0.838791,
+      0.81056,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9697604537010193,
+    "ipde_mean": 0.6079186797142029,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:50:26"
+  },
+  {
+    "design_id": "L2_pair_V84I_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "3/5",
+    "n_nonzero_replicates": 3,
+    "official_median": 0.731993,
+    "official_best": 0.767639,
+    "official_worst": 0.731993,
+    "per_replicate_total": [
+      0.767639,
+      0.739388,
+      0.0,
+      0.731993,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9734876275062561,
+    "ipde_mean": 0.5789316654205322,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23V_R127G",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNGGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "3/5",
+    "n_nonzero_replicates": 3,
+    "official_median": 0.511716,
+    "official_best": 0.772285,
+    "official_worst": 0.511716,
+    "per_replicate_total": [
+      0.772285,
+      0.0,
+      0.768075,
+      0.511716,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9758126497268677,
+    "ipde_mean": 0.49171552062034607,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L_E_shell_V84M",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDMVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "2/5",
+    "n_nonzero_replicates": 2,
+    "official_median": 0.0,
+    "official_best": 0.846513,
+    "official_worst": 0.736303,
+    "per_replicate_total": [
+      0.846513,
+      0.0,
+      0.736303,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9792443037033081,
+    "ipde_mean": 0.5155940413475036,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L_E_shell_V84L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "2/5",
+    "n_nonzero_replicates": 2,
+    "official_median": 0.0,
+    "official_best": 0.82584,
+    "official_worst": 0.792937,
+    "per_replicate_total": [
+      0.82584,
+      0.0,
+      0.792937,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9771464467048645,
+    "ipde_mean": 0.5192236959934234,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_M88F_V84L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "2/5",
+    "n_nonzero_replicates": 2,
+    "official_median": 0.0,
+    "official_best": 0.806454,
+    "official_worst": 0.784179,
+    "per_replicate_total": [
+      0.784179,
+      0.0,
+      0.0,
+      0.0,
+      0.806454
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.974400770664215,
+    "ipde_mean": 0.5766417384147644,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23V_V84M",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDMVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "2/5",
+    "n_nonzero_replicates": 2,
+    "official_median": 0.0,
+    "official_best": 0.794474,
+    "official_worst": 0.727237,
+    "per_replicate_total": [
+      0.727237,
+      0.0,
+      0.0,
+      0.0,
+      0.794474
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9756216526031494,
+    "ipde_mean": 0.5729180812835694,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_M88F_M45W",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAWQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "2/5",
+    "n_nonzero_replicates": 2,
+    "official_median": 0.0,
+    "official_best": 0.766277,
+    "official_worst": 0.704033,
+    "per_replicate_total": [
+      0.766277,
+      0.704033,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9777251482009888,
+    "ipde_mean": 0.5004485189914704,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_triple_V84I_I23V_M45A",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAAQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "2/5",
+    "n_nonzero_replicates": 2,
+    "official_median": 0.0,
+    "official_best": 0.699044,
+    "official_worst": 0.671682,
+    "per_replicate_total": [
+      0.699044,
+      0.0,
+      0.0,
+      0.0,
+      0.671682
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9760798335075378,
+    "ipde_mean": 0.6180930972099304,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23L_V84M",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDMVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.830814,
+    "official_worst": 0.830814,
+    "per_replicate_total": [
+      0.830814,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9789700746536255,
+    "ipde_mean": 0.44972811341285707,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_I23L_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.826629,
+    "official_worst": 0.826629,
+    "per_replicate_total": [
+      0.826629,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.976445996761322,
+    "ipde_mean": 0.4828150510787964,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_R127A_M45A",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAAQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNAGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.795622,
+    "official_worst": 0.795622,
+    "per_replicate_total": [
+      0.795622,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9776242494583129,
+    "ipde_mean": 0.4196779191493988,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L_D_seq_anchor_R127A_M45A",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAAQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNAGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.795622,
+    "official_worst": 0.795622,
+    "per_replicate_total": [
+      0.795622,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9776242494583129,
+    "ipde_mean": 0.4196779191493988,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L_E_shell_M88F",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.783161,
+    "official_worst": 0.783161,
+    "per_replicate_total": [
+      0.783161,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9767653942108154,
+    "ipde_mean": 0.5266753494739532,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_triple_I23V_M45A_V84L",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAAQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.762602,
+    "official_worst": 0.762602,
+    "per_replicate_total": [
+      0.762602,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.97587730884552,
+    "ipde_mean": 0.5062479853630066,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "L2_pair_R127A_M45Y",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNAGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.744989,
+    "official_worst": 0.744989,
+    "per_replicate_total": [
+      0.744989,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy"
+    ],
+    "plddt_mean": 0.9778977990150451,
+    "ipde_mean": 0.4412323534488678,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "ins080_F42Y_H103Y",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.743481,
+    "official_worst": 0.743481,
+    "per_replicate_total": [
+      0.743481,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9787522792816162,
+    "ipde_mean": 0.485019314289093,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  },
+  {
+    "design_id": "ins080_r103_42_F42Y_H103Y",
+    "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+    "length": 150,
+    "reproducibility": "1/5",
+    "n_nonzero_replicates": 1,
+    "official_median": 0.0,
+    "official_best": 0.743481,
+    "official_worst": 0.743481,
+    "per_replicate_total": [
+      0.743481,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "terms_zeroed_on_any_replicate": [
+      "orient_oxy",
+      "oxy"
+    ],
+    "plddt_mean": 0.9787522792816162,
+    "ipde_mean": 0.485019314289093,
+    "last_measured": "2026-11-22T13:10:41",
+    "first_seen": "2026-11-22T12:26:37"
+  }
+]

@@ -1,0 +1,25 @@
+# PDB polymer/non-polymer units read from the configured blob store.
+# Consumers add only design tasks, and a sampling weight if they want a different one.
+
+defaults:
+  - pdb_common
+  - _self_
+
+name: pdb_pn_units
+data: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/pdb/2026_10_03_tmol_plip_cath/sampling/pn_units.parquet
+
+loader:
+  column_mapping:
+    query_pn_unit_iids: ["q_pn_unit_iid"]
+
+filters:
+  mapping:
+    cluster: "cluster.notnull()"
+    physical_bonds: "pdb_id not in ${resolve_import:atomworks.ml.preprocessing.constants,PDB_IDS_WITH_UNPHYSICAL_BONDS}"
+
+columns_to_load:
+  mapping:
+    pn_unit:
+      - cluster
+      - q_pn_unit_iid
+      - q_pn_unit_is_loi

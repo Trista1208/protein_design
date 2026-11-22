@@ -1,0 +1,9 @@
+# Tiny PLINDER subset for the training walkthrough.
+
+defaults:
+  - /datasets/train/backend_pandas@dataset
+  - /datasets/sources/test_dataset@dataset
+  - /design_tasks/presets@dataset.transform.design_tasks: plinder_tasks
+  - _self_
+
+probability: 1.0   # convention: every train dataset sets its mixing probability

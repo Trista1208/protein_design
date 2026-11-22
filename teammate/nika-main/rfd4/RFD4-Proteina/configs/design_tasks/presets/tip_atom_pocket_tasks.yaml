@@ -1,0 +1,15 @@
+# Tip-atom pocket training mix (includes pocket convex-hull task):
+# 50% tip_atom_pocket, 10% each of tip_atom / tip_atom_partial_ligand / motif_scaffold / unconditional,
+# 5% folding, 5% inverse folding.
+
+defaults:
+  - all_off
+  - _self_
+
+unconditional:            {frequency: 10.0}
+folding:                  {frequency: 5.0}
+inverse_folding:          {frequency: 5.0}
+motif_scaffold:           {frequency: 10.0}
+tip_atom_partial_ligand:  {frequency: 10.0}
+tip_atom:                 {frequency: 10.0}
+tip_atom_pocket:          {frequency: 50.0}

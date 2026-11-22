@@ -1,0 +1,1135 @@
+{
+  "generated": "2026-11-22 12:56:23",
+  "protocol": {
+    "msa_mode": "none:single_sequence",
+    "single_sequence_mode": true,
+    "use_msa_server": false,
+    "recycling_steps": 3,
+    "diffusion_samples": 1,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "replicates": 5,
+    "ligand_ccd": "6NT",
+    "ramp_mode": "taper",
+    "targets": {
+      "d_base": 2.52,
+      "d_oxy": 3.1,
+      "angle": 120.0
+    },
+    "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+  },
+  "n_candidates": 25,
+  "n_scored": 7,
+  "n_eligible": 7,
+  "n_nonzero": 6,
+  "selected": [
+    {
+      "design_id": "L_E_shell_I23L",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.832968,
+      "official_score_best": 0.86167,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.832968,
+        0.767098,
+        0.843188,
+        0.817074,
+        0.86167
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "orient_oxy",
+      "subscores": {
+        "base": 0.9862,
+        "oxy": 0.9812,
+        "ipde": 0.9446,
+        "orient_base": 0.6095,
+        "orient_oxy": 0.4227,
+        "bury": 1.0,
+        "cons": 0.879
+      },
+      "sd_base": 0.060501012974357636,
+      "mean_plddt": 0.9792674541473388,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.6289505510754667,
+        "d_oxy": 3.1008166666218755,
+        "dih_oxy": 32.364636263756815,
+        "gap_dih_oxy": null,
+        "plddt": 0.9795775413513184,
+        "dense_rank": 0.703333
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23V_M45Y",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23V",
+        "F42Y",
+        "M45Y",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.810589,
+      "official_score_best": 0.886562,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.810589,
+        0.697506,
+        0.872514,
+        0.789027,
+        0.886562
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "orient_base",
+      "subscores": {
+        "base": 0.8636,
+        "oxy": 0.8048,
+        "ipde": 0.9384,
+        "orient_base": 0.6608,
+        "orient_oxy": 0.773,
+        "bury": 1.0,
+        "cons": 0.8561
+      },
+      "sd_base": 0.0719407940266069,
+      "mean_plddt": 0.9784985423088074,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.596274831368975,
+        "d_oxy": 3.1574562546455023,
+        "dih_oxy": 43.891447791540536,
+        "gap_dih_oxy": null,
+        "plddt": 0.9799162149429321,
+        "dense_rank": 0.655018
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23L_V84L",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "V84L",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.804401,
+      "official_score_best": 0.88391,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.856189,
+        0.744759,
+        0.804401,
+        0.763203,
+        0.88391
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "orient_base",
+      "subscores": {
+        "base": 0.9799,
+        "oxy": 0.8822,
+        "ipde": 0.9447,
+        "orient_base": 0.4968,
+        "orient_oxy": 0.4323,
+        "bury": 1.0,
+        "cons": 0.972
+      },
+      "sd_base": 0.013981781642489094,
+      "mean_plddt": 0.9778220653533936,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.536356836093849,
+        "d_oxy": 3.1617346504727433,
+        "dih_oxy": 23.19195756190017,
+        "gap_dih_oxy": null,
+        "plddt": 0.9781824946403503,
+        "dense_rank": 0.694872
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23L_V84I",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "V84I",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.769877,
+      "official_score_best": 0.87603,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.812504,
+        0.72493,
+        0.769877,
+        0.726007,
+        0.87603
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "oxy",
+      "subscores": {
+        "base": 0.9883,
+        "oxy": 0.6891,
+        "ipde": 0.9434,
+        "orient_base": 0.5521,
+        "orient_oxy": 0.4476,
+        "bury": 1.0,
+        "cons": 0.9171
+      },
+      "sd_base": 0.04142631342335803,
+      "mean_plddt": 0.9782166361808777,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.5494852421616407,
+        "d_oxy": 3.2434774548314658,
+        "dih_oxy": 28.413649651846022,
+        "gap_dih_oxy": null,
+        "plddt": 0.9793345332145691,
+        "dense_rank": 0.647766
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L_E_shell_V84I",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "F42Y",
+        "V84I",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.790692,
+      "official_score_best": 0.835871,
+      "n_nonzero_replicates": 4,
+      "per_replicate_total": [
+        0.835871,
+        0.778985,
+        0.820481,
+        0.790692,
+        0.0
+      ],
+      "reproducibility": "4/5",
+      "limiting_term": "oxy",
+      "subscores": {
+        "base": 0.9472,
+        "oxy": 0.5489,
+        "ipde": 0.9389,
+        "orient_base": 0.5908,
+        "orient_oxy": 0.4966,
+        "bury": 1.0,
+        "cons": 0.9159
+      },
+      "sd_base": 0.04205272203906917,
+      "mean_plddt": 0.9773456215858459,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.6106912877626876,
+        "d_oxy": 3.0858057294651586,
+        "dih_oxy": 38.01727162177019,
+        "gap_dih_oxy": null,
+        "plddt": 0.9778364896774292,
+        "dense_rank": 0.648462
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    }
+  ],
+  "all_scored": [
+    {
+      "design_id": "L_E_shell_I23L",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.832968,
+      "official_score_best": 0.86167,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.832968,
+        0.767098,
+        0.843188,
+        0.817074,
+        0.86167
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "orient_oxy",
+      "subscores": {
+        "base": 0.9862,
+        "oxy": 0.9812,
+        "ipde": 0.9446,
+        "orient_base": 0.6095,
+        "orient_oxy": 0.4227,
+        "bury": 1.0,
+        "cons": 0.879
+      },
+      "sd_base": 0.060501012974357636,
+      "mean_plddt": 0.9792674541473388,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.6289505510754667,
+        "d_oxy": 3.1008166666218755,
+        "dih_oxy": 32.364636263756815,
+        "gap_dih_oxy": null,
+        "plddt": 0.9795775413513184,
+        "dense_rank": 0.703333
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23L_V84L",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDLVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "V84L",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.804401,
+      "official_score_best": 0.88391,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.856189,
+        0.744759,
+        0.804401,
+        0.763203,
+        0.88391
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "orient_base",
+      "subscores": {
+        "base": 0.9799,
+        "oxy": 0.8822,
+        "ipde": 0.9447,
+        "orient_base": 0.4968,
+        "orient_oxy": 0.4323,
+        "bury": 1.0,
+        "cons": 0.972
+      },
+      "sd_base": 0.013981781642489094,
+      "mean_plddt": 0.9778220653533936,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.536356836093849,
+        "d_oxy": 3.1617346504727433,
+        "dih_oxy": 23.19195756190017,
+        "gap_dih_oxy": null,
+        "plddt": 0.9781824946403503,
+        "dense_rank": 0.694872
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23L_V84M",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDMVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "V84M",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.0,
+      "official_score_best": 0.830814,
+      "n_nonzero_replicates": 1,
+      "per_replicate_total": [
+        0.830814,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reproducibility": "1/5",
+      "limiting_term": "orient_oxy",
+      "subscores": {
+        "base": 0.9764,
+        "oxy": 0.7017,
+        "ipde": 0.9438,
+        "orient_base": 0.4209,
+        "orient_oxy": 0.0,
+        "bury": 1.0,
+        "cons": 0.9469
+      },
+      "sd_base": 0.026562277903485122,
+      "mean_plddt": 0.9789700746536255,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.540042125634927,
+        "d_oxy": 3.040978296535508,
+        "dih_oxy": 33.34804358281237,
+        "gap_dih_oxy": null,
+        "plddt": 0.9789451360702515,
+        "dense_rank": 0.678352
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23V_M45Y",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAYQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDVVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23V",
+        "F42Y",
+        "M45Y",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.810589,
+      "official_score_best": 0.886562,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.810589,
+        0.697506,
+        0.872514,
+        0.789027,
+        0.886562
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "orient_base",
+      "subscores": {
+        "base": 0.8636,
+        "oxy": 0.8048,
+        "ipde": 0.9384,
+        "orient_base": 0.6608,
+        "orient_oxy": 0.773,
+        "bury": 1.0,
+        "cons": 0.8561
+      },
+      "sd_base": 0.0719407940266069,
+      "mean_plddt": 0.9784985423088074,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.596274831368975,
+        "d_oxy": 3.1574562546455023,
+        "dih_oxy": 43.891447791540536,
+        "gap_dih_oxy": null,
+        "plddt": 0.9799162149429321,
+        "dense_rank": 0.655018
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L_E_shell_V84I",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSAISDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "F42Y",
+        "V84I",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.790692,
+      "official_score_best": 0.835871,
+      "n_nonzero_replicates": 4,
+      "per_replicate_total": [
+        0.835871,
+        0.778985,
+        0.820481,
+        0.790692,
+        0.0
+      ],
+      "reproducibility": "4/5",
+      "limiting_term": "oxy",
+      "subscores": {
+        "base": 0.9472,
+        "oxy": 0.5489,
+        "ipde": 0.9389,
+        "orient_base": 0.5908,
+        "orient_oxy": 0.4966,
+        "bury": 1.0,
+        "cons": 0.9159
+      },
+      "sd_base": 0.04205272203906917,
+      "mean_plddt": 0.9773456215858459,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.6106912877626876,
+        "d_oxy": 3.0858057294651586,
+        "dih_oxy": 38.01727162177019,
+        "gap_dih_oxy": null,
+        "plddt": 0.9778364896774292,
+        "dense_rank": 0.648462
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_pair_I23L_V84I",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSALSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELMQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23L",
+        "F42Y",
+        "V84I",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.769877,
+      "official_score_best": 0.87603,
+      "n_nonzero_replicates": 5,
+      "per_replicate_total": [
+        0.812504,
+        0.72493,
+        0.769877,
+        0.726007,
+        0.87603
+      ],
+      "reproducibility": "5/5",
+      "limiting_term": "oxy",
+      "subscores": {
+        "base": 0.9883,
+        "oxy": 0.6891,
+        "ipde": 0.9434,
+        "orient_base": 0.5521,
+        "orient_oxy": 0.4476,
+        "bury": 1.0,
+        "cons": 0.9171
+      },
+      "sd_base": 0.04142631342335803,
+      "mean_plddt": 0.9782166361808777,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.5494852421616407,
+        "d_oxy": 3.2434774548314658,
+        "dih_oxy": 28.413649651846022,
+        "gap_dih_oxy": null,
+        "plddt": 0.9793345332145691,
+        "dense_rank": 0.647766
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    },
+    {
+      "design_id": "L2_triple_V84I_I23V_M88F",
+      "sequence": "SSFLELMHKAVSAAKQGDFTSAVSDFVEACNLLLPDDKKDDYEAMQKALLSTLLAHHDQDRAKDALTTLLTVTLILFEKHHDDIVELFQKHYDHFHDMVSDDYKIVTEYLKGELDYEDYLTSLVHNRGDALNLSEAEITEIYEEAKKMLS",
+      "length": 150,
+      "mutations": [
+        "I23V",
+        "F42Y",
+        "V84I",
+        "M88F",
+        "H103Y"
+      ],
+      "parent": "ins080_r103_42_F42Y_H103Y",
+      "source": null,
+      "official_score": 0.81056,
+      "official_score_best": 0.865695,
+      "n_nonzero_replicates": 3,
+      "per_replicate_total": [
+        0.865695,
+        0.838791,
+        0.81056,
+        0.0,
+        0.0
+      ],
+      "reproducibility": "3/5",
+      "limiting_term": "orient_oxy",
+      "subscores": {
+        "base": 0.9962,
+        "oxy": 0.9172,
+        "ipde": 0.924,
+        "orient_base": 0.5781,
+        "orient_oxy": 0.2227,
+        "bury": 1.0,
+        "cons": 0.8738
+      },
+      "sd_base": 0.06310844656492112,
+      "mean_plddt": 0.9697604537010193,
+      "measurable": true,
+      "protocol": {
+        "msa_mode": "none:single_sequence",
+        "single_sequence_mode": true,
+        "use_msa_server": false,
+        "recycling_steps": 3,
+        "diffusion_samples": 1,
+        "seeds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "replicates": 5,
+        "ligand_ccd": "6NT",
+        "ramp_mode": "taper",
+        "targets": {
+          "d_base": 2.52,
+          "d_oxy": 3.1,
+          "angle": 120.0
+        },
+        "comparability_warning": "scores are comparable ONLY across records with an identical msa_mode. De novo designs have no MSA; natural controls do. Folding HG3.17 single-sequence scores 0.000 (LESSONS 3.1)."
+      },
+      "screen_1seed": {
+        "d_base": 2.537946807953232,
+        "d_oxy": 3.0680032594506805,
+        "dih_oxy": 30.2399860019563,
+        "gap_dih_oxy": null,
+        "plddt": 0.9693048000335693,
+        "dense_rank": 0.635018
+      },
+      "gates": {
+        "passed": true,
+        "gates": {
+          "length": {
+            "passed": true,
+            "value": 150,
+            "threshold": 260,
+            "detail": "150 aa (motif residues counted: 2); cap 260. Listov's state of the art is 263 aa, above the cap."
+          }
+        },
+        "verdict": "ELIGIBLE",
+        "policy": "fail closed - unproven novelty counts as failure (handover 4.3.9)"
+      },
+      "novelty": {
+        "eligible": true,
+        "reasons": [],
+        "identity": {
+          "max": 0.0,
+          "target": "",
+          "threshold": 0.7
+        },
+        "verdict": "NOVEL"
+      },
+      "eligible": true
+    }
+  ]
+}

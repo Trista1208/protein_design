@@ -1,0 +1,7 @@
+# Unconditional generation only — simple monomer training without conditioning.
+
+defaults:
+  - all_off
+  - _self_
+
+unconditional: {frequency: 1.0}

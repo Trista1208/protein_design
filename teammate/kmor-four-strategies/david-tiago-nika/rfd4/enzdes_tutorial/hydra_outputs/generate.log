@@ -1,0 +1,11 @@
+[2026-11-20 22:55:46,573][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 288 tokens (batch size 1). This may take a few minutes.
+This shape may need recompiling in later runs; set TORCH_COMPILE_CACHE_BLOB to a persistent file path to preserve the cache.
+[2026-11-20 22:55:57,130][rfproteina.nn.modules.openfold_modules.triangular_multiplicative_update][WARNING] - cuEquivariance has no fused compiled inference triangle multiplication for batch=1, n=288, c_z=384, c_hidden=256, bf16=False; using the torch backend.
+[2026-11-20 22:57:25,367][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 256 tokens (batch size 1).
+[2026-11-20 22:57:35,151][rfproteina.nn.modules.openfold_modules.triangular_multiplicative_update][WARNING] - cuEquivariance has no fused compiled inference triangle multiplication for batch=1, n=256, c_z=384, c_hidden=256, bf16=False; using the torch backend.
+[2026-11-20 23:00:31,489][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/scaffold_n25
+[2026-11-20 23:18:24,143][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 288 tokens (batch size 1). This may take a few minutes.
+This shape may need recompiling in later runs; set TORCH_COMPILE_CACHE_BLOB to a persistent file path to preserve the cache.
+[2026-11-20 23:18:34,963][rfproteina.nn.modules.openfold_modules.triangular_multiplicative_update][WARNING] - cuEquivariance has no fused compiled inference triangle multiplication for batch=1, n=288, c_z=384, c_hidden=256, bf16=True; using the torch backend.
+[2026-11-20 23:20:32,810][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/inverse_folding_n10_ll2.0
+[2026-11-21 00:04:18,391][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/inverse_folding_n10_ll2.0

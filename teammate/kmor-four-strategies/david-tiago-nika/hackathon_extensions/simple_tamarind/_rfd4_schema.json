@@ -1,0 +1,2924 @@
+{
+  "name": "rfd4-proteina",
+  "displayName": "RFD4-Proteina",
+  "finetune": false,
+  "github": "https://github.com/RosettaCommons/RFD4-Proteina",
+  "paper": "https://rfd4-proteina.org/assets/paper/RFD4-Proteina.pdf",
+  "settings": [
+    {
+      "name": "task",
+      "required": true,
+      "default": "binder-design",
+      "options": [
+        "binder-design",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions",
+        "score-structures",
+        "unconditional"
+      ],
+      "description": "The design problem to solve."
+    },
+    {
+      "name": "modelCheckpoint",
+      "default": "general",
+      "options": [
+        "general",
+        "antibody-2026-10-30"
+      ],
+      "tasks": [
+        "antibody-design",
+        "nanobody-design"
+      ],
+      "description": "Choose the general model or the antibody-specialized checkpoint for CDR design. Antibody weights: https://huggingface.co/nvidia/RFD4-Proteina/blob/main/antibody/rfd4-proteina-antibody-2026-10-30-ema.ckpt",
+      "required": false
+    },
+    {
+      "name": "structureOperation",
+      "default": "partial-diffusion",
+      "options": [
+        "partial-diffusion",
+        "inverse-folding",
+        "structure-prediction",
+        "sidechain-packing"
+      ],
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "What to do with the structure you upload.",
+      "required": false
+    },
+    {
+      "name": "conditionsFrom",
+      "default": "file",
+      "options": [
+        "file",
+        "annotated-cif"
+      ],
+      "tasks": [
+        "custom-conditions"
+      ],
+      "description": "Whether you give the conditions as a separate file or already inside an annotated CIF.",
+      "required": false
+    },
+    {
+      "name": "pdbFile",
+      "type": "pdb",
+      "extension": [
+        "pdb"
+      ],
+      "required": true,
+      "tasks": [
+        "binder-design",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "The target, motif or backbone to design against or around. PDB or mmCIF (.cif); use mmCIF with ligands or a motif, since a PDB cannot hold bond orders or charges."
+    },
+    {
+      "name": "conditionSpec",
+      "type": "file",
+      "extension": [
+        "yaml",
+        "yml",
+        "json"
+      ],
+      "required": true,
+      "tasks": [
+        "custom-conditions"
+      ],
+      "description": "YAML or JSON for one design: the chains to build and the conditions to apply, numbered as in your file. Base pairs can't be set here; the example lists the options."
+    },
+    {
+      "name": "structureFiles",
+      "type": "pdb",
+      "list": true,
+      "extension": [
+        "pdb"
+      ],
+      "required": true,
+      "tasks": [
+        "score-structures"
+      ],
+      "description": "PDB or mmCIF (.cif) structures to score, up to 100 per job. Each file name labels its row."
+    },
+    {
+      "name": "designType",
+      "default": "protein-binder",
+      "options": [
+        "protein",
+        "protein-binder",
+        "nanobody",
+        "small-molecule-binder",
+        "dna-binder"
+      ],
+      "tasks": [
+        "score-structures"
+      ],
+      "description": "What kind of design the structures are; it sets the checks and pass limits.",
+      "required": false
+    },
+    {
+      "name": "designedChain",
+      "type": "chain",
+      "required": true,
+      "tasks": [
+        "score-structures"
+      ],
+      "description": "The chain you designed; every other chain, ligand or DNA counts as the target. Use the same chain letter in every structure."
+    },
+    {
+      "name": "secondaryStructure",
+      "type": "string",
+      "required": true,
+      "tasks": [
+        "rna-secondary-structure"
+      ],
+      "description": "One character per residue, 8 to 1024 (over 256 is beyond training). ( ) pair, . is unpaired, ? is left to the model; [ ] { } < > or letter pairs like Aa mark pseudoknots."
+    },
+    {
+      "name": "minLength",
+      "type": "number",
+      "default": 100,
+      "tasks": [
+        "unconditional"
+      ],
+      "description": "Shortest chain to generate, in residues.",
+      "required": false
+    },
+    {
+      "name": "maxLength",
+      "type": "number",
+      "default": 100,
+      "tasks": [
+        "unconditional"
+      ],
+      "description": "Longest chain to generate, in residues.",
+      "required": false
+    },
+    {
+      "name": "foldClass",
+      "type": "string",
+      "default": "",
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder"
+      ],
+      "description": "CATH code to steer the fold, in the full class.architecture.topology form such as 2.60.40 (immunoglobulin).",
+      "required": false
+    },
+    {
+      "name": "designedLengths",
+      "list": true,
+      "tasks": [
+        "motif-scaffolding",
+        "enzyme-design"
+      ],
+      "description": "New protein to add before, between and after the kept residues, one row per gap in order. Gaps without a row get 10 to 20 residues.",
+      "required": false
+    },
+    {
+      "name": "minScaffoldLength",
+      "type": "number",
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Fewest residues in the whole protein, catalytic residues included, instead of per gap; the model must place the motif. Blank: 180, as in the model's enzyme benchmark.",
+      "required": false
+    },
+    {
+      "name": "maxScaffoldLength",
+      "type": "number",
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Most residues in the whole protein, catalytic residues included, when the model places the motif; one bound alone fixes the length. Blank: 180, as in the model's enzyme benchmark.",
+      "required": false
+    },
+    {
+      "name": "nanobodyFramework",
+      "default": "vobarilizumab",
+      "options": [
+        "vobarilizumab",
+        "caplacizumab",
+        "ozoralizumab",
+        "h-nbbcii10",
+        "own"
+      ],
+      "tasks": [
+        "nanobody-design"
+      ],
+      "description": "The nanobody to design the three loops on: a built-in framework or your own.",
+      "required": false
+    },
+    {
+      "name": "antibodyFramework",
+      "default": "trastuzumab",
+      "options": [
+        "trastuzumab",
+        "own"
+      ],
+      "tasks": [
+        "antibody-design"
+      ],
+      "description": "The antibody Fv to design the six loops on: a built-in framework or your own.",
+      "required": false
+    },
+    {
+      "name": "frameworkFile",
+      "type": "pdb",
+      "extension": [
+        "pdb"
+      ],
+      "tasks": [
+        "nanobody-design",
+        "antibody-design"
+      ],
+      "description": "Your nanobody, or your antibody's heavy and light chains, apart from the target. PDB or uncompressed mmCIF (.cif). Blank: they are in the input structure with the target.",
+      "required": false
+    },
+    {
+      "name": "frameworkChains",
+      "type": "chains",
+      "list": true,
+      "tasks": [
+        "nanobody-design",
+        "antibody-design"
+      ],
+      "description": "Chains of the framework structure to use: one for a nanobody, heavy then light for an antibody. Blank uses every protein chain in it.",
+      "required": false
+    },
+    {
+      "name": "targetChains",
+      "type": "chains",
+      "list": true,
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "existing-structure"
+      ],
+      "description": "Target chains; for Inverse Folding and Side Chain Packing, chains to redesign or repack. Required for TCR and for an antibody or nanobody in one structure with its target; otherwise blank uses every protein chain.",
+      "required": false
+    },
+    {
+      "name": "igChains",
+      "type": "chains",
+      "list": true,
+      "required": true,
+      "tasks": [
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Chains that hold the variable domain to redesign: one for a nanobody, heavy and light for an antibody, alpha and beta for a TCR. With a framework structure, its chains; blank finds them."
+    },
+    {
+      "name": "cdrResidues",
+      "tasks": [
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Residues of the loops to replace, one CDR per separate stretch, in order; blank finds the standard CDRs. With a framework structure, its residues.",
+      "required": false
+    },
+    {
+      "name": "cdrLengths",
+      "list": true,
+      "tasks": [
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Length range per CDR in order from CDR1, then the second chain's CDRs for an antibody or TCR. CDRs without a row keep their length (built-in nanobody: 13, 9 to 10, 12 to 21; built-in antibody: H1 13, H2 10, H3 11 to 17, L1 11, L2 8, L3 9).",
+      "required": false
+    },
+    {
+      "name": "minBinderLength",
+      "type": "number",
+      "default": {
+        "binder-design": 60,
+        "small-molecule-binder": 100,
+        "dna-binder": 120
+      },
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder"
+      ],
+      "description": "Shortest binder to generate, in residues.",
+      "required": false
+    },
+    {
+      "name": "maxBinderLength",
+      "type": "number",
+      "default": {
+        "binder-design": 120,
+        "small-molecule-binder": 155,
+        "dna-binder": 150
+      },
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder"
+      ],
+      "description": "Longest binder to generate, in residues. Very large systems can lower quality; the target counts toward the size.",
+      "required": false
+    },
+    {
+      "name": "hotspotResidues",
+      "tasks": [
+        "binder-design",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Target residues the binder should contact.",
+      "required": false
+    },
+    {
+      "name": "hotspotAtoms",
+      "default": {
+        "binder-design": "all-atom",
+        "nanobody-design": "single-atom",
+        "antibody-design": "single-atom",
+        "tcr-design": "single-atom"
+      },
+      "options": [
+        "all-atom",
+        "side-chain",
+        "tip-atom",
+        "single-atom"
+      ],
+      "tasks": [
+        "binder-design",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Which atoms of each hotspot residue to mark.",
+      "required": false
+    },
+    {
+      "name": "repackTargetInterface",
+      "type": "boolean",
+      "default": true,
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Lets the model re-place target side chains around the new binder.",
+      "required": false
+    },
+    {
+      "name": "frameworkAtoms",
+      "default": "backbone",
+      "options": [
+        "backbone",
+        "all-atom"
+      ],
+      "tasks": [
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Which atoms of the framework to keep fixed. The framework sequence is always kept.",
+      "required": false
+    },
+    {
+      "name": "separateIgChains",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Lets the model place each variable chain on its own. Off keeps the pairing geometry of your structure.",
+      "required": false
+    },
+    {
+      "name": "keepConstantDomains",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design"
+      ],
+      "description": "Holds constant domains and tags if your structure has them. Off keeps only the variable domain, as trained, and reports what was removed.",
+      "required": false
+    },
+    {
+      "name": "motifResidues",
+      "tasks": [
+        "motif-scaffolding",
+        "enzyme-design"
+      ],
+      "description": "Residues to hold fixed while new protein is built around them.",
+      "required": false
+    },
+    {
+      "name": "motifAtoms",
+      "default": "all-atom",
+      "options": [
+        "all-atom",
+        "backbone",
+        "tip-atom"
+      ],
+      "tasks": [
+        "motif-scaffolding"
+      ],
+      "description": "Which atoms of the motif to keep fixed.",
+      "required": false
+    },
+    {
+      "name": "catalyticAtoms",
+      "default": "functional-tip",
+      "options": [
+        "tip-atom",
+        "functional-tip",
+        "sidechain",
+        "backbone"
+      ],
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Which atoms of the catalytic residues to keep fixed.",
+      "required": false
+    },
+    {
+      "name": "catalyticAtomPicks",
+      "type": "string",
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Hold exactly these atoms of chosen catalytic residues, such as A102:CG,OD2 A195:NE2. Use 1:102:CG for a chain named by a digit.",
+      "required": false
+    },
+    {
+      "name": "unindexMotif",
+      "type": "boolean",
+      "default": {
+        "motif-scaffolding": false,
+        "enzyme-design": true
+      },
+      "tasks": [
+        "motif-scaffolding",
+        "enzyme-design"
+      ],
+      "description": "Lets the model choose where the motif sits in the new sequence. Off fixes its position.",
+      "required": false
+    },
+    {
+      "name": "fixMotifSequence",
+      "type": "boolean",
+      "default": true,
+      "tasks": [
+        "motif-scaffolding",
+        "enzyme-design"
+      ],
+      "description": "Keeps the motif's amino acids as well as its backbone. Off keeps the shape and lets the model choose residues.",
+      "required": false
+    },
+    {
+      "name": "ligandCode",
+      "type": "string",
+      "tasks": [
+        "small-molecule-binder",
+        "enzyme-design"
+      ],
+      "description": "Residue codes of the ligands and ions to design around, such as SAM, ATP, MG. Others are removed; blank keeps all but crystallization additives such as glycerol, sulfate and PEG, which are always removed.",
+      "required": false
+    },
+    {
+      "name": "ligandHandling",
+      "default": {
+        "enzyme-design": "fixed",
+        "small-molecule-binder": "sampled",
+        "existing-structure": "sampled"
+      },
+      "options": [
+        "sampled",
+        "fixed"
+      ],
+      "tasks": [
+        "enzyme-design",
+        "small-molecule-binder",
+        "existing-structure"
+      ],
+      "description": "Whether the ligand pose is generated with the protein or held as uploaded.",
+      "required": false
+    },
+    {
+      "name": "ligandHoldAtoms",
+      "type": "string",
+      "tasks": [
+        "small-molecule-binder",
+        "enzyme-design"
+      ],
+      "description": "Ligand atoms to hold where they are in your file, such as O2, C5. The rest of the ligand is left free. Write SAM:O2 for several ligands.",
+      "required": false
+    },
+    {
+      "name": "ligandHbondDonors",
+      "type": "string",
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Ligand atoms that should donate a hydrogen bond to the new protein, such as N3, O4. Write SAM:N3 for several ligands.",
+      "required": false
+    },
+    {
+      "name": "ligandHbondAcceptors",
+      "type": "string",
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Ligand atoms that should accept a hydrogen bond from the new protein, such as O2, N7. Write SAM:O2 for several ligands.",
+      "required": false
+    },
+    {
+      "name": "ligandBurial",
+      "default": "free",
+      "options": [
+        "free",
+        "buried",
+        "partly-buried",
+        "exposed"
+      ],
+      "tasks": [
+        "small-molecule-binder"
+      ],
+      "description": "How buried the ligand should be in the protein.",
+      "required": false
+    },
+    {
+      "name": "ligandExposedAtoms",
+      "type": "string",
+      "tasks": [
+        "small-molecule-binder"
+      ],
+      "description": "Ligand atoms to keep exposed (relative accessible surface above 0.1), such as where a linker attaches. Names as in your file, like N6, O2'; write SAM:N6 for several ligands.",
+      "required": false
+    },
+    {
+      "name": "ligandInteractions",
+      "list": true,
+      "tasks": [
+        "small-molecule-binder"
+      ],
+      "description": "Ask the design to make a specific contact with named ligand atoms, such as accepting a hydrogen bond at a carbonyl oxygen.",
+      "required": false
+    },
+    {
+      "name": "dnaContext",
+      "default": "sequence",
+      "options": [
+        "sequence",
+        "structure"
+      ],
+      "tasks": [
+        "dna-binder"
+      ],
+      "description": "Whether the DNA conformation is generated with the binder or held as uploaded.",
+      "required": false
+    },
+    {
+      "name": "keepChains",
+      "type": "chains",
+      "list": true,
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Chains held fixed in position and sequence while the rest is re-noised, such as a target when rescuing a binder.",
+      "required": false
+    },
+    {
+      "name": "partialMode",
+      "default": "fraction",
+      "options": [
+        "fraction",
+        "levels"
+      ],
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "How the amount of change is set.",
+      "required": false
+    },
+    {
+      "name": "noiseLevel",
+      "type": "number",
+      "default": 0.3,
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Fraction of the sampling steps to re-run, 0.05 to 1. Higher changes more of the input and 1 regenerates it.",
+      "required": false
+    },
+    {
+      "name": "partialBackboneLevel",
+      "type": "number",
+      "default": 0.8,
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Backbone to keep, 0.01 to 0.99. Higher stays closer to the input.",
+      "required": false
+    },
+    {
+      "name": "partialLatentLevel",
+      "type": "number",
+      "default": 0.8,
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Sequence and side chains to keep, 0.01 to 0.99. Higher stays closer to the input.",
+      "required": false
+    },
+    {
+      "name": "redesignShell",
+      "type": "number",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Residues more than this many \u00c5 from the kept chains (and from the ligand, when measured from it) stay fixed; nearer ones are redesigned. Blank redesigns every residue that is not kept.",
+      "required": false
+    },
+    {
+      "name": "sequenceShell",
+      "type": "number",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Distance in \u00c5 from the kept chains within which the sequence may change. Blank uses the Redesign Shell.",
+      "required": false
+    },
+    {
+      "name": "backboneShell",
+      "type": "number",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Distance in \u00c5 from the kept chains within which the backbone may move. Blank uses the Redesign Shell.",
+      "required": false
+    },
+    {
+      "name": "shellFromLigand",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Also measures the shells from the ligand (and any metal) and holds it fixed, to redesign the pocket around it. The structure must contain a ligand.",
+      "required": false
+    },
+    {
+      "name": "fixedResidues",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Residues to keep unchanged while the rest is redesigned.",
+      "required": false
+    },
+    {
+      "name": "keepFixedResiduesInPlace",
+      "type": "boolean",
+      "default": true,
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Keeps the residues you chose exactly as uploaded, atoms included. Off keeps only their amino acid.",
+      "required": false
+    },
+    {
+      "name": "helixResidues",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Residues that should come out as helix.",
+      "required": false
+    },
+    {
+      "name": "strandResidues",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Residues that should come out as beta strand.",
+      "required": false
+    },
+    {
+      "name": "loopResidues",
+      "tasks": [
+        "existing-structure"
+      ],
+      "description": "Residues that should come out as loop.",
+      "required": false
+    },
+    {
+      "name": "numDesigns",
+      "productionScale": 1000,
+      "type": "number",
+      "default": 8,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Number of designs to generate. A production campaign is ~1,000 designs; try ~100 first. Above 100 splits into several jobs; Reward Search allows at most 16.",
+      "required": false
+    },
+    {
+      "name": "samplingEffort",
+      "options": [
+        "thinking_low",
+        "thinking_medium",
+        "thinking_high"
+      ],
+      "default": {
+        "binder-design": "thinking_medium",
+        "unconditional": "thinking_medium",
+        "motif-scaffolding": "thinking_medium",
+        "enzyme-design": "thinking_medium",
+        "small-molecule-binder": "thinking_medium",
+        "dna-binder": "thinking_medium",
+        "nanobody-design": "thinking_high",
+        "antibody-design": "thinking_medium",
+        "tcr-design": "thinking_medium",
+        "rna-secondary-structure": "thinking_medium",
+        "existing-structure": "thinking_medium",
+        "custom-conditions": "thinking_medium"
+      },
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "How much computation to spend refining each design.",
+      "required": false
+    },
+    {
+      "name": "samplingSteps",
+      "type": "number",
+      "default": 60,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Sampling steps per design, 60 to 120. The paper uses 60; other values can change quality.",
+      "required": false
+    },
+    {
+      "name": "searchPreset",
+      "default": "off",
+      "options": [
+        "off",
+        "interface-contacts",
+        "low-clash",
+        "oracle-final"
+      ],
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "existing-structure",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "custom-conditions"
+      ],
+      "description": "Makes several candidates per design and keeps the best by a built-in reward.",
+      "required": false
+    },
+    {
+      "name": "searchBeamWidth",
+      "type": "number",
+      "default": 1,
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "existing-structure",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "custom-conditions"
+      ],
+      "description": "How many of the best candidates the search keeps after each scoring round, 1 to 4. You get this many designs back for each design you request.",
+      "required": false
+    },
+    {
+      "name": "searchBranches",
+      "type": "number",
+      "default": 2,
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "existing-structure",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "custom-conditions"
+      ],
+      "description": "How many new candidates each kept candidate spawns before the next scoring round, 1 to 4. More branches search more widely; Best by refolding needs at least 2.",
+      "required": false
+    },
+    {
+      "name": "deterministicSampling",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Samples without added noise, so the same seed gives matching designs to within sampling tolerance.",
+      "required": false
+    },
+    {
+      "name": "backboneTemperature",
+      "type": "number",
+      "default": 1,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Backbone noise while sampling, 0.01 to 1.5. Higher gives more varied folds and can lower designability.",
+      "required": false
+    },
+    {
+      "name": "sequenceTemperature",
+      "type": "number",
+      "default": 1,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Sequence and side-chain noise while sampling, 0.01 to 5. Higher gives more varied sequences.",
+      "required": false
+    },
+    {
+      "name": "seed",
+      "type": "number",
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Repeats a run to within sampling tolerance. Blank gives a new result each time.",
+      "required": false
+    },
+    {
+      "name": "tsrBackboneK",
+      "type": "number",
+      "default": 16,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "How far temporal score rescaling (TSR) lowers the backbone sampling temperature by the end of sampling. Higher lowers it more.",
+      "required": false
+    },
+    {
+      "name": "tsrBackboneSigma",
+      "type": "number",
+      "default": 3,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "How fast temporal score rescaling (TSR) reaches its lowest backbone sampling temperature. Higher is faster.",
+      "required": false
+    },
+    {
+      "name": "tsrLatentK",
+      "type": "number",
+      "default": 4,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "How far temporal score rescaling (TSR) lowers the sequence and side-chain sampling temperature by the end of sampling. Higher lowers it more.",
+      "required": false
+    },
+    {
+      "name": "tsrLatentSigma",
+      "type": "number",
+      "default": 12,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "How fast temporal score rescaling (TSR) reaches its lowest sequence and side-chain sampling temperature. Higher is faster.",
+      "required": false
+    },
+    {
+      "name": "excludeAminoAcids",
+      "list": true,
+      "options": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "V",
+        "W",
+        "Y"
+      ],
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "existing-structure"
+      ],
+      "description": "Amino acids to avoid, such as cysteine. A bias, not a ban: one can still appear where the input structure calls for it, such as a disulfide. Kept residues are unaffected, and antibody, nanobody and TCR design bias only the new loops.",
+      "required": false
+    },
+    {
+      "name": "favorAminoAcids",
+      "list": true,
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder"
+      ],
+      "description": "Amino acids to favor, such as tryptophan and tyrosine, each as a percent of positions. A bias, not a guarantee; the percents add up to 100 or less.",
+      "required": false
+    },
+    {
+      "name": "clusterDesigns",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Groups designs by structure with Foldseek and adds a cluster ID, plus the clustered pass rate for tasks with pass limits. Jobs split from a large request are clustered separately.",
+      "required": false
+    },
+    {
+      "name": "preOracleFilters",
+      "type": "boolean",
+      "default": true,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Removes designs that break a condition you set, such as a changed fixed sequence, or that contain an unknown residue, before they are scored. Off keeps every design you asked for.",
+      "required": false
+    },
+    {
+      "name": "refoldDesigns",
+      "type": "boolean",
+      "default": true,
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "motif-scaffolding",
+        "enzyme-design",
+        "nanobody-design",
+        "existing-structure",
+        "custom-conditions",
+        "score-structures"
+      ],
+      "description": "Re-predicts each design from its sequence with OpenFold3 and compares it with the design, adding refold metrics and, for tasks with pass limits, the pass columns.",
+      "required": false
+    },
+    {
+      "name": "passInterfacePae",
+      "type": "number",
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "enzyme-design"
+      ],
+      "description": "Highest interface error, in \u00c5, at which a refolded design counts as passed. Blank uses the authors' limit: 1.5 \u00c5, or 2.0 \u00c5 for nanobodies.",
+      "required": false
+    },
+    {
+      "name": "passBackboneRmsd",
+      "type": "number",
+      "tasks": [
+        "unconditional",
+        "small-molecule-binder",
+        "motif-scaffolding",
+        "enzyme-design"
+      ],
+      "description": "Highest backbone RMSD, in \u00c5, between a design and its refold to count as passed. Blank uses the authors' limit: 1.5 \u00c5, or 2.0 \u00c5 for motif scaffolding and enzymes.",
+      "required": false
+    },
+    {
+      "name": "passBinderRmsd",
+      "type": "number",
+      "tasks": [
+        "binder-design",
+        "dna-binder",
+        "nanobody-design"
+      ],
+      "description": "Highest binder RMSD, in \u00c5, between a design and its refold, aligned on the target. Blank uses the authors' limit: 2.5 \u00c5 for binders, 2.0 \u00c5 for nanobodies, 8.0 \u00c5 for DNA binders.",
+      "required": false
+    },
+    {
+      "name": "passMotifRmsd",
+      "type": "number",
+      "tasks": [
+        "motif-scaffolding",
+        "enzyme-design"
+      ],
+      "description": "Highest all-atom motif RMSD, in \u00c5, between a design and its refold. Blank uses the authors' limit: 2.0 \u00c5 for motif scaffolding, 1.5 \u00c5 for enzymes.",
+      "required": false
+    },
+    {
+      "name": "avoidTargetFiles",
+      "type": "file",
+      "list": true,
+      "extension": [
+        "pdb"
+      ],
+      "tasks": [
+        "binder-design"
+      ],
+      "description": "Related proteins the binder should not bind, such as other family members. Up to 6 across both lists.",
+      "required": false
+    },
+    {
+      "name": "alsoBindTargetFiles",
+      "type": "file",
+      "list": true,
+      "extension": [
+        "pdb"
+      ],
+      "tasks": [
+        "binder-design"
+      ],
+      "description": "Other versions of the target the binder should also bind, such as the same protein from another species. Up to 6 across both lists.",
+      "required": false
+    },
+    {
+      "name": "checkApoFold",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder"
+      ],
+      "description": "Folds each binder on its own, without the target, and reports how far its shape moves; lower means it keeps its shape.",
+      "required": false
+    },
+    {
+      "name": "interfaceEnergy",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "binder-design",
+        "small-molecule-binder"
+      ],
+      "description": "Adds the physics-based energy of the contacts between the binder and its target or ligand. Lower is more favorable.",
+      "required": false
+    },
+    {
+      "name": "developabilityMetrics",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "unconditional",
+        "binder-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "motif-scaffolding",
+        "enzyme-design",
+        "existing-structure",
+        "custom-conditions",
+        "nanobody-design"
+      ],
+      "description": "Adds GRAVY (average hydrophobicity, lower is more soluble) and the instability index (below 40 predicts a stable protein). Both are left blank for multi-chain designs.",
+      "required": false
+    },
+    {
+      "name": "saveTrajectory",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "binder-design",
+        "unconditional",
+        "motif-scaffolding",
+        "enzyme-design",
+        "small-molecule-binder",
+        "dna-binder",
+        "nanobody-design",
+        "antibody-design",
+        "tcr-design",
+        "rna-secondary-structure",
+        "existing-structure",
+        "custom-conditions"
+      ],
+      "description": "Saves the generation path as a C-alpha trajectory, one frame every 10 steps. If saving fails, the job reruns without it.",
+      "required": false
+    }
+  ],
+  "description": "Generates protein structure and sequence together, from scratch or around a target, motif or ligand.",
+  "outputTypes": [
+    "csv",
+    "pdb",
+    "sequence"
+  ],
+  "taskType": "generate",
+  "outputs": {
+    "produces": [
+      "pdb",
+      "sequence"
+    ],
+    "mainCSV": "results.csv",
+    "columns": [
+      {
+        "name": "design_id",
+        "type": "string",
+        "displayName": "Design",
+        "description": "Identifier for this design within the job."
+      },
+      {
+        "name": "task",
+        "type": "string",
+        "displayName": "Task",
+        "description": "The design task this design was generated for."
+      },
+      {
+        "name": "output_pdb",
+        "type": "pdb",
+        "displayName": "Design Structure",
+        "description": "Generated structure for this design."
+      },
+      {
+        "name": "output_cif",
+        "type": "string",
+        "displayName": "Design Structure (mmCIF)",
+        "description": "Same design in mmCIF, which additionally records which part of the input each atom came from."
+      },
+      {
+        "name": "sequence",
+        "type": "sequence",
+        "displayName": "Designed Sequence",
+        "description": "Amino-acid sequence of the chain the model designed, so the table can be read without opening the structure."
+      },
+      {
+        "name": "chain_of_interest",
+        "type": "string",
+        "displayName": "Designed Chain",
+        "description": "Chain ID of the designed chain in the output structure."
+      },
+      {
+        "name": "passed",
+        "type": "number",
+        "displayName": "Passed",
+        "description": "1 if the refolded design met every criterion the model's authors use for this task, 0 if it missed one, blank if it could not be judged.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "limits_used",
+        "type": "string",
+        "displayName": "Pass Limits Used",
+        "description": "The limits behind the Passed column, with the ones you changed marked. The same on every row."
+      },
+      {
+        "name": "clash_metrics.frac_atoms_clashing_1p5A",
+        "type": "number",
+        "displayName": "Clashing Atoms",
+        "description": "Fraction of atoms sitting closer than 1.5 angstroms to another atom. A physically sensible design is near zero.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "bond_length_metrics.bond_length.frac_unreasonable",
+        "type": "number",
+        "displayName": "Unreasonable Bonds",
+        "description": "Fraction of bonds that are longer than a physical bond can be for their elements. Bonds that are too short are not counted.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "sequence_adherence.n_violations",
+        "type": "number",
+        "displayName": "Sequence Violations",
+        "description": "Number of residues you fixed whose amino acid changed in the design. Zero means every fixed residue was kept.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "sequence_adherence.sequence_adherence",
+        "type": "number",
+        "displayName": "Sequence Adherence",
+        "description": "Fraction of the residues you fixed that kept their amino acid. One means every constraint was met.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "hotspot_obedience.hotspot_obedience",
+        "type": "number",
+        "displayName": "Hotspot Obedience",
+        "description": "Fraction of the hotspot atoms you marked that have a binder atom within 4.5 \u00c5. Only meaningful when hotspots were given.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "design_motif_allatom_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Motif RMSD",
+        "description": "All-atom deviation, in angstroms, between the motif you held fixed and where it ended up in the design. Lower is closer to what you asked for.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "design_unindexed_motif_allatom_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Placed Motif RMSD",
+        "description": "The same deviation, in angstroms, restricted to motif atoms whose position in the sequence the model chose.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "unindexed_insertion_mapping.n_unmapped_tokens",
+        "type": "number",
+        "displayName": "Unplaced Motif Residues",
+        "description": "Number of motif residues the model did not place in the designed chain. Zero means every one was placed.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "unindexed_insertion_mapping.n_sequence_mismatches",
+        "type": "number",
+        "displayName": "Motif Sequence Mismatches",
+        "description": "Number of placed motif residues whose amino acid differs from the one you asked for.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "motif_residue_map",
+        "type": "string",
+        "displayName": "Motif Residue Map",
+        "description": "Where each motif residue of your input ended up in the designed chain, as input residue to output residue."
+      },
+      {
+        "name": "ca_rmsd_to_input.rmsd",
+        "type": "number",
+        "displayName": "C-alpha RMSD To Input",
+        "description": "Backbone deviation, in angstroms, between this design and your input over C-alpha atoms. Lower means closer to your input; for Structure Prediction, how far the predicted fold is from yours.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "sequence_similarity_to_input.sequence_identity_to_input",
+        "type": "number",
+        "displayName": "Sequence Identity To Input",
+        "description": "Fraction of positions where the designed sequence matches your input, 0 to 1. Higher means more of the input was kept.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "contact_molecular_surface.contact_ms",
+        "type": "number",
+        "displayName": "Interface Contact Area",
+        "description": "Distance-weighted contact surface between the designed chain and its target. Higher means more contact.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "contact_molecular_surface.contact_ms_binder",
+        "type": "number",
+        "displayName": "Interface Contact Area (Binder Side)",
+        "description": "The same contact surface measured from the binder side.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "identity_to_target",
+        "type": "number",
+        "displayName": "Identity to Target",
+        "description": "Highest fraction of positions, from 0 to 1, where the designed chain matches an ungapped, same-length stretch of a protein target chain. Near 1 means a copy of the target. Blank without a target.",
+        "filterable": true,
+        "tasks": [
+          "antibody-design",
+          "binder-design",
+          "custom-conditions",
+          "dna-binder",
+          "nanobody-design",
+          "score-structures",
+          "small-molecule-binder",
+          "tcr-design"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "interchain_interactions.hbond_atom_pair_count_coi",
+        "type": "number",
+        "displayName": "Interface Hydrogen Bonds",
+        "description": "Number of hydrogen-bonded atom pairs between the designed chain and everything else in the system.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.saltbridge_residue_pair_count_coi",
+        "type": "number",
+        "displayName": "Interface Salt Bridges",
+        "description": "Number of salt-bridged residue pairs between the designed chain and its partner.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.hydrophobic_atom_pair_count_coi",
+        "type": "number",
+        "displayName": "Interface Hydrophobic Contacts",
+        "description": "Number of hydrophobic atom pairs across the interface the designed chain makes.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pistack_residue_pair_count_coi",
+        "type": "number",
+        "displayName": "Interface Pi Stacking",
+        "description": "Number of pi-stacked residue pairs between the designed chain and its partner.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pication_residue_pair_count_coi",
+        "type": "number",
+        "displayName": "Interface Cation-Pi",
+        "description": "Number of cation-pi residue pairs between the designed chain and its partner.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.metal_coord_atom_pair_count_coi",
+        "type": "number",
+        "displayName": "Interface Metal Coordination",
+        "description": "Number of metal-coordinating atom pairs between the designed chain and its partner.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.hbond_donor_conditioning_adherence",
+        "type": "number",
+        "displayName": "Hydrogen Bond Donor Adherence",
+        "description": "Fraction of atoms you asked to donate a hydrogen bond that do. Only reported when you set hydrogen bond conditions.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.hbond_acceptor_conditioning_adherence",
+        "type": "number",
+        "displayName": "Hydrogen Bond Acceptor Adherence",
+        "description": "Fraction of atoms you asked to accept a hydrogen bond that do. Only reported when you set hydrogen bond conditions.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.hbond_simultaneous_donor_acceptor_conditioning_adherence",
+        "type": "number",
+        "displayName": "Hydrogen Bond Both-Role Adherence",
+        "description": "Fraction of atoms you asked to both donate and accept that do both, in different bonds.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pistack_conditioning_adherence",
+        "type": "number",
+        "displayName": "Pi Stacking Adherence",
+        "description": "Fraction of the rings you asked to pi-stack that do. Only reported when you set this condition.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pication_aromatic_conditioning_adherence",
+        "type": "number",
+        "displayName": "Cation-Pi Ring Adherence",
+        "description": "Fraction of the rings you asked to take part in a cation-pi contact that do.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pication_cation_conditioning_adherence",
+        "type": "number",
+        "displayName": "Cation-Pi Cation Adherence",
+        "description": "Fraction of the cations you asked to take part in a cation-pi contact that do.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.saltbridge_conditioning_adherence",
+        "type": "number",
+        "displayName": "Salt Bridge Adherence",
+        "description": "Fraction of the atoms you asked to form a salt bridge that do. Only reported when you set this condition.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.hydrophobic_conditioning_adherence",
+        "type": "number",
+        "displayName": "Hydrophobic Contact Adherence",
+        "description": "Fraction of the atoms you asked to make a hydrophobic contact that do. Only reported when you set this condition.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.metal_coord_conditioning_adherence",
+        "type": "number",
+        "displayName": "Metal Coordination Adherence",
+        "description": "Fraction of the atoms you asked to coordinate a metal that do. Only reported when you set this condition.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "rasa_adherence.buried_conditioning_adherence",
+        "type": "number",
+        "displayName": "Buried Residue Adherence",
+        "description": "Fraction of the residues or ligand atoms you asked to be buried that are. Only reported when you set burial conditions.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "rasa_adherence.intermediate_conditioning_adherence",
+        "type": "number",
+        "displayName": "Partly Buried Residue Adherence",
+        "description": "Fraction of the residues or ligand atoms you asked to be partly buried that are.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "rasa_adherence.exposed_conditioning_adherence",
+        "type": "number",
+        "displayName": "Exposed Residue Adherence",
+        "description": "Fraction of the residues or ligand atoms you asked to be exposed that are.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "centroid_conditioning_adherence.centroid_conditioning_mae",
+        "type": "number",
+        "displayName": "Chain Centroid Error",
+        "description": "Average distance, in angstroms, between the chain centroid you requested and where it ended up. Lower is closer.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "sequence_probability_adherence.zero_adherence",
+        "type": "number",
+        "displayName": "Exclusion Adherence",
+        "description": "Fraction of your amino acid exclusions that the design respected. One means no excluded amino acid appears where you excluded it.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "sequence_probability_adherence.n_zero_violations",
+        "type": "number",
+        "displayName": "Exclusion Violations",
+        "description": "Number of times an excluded amino acid appears at a position where you excluded it.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "sequence_probability_adherence.one_adherence",
+        "type": "number",
+        "displayName": "Required Residue Adherence",
+        "description": "Fraction of the positions where you required one amino acid that got it. Only reported when you set this condition.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "sequence_probability_adherence.n_one_violations",
+        "type": "number",
+        "displayName": "Required Residue Violations",
+        "description": "Number of positions where you required one amino acid and got another.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "foldseek_cluster_id",
+        "type": "string",
+        "displayName": "Structural Cluster",
+        "description": "Cluster ID from Foldseek. Designs with the same ID have similar folds. Only reported with Cluster Designs."
+      },
+      {
+        "name": "cluster_diversity",
+        "type": "number",
+        "displayName": "Cluster Diversity",
+        "description": "Distinct structural clusters divided by the number of designs, 0 to 1. Higher means a more diverse set. Only reported with Cluster Designs.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "clustered_pass_rate",
+        "type": "number",
+        "displayName": "Clustered Pass Rate",
+        "description": "Distinct structure clusters among the designs that passed, divided by the designs attempted, from 0 to 1. The same on every row. Closer to 1 means more varied successes.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "clusters_passed",
+        "type": "number",
+        "displayName": "Passing Clusters",
+        "description": "Number of distinct structure clusters among the designs that passed. The same on every row.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "cdr_sequences",
+        "type": "string",
+        "displayName": "Designed Loops",
+        "description": "The residues the model designed in each loop you replaced, one entry per loop in order along each chain, for example H-CDR1:GRTFSYNP;H-CDR2:ISRTGGST.",
+        "tasks": [
+          "antibody-design",
+          "nanobody-design",
+          "tcr-design"
+        ]
+      },
+      {
+        "name": "sse_distribution.helix_fraction_coi",
+        "type": "number",
+        "displayName": "Helix Fraction",
+        "description": "Fraction of the designed chain that folded into helix.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "sse_distribution.sheet_fraction_coi",
+        "type": "number",
+        "displayName": "Sheet Fraction",
+        "description": "Fraction of the designed chain that folded into sheet.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "sse_distribution.loop_fraction_coi",
+        "type": "number",
+        "displayName": "Loop Fraction",
+        "description": "Fraction of the designed chain that is loop rather than helix or sheet.",
+        "validRange": [
+          0,
+          1
+        ],
+        "filterable": true
+      },
+      {
+        "name": "designed_chain",
+        "type": "string",
+        "displayName": "Designed Chain",
+        "description": "Chain ID of the designed chain in the structure files. Several chains are joined with colons, in the order of the sequence."
+      },
+      {
+        "name": "sse_distribution.num_ss_elements_coi",
+        "type": "number",
+        "displayName": "Secondary Structure Segments",
+        "description": "Number of separate helix, sheet and loop segments along the designed chain.",
+        "filterable": true
+      },
+      {
+        "name": "sse_distribution.helix_fraction",
+        "type": "number",
+        "displayName": "Helix Fraction (All Chains)",
+        "description": "Fraction of every protein chain in the structure, target included, that is helix.",
+        "filterable": true
+      },
+      {
+        "name": "sse_distribution.sheet_fraction",
+        "type": "number",
+        "displayName": "Sheet Fraction (All Chains)",
+        "description": "Fraction of every protein chain in the structure, target included, that is sheet.",
+        "filterable": true
+      },
+      {
+        "name": "sse_distribution.loop_fraction",
+        "type": "number",
+        "displayName": "Loop Fraction (All Chains)",
+        "description": "Fraction of every protein chain in the structure, target included, that is loop.",
+        "filterable": true
+      },
+      {
+        "name": "sse_distribution.num_ss_elements",
+        "type": "number",
+        "displayName": "Secondary Structure Segments (All Chains)",
+        "description": "Number of separate helix, sheet and loop segments along every protein chain in the structure.",
+        "filterable": true
+      },
+      {
+        "name": "n_unmapped_tokens",
+        "type": "number",
+        "displayName": "Motif Residues Not Found",
+        "description": "Number of motif residues you gave that could not be found in the design. Zero means all were located.",
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "interchain_interactions.hbond_atom_count_coi",
+        "type": "number",
+        "displayName": "Interface Hydrogen-Bonding Atoms",
+        "description": "Number of atoms in the designed chain that take part in hydrogen bonds with other chains.",
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pistack_residue_count_coi",
+        "type": "number",
+        "displayName": "Interface Pi-Stacking Residues",
+        "description": "Number of residues in the designed chain that pi-stack with another chain.",
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.pication_residue_count_coi",
+        "type": "number",
+        "displayName": "Interface Pi-Cation Residues",
+        "description": "Number of residues in the designed chain that make a pi-cation contact with another chain.",
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.saltbridge_residue_count_coi",
+        "type": "number",
+        "displayName": "Interface Salt Bridge Residues",
+        "description": "Number of residues in the designed chain that form a salt bridge with another chain.",
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.hydrophobic_atom_count_coi",
+        "type": "number",
+        "displayName": "Interface Hydrophobic Atoms",
+        "description": "Number of atoms in the designed chain that make hydrophobic contacts with other chains.",
+        "filterable": true
+      },
+      {
+        "name": "interchain_interactions.metal_coord_atom_count_coi",
+        "type": "number",
+        "displayName": "Interface Metal-Coordinating Atoms",
+        "description": "Number of atoms in the designed chain that coordinate a metal held by another chain.",
+        "filterable": true
+      },
+      {
+        "name": "sse_accuracy.overall_accuracy",
+        "type": "number",
+        "displayName": "Secondary Structure Accuracy",
+        "description": "Fraction of the residues you gave a secondary structure that came out as asked.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "sse_accuracy.helix_recall",
+        "type": "number",
+        "displayName": "Helix Recall",
+        "description": "Fraction of the residues you asked to be helix that came out helix.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "sse_accuracy.sheet_recall",
+        "type": "number",
+        "displayName": "Sheet Recall",
+        "description": "Fraction of the residues you asked to be sheet that came out sheet.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "sse_accuracy.loop_recall",
+        "type": "number",
+        "displayName": "Loop Recall",
+        "description": "Fraction of the residues you asked to be loop that came out loop.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "sse_accuracy.n_conditioned_atoms",
+        "type": "number",
+        "displayName": "Secondary Structure Constrained Atoms",
+        "description": "Number of atoms you gave a secondary-structure condition.",
+        "filterable": true
+      },
+      {
+        "name": "sequence_probability_adherence.n_zero_conditions",
+        "type": "number",
+        "displayName": "Exclusions Requested",
+        "description": "Number of position and identity pairs you excluded.",
+        "filterable": true
+      },
+      {
+        "name": "sequence_probability_adherence.n_one_conditions",
+        "type": "number",
+        "displayName": "Required Identities",
+        "description": "Number of positions where you required one specific identity.",
+        "filterable": true
+      },
+      {
+        "name": "search.reward",
+        "type": "number",
+        "displayName": "Search Score",
+        "description": "Score the guided search gave this design when choosing which candidates to keep. Higher ranked better, and the scale depends on the search setting you chose.",
+        "filterable": true,
+        "lowIsGood": false
+      },
+      {
+        "name": "search_stage",
+        "type": "string",
+        "displayName": "Search Stage",
+        "description": "Which part of the guided search produced this design: the final selection or a candidate kept from an earlier checkpoint."
+      },
+      {
+        "name": "pass_ppi_binder_ptm",
+        "type": "number",
+        "displayName": "Pass: pTM",
+        "description": "1 if the limit on binder pTM (at least 80) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ppi_interface_pae",
+        "type": "number",
+        "displayName": "Pass: iPAE",
+        "description": "1 if the limit on minimum interface PAE (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ppi_binder_rmsd",
+        "type": "number",
+        "displayName": "Pass: Binder RMSD",
+        "description": "1 if the limit on binder RMSD after aligning the target backbone (at most 2.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "refolded_backbone_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Refolded Backbone RMSD",
+        "description": "Backbone deviation, in \u00c5, between the design and its refolded structure. Lower means the designed sequence folds back into the design.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "custom-conditions",
+          "dna-binder",
+          "enzyme-design",
+          "existing-structure",
+          "motif-scaffolding",
+          "nanobody-design",
+          "score-structures",
+          "small-molecule-binder",
+          "unconditional"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "refolded_target_aligned_binder_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Binder RMSD (Target Aligned)",
+        "description": "All-atom deviation, in \u00c5, of the binder between the design and its refold after aligning on the target. Lower is closer.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "dna-binder",
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "refolded_target_backbone_aligned_binder_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Binder RMSD (Target Backbone Aligned)",
+        "description": "Deviation, in \u00c5, of the binder between the design and its refold after aligning on the target backbone. Lower is closer.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "score-structures"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "oracle_ppi.plddt_coi",
+        "type": "number",
+        "displayName": "Refold Confidence",
+        "description": "How confident the folding model is in the designed chain in the refold, from 0 to 100. Higher is more confident.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle_ppi.ptm_coi",
+        "type": "number",
+        "displayName": "Refold Chain pTM",
+        "description": "Predicted TM-score of the designed chain in the refold, from 0 to 100. Higher is better.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle_ppi.min_ipae_coi",
+        "type": "number",
+        "displayName": "Refold Interface Error",
+        "description": "Lowest predicted aligned error, in \u00c5, between the designed chain and another chain in the refold. Lower means a more confident interface.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "oracle_ppi.iptm_coi",
+        "type": "number",
+        "displayName": "Refold Interface pTM",
+        "description": "Predicted interface TM-score between the designed chain and the rest of the refold, from 0 to 100. Higher is better.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "interface_energy.interface_ddg",
+        "type": "number",
+        "displayName": "Interface Energy",
+        "description": "Physics-based energy of the contacts between the designed chain and its partner, in Rosetta energy units. Lower is more favorable. Compare designs within one job.",
+        "units": "REU",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "interface_energy.fa_elec",
+        "type": "number",
+        "displayName": "Interface Electrostatic Energy",
+        "description": "Electrostatic part of the interface energy. Lower is more favorable.",
+        "units": "REU",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "interface_energy.n_interface_elec_interactions",
+        "type": "number",
+        "displayName": "Interface Electrostatic Contacts",
+        "description": "Number of residue pairs across the interface whose electrostatic energy is below -0.2. More means more favorable charge contacts.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "sequence_developability.gravy",
+        "type": "number",
+        "displayName": "GRAVY",
+        "description": "Average hydrophobicity of the designed sequence on the Kyte-Doolittle scale. Lower is more soluble. Blank for designs with several chains.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "custom-conditions",
+          "dna-binder",
+          "enzyme-design",
+          "existing-structure",
+          "motif-scaffolding",
+          "nanobody-design",
+          "small-molecule-binder",
+          "unconditional"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "sequence_developability.instability_index",
+        "type": "number",
+        "displayName": "Instability Index",
+        "description": "Instability predicted from the designed sequence's neighboring residue pairs. Below 40 predicts a stable protein. Blank for designs with several chains.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "custom-conditions",
+          "dna-binder",
+          "enzyme-design",
+          "existing-structure",
+          "motif-scaffolding",
+          "nanobody-design",
+          "small-molecule-binder",
+          "unconditional"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "favored_residues",
+        "type": "string",
+        "displayName": "Favored Amino Acids",
+        "description": "Share of the designed chain that is each amino acid you asked to favor, with the share you asked for, for example W 12% (asked 10%).",
+        "tasks": [
+          "binder-design",
+          "dna-binder",
+          "small-molecule-binder",
+          "unconditional"
+        ]
+      },
+      {
+        "name": "specificity_passed",
+        "type": "number",
+        "displayName": "Specificity Check",
+        "description": "1 if every structure you named behaved as you asked, 0 if one did not, blank if one could not be scored.",
+        "filterable": true,
+        "tasks": [
+          "binder-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "closest_avoided_target",
+        "type": "string",
+        "displayName": "Closest Avoided Structure",
+        "description": "The structure to avoid that the design came closest to binding, named after its file. Blank if you named none.",
+        "tasks": [
+          "binder-design"
+        ]
+      },
+      {
+        "name": "closest_avoided_interface_error",
+        "type": "number",
+        "displayName": "Closest Avoided Interface Error",
+        "description": "Lowest predicted aligned error, in \u00c5, at the interface with the avoided structure the design came closest to binding. Higher means the folding model finds no interface.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "weakest_wanted_target",
+        "type": "string",
+        "displayName": "Weakest Wanted Structure",
+        "description": "The structure to also bind that the design bound least well, named after its file. Blank if you named none.",
+        "tasks": [
+          "binder-design"
+        ]
+      },
+      {
+        "name": "weakest_wanted_interface_error",
+        "type": "number",
+        "displayName": "Weakest Wanted Interface Error",
+        "description": "Lowest predicted aligned error, in \u00c5, at the interface with the structure to also bind that the design bound least well. Lower means a more confident interface.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "refolded_apo_holo_rmsd.apo.rmsd",
+        "type": "number",
+        "displayName": "Alone vs Complex RMSD",
+        "description": "Backbone deviation, in \u00c5, of the designed chain between its fold on its own and its fold in the complex. Lower means the design keeps its shape without the target.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "dna-binder",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "oracle_apo.apo.plddt_coi",
+        "type": "number",
+        "displayName": "Alone Confidence",
+        "description": "How confident the folding model is in the designed chain folded on its own, from 0 to 100. Higher is more confident.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "dna-binder",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_apo_fold",
+        "type": "number",
+        "displayName": "Holds Fold Alone",
+        "description": "1 if the design's fold on its own stayed within 1.5 \u00c5 of its fold in the complex, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "binder-design",
+          "dna-binder",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle.plddt_coi",
+        "type": "number",
+        "displayName": "Refold Confidence",
+        "description": "How confident the folding model is in the designed chain in the refold, from 0 to 100. Higher is more confident.",
+        "filterable": true,
+        "tasks": [
+          "custom-conditions",
+          "enzyme-design",
+          "existing-structure",
+          "motif-scaffolding",
+          "score-structures",
+          "small-molecule-binder",
+          "unconditional"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle.ptm_coi",
+        "type": "number",
+        "displayName": "Refold Chain pTM",
+        "description": "Predicted TM-score of the designed chain in the refold, from 0 to 100. Higher is better.",
+        "filterable": true,
+        "tasks": [
+          "custom-conditions",
+          "enzyme-design",
+          "existing-structure",
+          "motif-scaffolding",
+          "score-structures",
+          "small-molecule-binder",
+          "unconditional"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_dna_interface_pae",
+        "type": "number",
+        "displayName": "Pass: iPAE",
+        "description": "1 if the limit on minimum interface PAE (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "dna-binder",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_dna_binder_rmsd",
+        "type": "number",
+        "displayName": "Pass: Binder RMSD",
+        "description": "1 if the limit on binder RMSD after aligning the target (at most 8 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "dna-binder",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle_dna.plddt_coi",
+        "type": "number",
+        "displayName": "Refold Confidence",
+        "description": "How confident the folding model is in the designed chain in the refold, from 0 to 100. Higher is more confident.",
+        "filterable": true,
+        "tasks": [
+          "dna-binder",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle_dna.ptm_coi",
+        "type": "number",
+        "displayName": "Refold Chain pTM",
+        "description": "Predicted TM-score of the designed chain in the refold, from 0 to 100. Higher is better.",
+        "filterable": true,
+        "tasks": [
+          "dna-binder",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "oracle_dna.min_ipae_coi",
+        "type": "number",
+        "displayName": "Refold Interface Error",
+        "description": "Lowest predicted aligned error, in \u00c5, between the designed chain and another chain in the refold. Lower means a more confident interface.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "dna-binder",
+          "score-structures"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "oracle_dna.iptm_coi",
+        "type": "number",
+        "displayName": "Refold Interface pTM",
+        "description": "Predicted interface TM-score between the designed chain and the rest of the refold, from 0 to 100. Higher is better.",
+        "filterable": true,
+        "tasks": [
+          "dna-binder",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ame_interface_pae",
+        "type": "number",
+        "displayName": "Pass: iPAE",
+        "description": "1 if the limit on minimum interface PAE (below 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ame_backbone_rmsd",
+        "type": "number",
+        "displayName": "Pass: Refold RMSD",
+        "description": "1 if the limit on refolded backbone RMSD (at most 2 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ame_motif_allatom_rmsd",
+        "type": "number",
+        "displayName": "Pass: Motif RMSD",
+        "description": "1 if the limit on motif all-atom RMSD (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ame_ligand_clashes",
+        "type": "number",
+        "displayName": "Pass: Clashes",
+        "description": "1 if the limit on clashes between protein and ligand (at most 0) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ame_no_ligand_backbone_rmsd",
+        "type": "number",
+        "displayName": "Pass: Refold RMSD",
+        "description": "1 if the limit on refolded backbone RMSD (at most 2 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_ame_no_ligand_motif_allatom_rmsd",
+        "type": "number",
+        "displayName": "Pass: Motif RMSD",
+        "description": "1 if the limit on motif all-atom RMSD (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "refolded_motif_allatom_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Refolded Motif RMSD",
+        "description": "All-atom deviation, in \u00c5, of the motif between the design and its refold. Lower is closer.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design",
+          "motif-scaffolding"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A",
+        "type": "number",
+        "displayName": "Protein-Ligand Clashes",
+        "description": "Fraction of atoms closer than 1.5 \u00c5 between the protein and its ligand. Lower is better and zero means none.",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "oracle.min_ipae_coi",
+        "type": "number",
+        "displayName": "Refold Interface Error",
+        "description": "Lowest predicted aligned error, in \u00c5, between the designed chain and another chain in the refold. Lower means a more confident interface.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "enzyme-design",
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "structure_prediction_lddt.all_atom_lddt",
+        "type": "number",
+        "displayName": "Prediction Accuracy (lDDT)",
+        "description": "How closely the predicted structure matches the structure you uploaded, as all-atom lDDT from 0 to 1. Higher is closer. Blank if the atom counts differ.",
+        "filterable": true,
+        "tasks": [
+          "existing-structure"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_motif_scaffold_backbone_rmsd",
+        "type": "number",
+        "displayName": "Pass: Refold RMSD",
+        "description": "1 if the limit on refolded backbone RMSD (at most 2 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "motif-scaffolding"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_motif_scaffold_motif_allatom_rmsd",
+        "type": "number",
+        "displayName": "Pass: Motif RMSD",
+        "description": "1 if the limit on motif all-atom RMSD (at most 2 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "motif-scaffolding"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_motif_scaffold_motif_ca_rmsd",
+        "type": "number",
+        "displayName": "Pass: Motif CA RMSD",
+        "description": "1 if the limit on motif C-alpha RMSD (at most 1 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "motif-scaffolding"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "refolded_motif_ca_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Refolded Motif C-alpha RMSD",
+        "description": "C-alpha deviation, in \u00c5, of the motif between the design and its refold. Lower is closer.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "motif-scaffolding"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "pass_antibody_interface_pae",
+        "type": "number",
+        "displayName": "Pass: iPAE",
+        "description": "1 if the limit on minimum interface PAE (at most 2 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_antibody_binder_rmsd",
+        "type": "number",
+        "displayName": "Pass: Binder RMSD",
+        "description": "1 if the limit on binder RMSD after aligning the target (at most 2 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "antibody_contacts.cdr_contact_count",
+        "type": "number",
+        "displayName": "CDR Contacts",
+        "description": "CDR residues of the design with a C-alpha within 7 \u00c5 of a target C-alpha, each counted once. CDRs here are the standard Chothia loops, narrower than the loops this job redesigned.",
+        "filterable": true,
+        "tasks": [
+          "nanobody-design",
+          "score-structures"
+        ]
+      },
+      {
+        "name": "antibody_contacts.fw_contact_count",
+        "type": "number",
+        "displayName": "Framework Contacts",
+        "description": "Framework residues of the design with a C-alpha within 7 \u00c5 of a target C-alpha. A framework contact is a loop-independent part of the binding surface.",
+        "filterable": true,
+        "tasks": [
+          "nanobody-design",
+          "score-structures"
+        ]
+      },
+      {
+        "name": "antibody_contacts.cdr_contact_fraction",
+        "type": "number",
+        "displayName": "CDR Contact Fraction",
+        "description": "Share of the design's contacting residues that sit in a CDR. Higher means the binding surface comes from the loops. Blank if nothing touches the target.",
+        "filterable": true,
+        "tasks": [
+          "nanobody-design",
+          "score-structures"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "nucleic_ss_adherence.pair_f1",
+        "type": "number",
+        "displayName": "Base-Pair Agreement",
+        "description": "How well the base pairs in the generated RNA match the pairs you asked for, from 0 to 1 (an F1 score over pair positions). One means every requested pair formed and no other did.",
+        "filterable": true,
+        "tasks": [
+          "rna-secondary-structure"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "nucleic_ss_adherence.loop_f1",
+        "type": "number",
+        "displayName": "Unpaired Agreement",
+        "description": "How well the residues you marked unpaired stayed unpaired in the generated RNA, from 0 to 1.",
+        "filterable": true,
+        "tasks": [
+          "rna-secondary-structure"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "nucleic_ss_adherence.weighted_f1",
+        "type": "number",
+        "displayName": "Secondary Structure Agreement",
+        "description": "Pair and unpaired agreement combined, weighted by how many of each you asked for, from 0 to 1.",
+        "filterable": true,
+        "tasks": [
+          "rna-secondary-structure"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_unconditional_backbone_rmsd",
+        "type": "number",
+        "displayName": "Pass: Refold RMSD",
+        "description": "1 if the limit on refolded backbone RMSD (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "unconditional"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_sm_binder_interface_pae",
+        "type": "number",
+        "displayName": "Pass: iPAE",
+        "description": "1 if the limit on minimum interface PAE (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_sm_binder_ligand_iptm",
+        "type": "number",
+        "displayName": "Pass: ipTM",
+        "description": "1 if the limit on ligand ipTM (at least 80) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_sm_binder_backbone_rmsd",
+        "type": "number",
+        "displayName": "Pass: Refold RMSD",
+        "description": "1 if the limit on refolded backbone RMSD (at most 1.5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "pass_sm_binder_ligand_rmsd",
+        "type": "number",
+        "displayName": "Pass: Ligand RMSD",
+        "description": "1 if the limit on ligand RMSD after aligning the backbone (at most 5 \u00c5) was met, 0 if not, blank if it could not be computed.",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "refolded_backbone_aligned_ligand_rmsd.rmsd",
+        "type": "number",
+        "displayName": "Refolded Ligand RMSD",
+        "description": "Deviation, in \u00c5, of the ligand between the design and its refold after aligning the backbone. Lower is closer.",
+        "units": "\u00c5",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "oracle.iptm_coi",
+        "type": "number",
+        "displayName": "Refold Interface pTM",
+        "description": "Predicted interface TM-score between the designed chain and the rest of the refold, from 0 to 100. Higher is better.",
+        "filterable": true,
+        "tasks": [
+          "score-structures",
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      },
+      {
+        "name": "interface_energy.hbond",
+        "type": "number",
+        "displayName": "Ligand Hydrogen-Bond Energy",
+        "description": "Hydrogen-bond part of the energy between the ligand and the protein. Lower is more favorable.",
+        "units": "REU",
+        "filterable": true,
+        "tasks": [
+          "small-molecule-binder"
+        ],
+        "lowIsGood": true
+      },
+      {
+        "name": "interface_energy.n_interface_hbonds",
+        "type": "number",
+        "displayName": "Ligand Hydrogen-Bond Contacts",
+        "description": "Number of residue pairs between the ligand and the protein whose hydrogen-bond energy is below -0.3. More means more hydrogen-bonded contacts.",
+        "filterable": true,
+        "tasks": [
+          "small-molecule-binder"
+        ],
+        "lowIsGood": false
+      }
+    ],
+    "byTask": {
+      "antibody-design": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "binder-design": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "custom-conditions": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "dna-binder": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "enzyme-design": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "existing-structure": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "motif-scaffolding": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "nanobody-design": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "rna-secondary-structure": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "score-structures": {
+        "mainCSV": "results.csv",
+        "taskType": "score",
+        "generates": []
+      },
+      "small-molecule-binder": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "tcr-design": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      },
+      "unconditional": {
+        "mainCSV": "results.csv",
+        "taskType": "generate",
+        "generates": [
+          "pdb",
+          "sequence"
+        ]
+      }
+    },
+    "byTaskNote": "This tool's output depends on the task it runs. byTask is authoritative for the task you set, and each entry is COMPLETE \u2014 a task that does not redeclare mainCSV/taskType inherits the tool's top-level value (the top-level `taskType` field and this block's `mainCSV`). The top-level taskType and this block's mainCSV/produces summarize ACROSS tasks \u2014 produces is the union over every task's output \u2014 as a column OR as a file alongside the CSV \u2014 and taskType/mainCSV are the tool's top-level declaration, which is not guaranteed to be the task selector's default. Do not read them as describing the run you are about to submit. `generates` is what a task creates fresh (empty for a scoring task, whose table may still echo its input). A column carrying a `tasks` list appears only in those tasks; an untagged column is simply not task-gated in the tool's declaration, which does not promise every task fills it \u2014 read `generates` for what a task actually produces. An ABSENT `generates` means the tool declared none for that task, not that the task generates nothing."
+  }
+}

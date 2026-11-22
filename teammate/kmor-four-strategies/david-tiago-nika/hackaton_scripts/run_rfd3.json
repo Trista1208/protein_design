@@ -1,0 +1,10 @@
+{
+  "type": "rfdiffusion3",
+  "jobName": "rfd3_1qji",
+  "input": "../test_pipeline/1qji_json.json",
+  "settings": {
+    "task": "json",
+    "jsonInputType": "file",
+    "numDesigns": 1
+  }
+}

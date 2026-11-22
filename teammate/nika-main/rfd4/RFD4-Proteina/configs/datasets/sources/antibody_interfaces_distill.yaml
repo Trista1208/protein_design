@@ -1,0 +1,31 @@
+# Antibody-antigen pairs predicted by ESMFold2: 20 seeds x 5 samples, 20 effective recurrence passes.
+# Highest-global-ipTM geometry-valid winner per pair; filtered by pLDDT, Ab-Ag PAE and contact count.
+defaults:
+  - backend_blob
+  - _self_
+
+name: antibody_interfaces_distill
+memory_map: true
+data: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/2026_09_18_antibody_antigen_esmfold2/examples.parquet
+
+columns_to_load:
+  - example_id
+  - interface_cluster
+  - n_standard_amino_acid_residues
+  - n_other_heavy_atoms
+  - overall_plddt
+  - pae_min_ab_ag
+  - n_contact_pairs
+  - cdr_contact_frac
+
+filters:
+  # ESMFold2 confidence is stored on a 0–1 scale.
+  - "overall_plddt >= 0.75"
+  - "pae_min_ab_ag < 3"
+  - "n_contact_pairs >= 25"
+  - "cdr_contact_frac >= 0.25"
+
+loader:
+  blob_dir: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/2026_09_18_antibody_antigen_esmfold2/blob
+  parser_args:
+    extra_fields: [ig_region]

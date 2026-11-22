@@ -1,0 +1,21 @@
+# TCR / peptide-MHC interfaces, predicted with a fine-tuned AF2 model.
+
+defaults:
+  - backend_blob
+  - _self_
+
+name: tcr_interfaces_distill
+data: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/2026_09_09_tcr_af2/examples.parquet
+
+loader:
+  blob_dir: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/synthetic/2026_09_09_tcr_af2/blob
+  record_id_colname: path
+
+  parser_args:
+    # Identifies CDRs and framework regions in the TCR chains
+    extra_fields: [ig_region]
+
+columns_to_load:
+  - example_id
+  - path
+  - n_standard_amino_acid_residues

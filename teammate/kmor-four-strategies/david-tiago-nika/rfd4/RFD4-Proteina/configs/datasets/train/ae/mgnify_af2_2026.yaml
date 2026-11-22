@@ -1,0 +1,8 @@
+# MGnify monomers with the shared AE reconstruction/sequence-conditioning mix.
+defaults:
+  - /datasets/train/pipeline_defaults@dataset
+  - /datasets/sources/mgnify_af2_2026@dataset
+  - /design_tasks/presets@dataset.transform.design_tasks: ae_uncond_folding
+  - _self_
+
+probability: 1.0

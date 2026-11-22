@@ -1,0 +1,100 @@
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep0
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep0_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep0/rank1_M0732_1xs1_theozyme_rep2_generated_rep0_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2833
+  amino_acid_composition.val_fraction                  0.0644
+  amino_acid_composition.gly_fraction                  0.0429
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep1
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep1_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep1/rank1_M0732_1xs1_theozyme_rep2_generated_rep1_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2833
+  amino_acid_composition.val_fraction                  0.0644
+  amino_acid_composition.gly_fraction                  0.0258
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep2
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep2_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep2/rank1_M0732_1xs1_theozyme_rep2_generated_rep2_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2146
+  amino_acid_composition.val_fraction                  0.0644
+  amino_acid_composition.gly_fraction                  0.0258
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep3
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep3_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep3/rank1_M0732_1xs1_theozyme_rep2_generated_rep3_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2833
+  amino_acid_composition.val_fraction                  0.0644
+  amino_acid_composition.gly_fraction                  0.0343
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep4
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep4_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep4/rank1_M0732_1xs1_theozyme_rep2_generated_rep4_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.3133
+  amino_acid_composition.val_fraction                  0.0601
+  amino_acid_composition.gly_fraction                  0.0343
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep5
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep5_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep5/rank1_M0732_1xs1_theozyme_rep2_generated_rep5_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2146
+  amino_acid_composition.val_fraction                  0.0687
+  amino_acid_composition.gly_fraction                  0.0386
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep6
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep6_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep6/rank1_M0732_1xs1_theozyme_rep2_generated_rep6_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2661
+  amino_acid_composition.val_fraction                  0.0601
+  amino_acid_composition.gly_fraction                  0.0343
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep7
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep7_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep7/rank1_M0732_1xs1_theozyme_rep2_generated_rep7_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2704
+  amino_acid_composition.val_fraction                  0.0644
+  amino_acid_composition.gly_fraction                  0.0429
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep8
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep8_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep8/rank1_M0732_1xs1_theozyme_rep2_generated_rep8_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2489
+  amino_acid_composition.val_fraction                  0.0601
+  amino_acid_composition.gly_fraction                  0.0386
+  pre_oracle_pass                                         1.0
+
+Example: rank1_M0732_1xs1_theozyme_rep2_generated_rep9
+Structure: rank1_M0732_1xs1_theozyme_rep2_generated_rep9_generated.cif
+Location relative to run: inference_samples/rank1_M0732_1xs1_theozyme_rep2_generated_rep9/rank1_M0732_1xs1_theozyme_rep2_generated_rep9_generated.cif
+  amino_acid_composition.n_generated_unknown_residues     0.0
+  amino_acid_composition.n_standard_residues            233.0
+  amino_acid_composition.ala_fraction                  0.2961
+  amino_acid_composition.val_fraction                  0.0558
+  amino_acid_composition.gly_fraction                  0.0386
+  pre_oracle_pass                                         1.0
+

@@ -1,0 +1,62 @@
+[
+  {
+    "tag": "L_E_shell_I23L",
+    "total_score": -543.931,
+    "n_res": 150,
+    "score_per_res": -3.626206666666667,
+    "fa_rep": 93.905,
+    "fa_atr": -955.33,
+    "hbond_sc": -13.622,
+    "n_atoms": 1205
+  },
+  {
+    "tag": "L2_pair_I23V_M45Y",
+    "total_score": -531.856,
+    "n_res": 150,
+    "score_per_res": -3.545706666666667,
+    "fa_rep": 94.92,
+    "fa_atr": -942.07,
+    "hbond_sc": -14.331,
+    "n_atoms": 1208
+  },
+  {
+    "tag": "L2_pair_I23L_V84L",
+    "total_score": -542.706,
+    "n_res": 150,
+    "score_per_res": -3.61804,
+    "fa_rep": 92.677,
+    "fa_atr": -946.375,
+    "hbond_sc": -15.115,
+    "n_atoms": 1206
+  },
+  {
+    "tag": "L2_pair_I23L_V84I",
+    "total_score": -546.893,
+    "n_res": 150,
+    "score_per_res": -3.6459533333333334,
+    "fa_rep": 94.698,
+    "fa_atr": -957.466,
+    "hbond_sc": -12.246,
+    "n_atoms": 1206
+  },
+  {
+    "tag": "L_E_shell_V84I",
+    "total_score": -549.112,
+    "n_res": 150,
+    "score_per_res": -3.6607466666666664,
+    "fa_rep": 93.156,
+    "fa_atr": -959.339,
+    "hbond_sc": -14.164,
+    "n_atoms": 1206
+  },
+  {
+    "tag": "REF_HG3.17_4BS0",
+    "total_score": -978.175,
+    "n_res": 299,
+    "score_per_res": -3.271488294314381,
+    "fa_rep": 225.587,
+    "fa_atr": -1880.565,
+    "hbond_sc": -35.925,
+    "n_atoms": 2278
+  }
+]

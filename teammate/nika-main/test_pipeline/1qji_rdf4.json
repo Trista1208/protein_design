@@ -1,0 +1,39 @@
+{
+  "test1": {
+    "input": "/mnt/c/Users/tiago/Documents/ProteinDesignHackaton/enzyme-design-hackathon-2026/test_pipeline/PDB_1QJI_theozyme_HEHHMY.cif",
+    "contig": "SCAFF:120-150, /0, A92, A93, A96, A102, A147, A149, /0, B1, /0, C1",
+    "conditions": {
+      "C_CRD": {
+        "true": [
+          { "select": "sel('A/*/92/[NE2,CD2,CG,CB,ND1,CE1]')" },
+          { "select": "sel('A/*/93/[OE1,OE2,CD,CG]')" },
+          { "select": "sel('A/*/96/[NE2,CD2,CG,CB,ND1,CE1]')" },
+          { "select": "sel('A/*/102/[NE2,CD2,CG,CB,ND1,CE1]')" },
+          { "select": "sel('A/*/147/[SD,CE,CG]')" },
+          { "select": "sel('A/*/149/[OH,CZ,CE1,CD1,CE2,CG,CB,CD2]')" },
+          { "select": "res_name in ['ZN', 'PKF']" }
+        ]
+      },
+      "C_SEQ": {
+        "true": [
+          { "select": "sel('A/*/[92,93,96,102,147,149]')" }
+        ]
+      },
+      "C_IDX": {
+        "false": [
+          { "select": "sel('A/*/92')", "group": "cat_92" },
+          { "select": "sel('A/*/93')", "group": "cat_93" },
+          { "select": "sel('A/*/96')", "group": "cat_96" },
+          { "select": "sel('A/*/102')", "group": "cat_102" },
+          { "select": "sel('A/*/147')", "group": "cat_147" },
+          { "select": "sel('A/*/149')", "group": "cat_149" }
+        ]
+      },
+      "C_CENTROID": {
+        "[15.414421081542969, 25.94517707824707, 20.1755428314209]": [
+          { "select": "res_name == 'SCAFF'" }
+        ]
+      }
+    }
+  }
+}

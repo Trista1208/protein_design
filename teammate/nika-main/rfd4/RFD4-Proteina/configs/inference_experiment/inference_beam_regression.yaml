@@ -1,0 +1,33 @@
+# @package _global_
+#
+# Beam search config for GPU regression tests.
+# Uses clash-based reward (no RF3 oracle) so the test exercises real reward
+# discrimination between candidates without requiring a slow oracle.
+#
+
+defaults:
+  - inference_on_user_inputs
+  - _self_
+
+inputs: ${oc.env:PROJECT_ROOT}/data/benchmarks/monomer
+subset_to_examples: monomer-short
+
+metrics_tags: [design]
+
+search:
+  n_branch: 2
+  beam_width: 3
+  checkpoints:
+    "40":
+      metrics: [clash_metrics]
+      rewards:
+        clash_metrics.frac_atoms_clashing_1p5A: {weight: -1.0}
+    "60":
+      metrics: [clash_metrics]
+      rewards:
+        clash_metrics.frac_atoms_clashing_1p5A: {weight: -1.0}
+
+generation:
+  args:
+    nsteps: 60
+    guidance_w: 1.0

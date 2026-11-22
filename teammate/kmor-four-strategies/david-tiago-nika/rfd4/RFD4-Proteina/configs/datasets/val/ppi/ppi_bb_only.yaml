@@ -1,0 +1,20 @@
+defaults:
+  - /recycle_strategy@generation: medium/front_loaded
+  - _self_
+
+dataset:
+  _target_: rfproteina.inference_utils.datasets.DesignProblemDataset
+
+  # Same targets and settings as ppi_all_atom, but these annotated CIFs restrict target
+  # coordinate conditioning to protein backbone atoms; every other condition is preserved.
+  dir_path_or_file_paths: ${oc.env:PROJECT_ROOT}/data/benchmarks/ppi/ppi_bb_only
+
+  num_replicates: 200
+
+  transform:
+    _target_: rfproteina.datapipes.pipeline.build_design_validation_pipeline
+    metrics_tags:
+      - design
+      - 3d_coordinate_conditioning
+      - hotspot_conditioning
+      - ppi_refolding

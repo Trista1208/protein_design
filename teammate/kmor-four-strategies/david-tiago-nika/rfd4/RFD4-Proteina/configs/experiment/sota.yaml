@@ -1,0 +1,10 @@
+# @package _global_
+# Canonical "SOTA" training recipe. Repoint the default below to advance it.
+defaults:
+  - /releases/flow/2026_10_19_hero_pretrain
+  - _self_
+
+run_name_: sota
+
+log:
+  tags: ["sota"]

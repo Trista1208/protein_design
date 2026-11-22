@@ -1,0 +1,30 @@
+# =============================================================================
+# Search Strategy Comparison Sweep
+# =============================================================================
+# Sweeps over search strategies (vanilla, beam search) and their
+# parameters to compare generation quality vs. compute trade-offs.
+#
+# Usage:
+#   python src/script_utils/sweep.py --sweep-config configs/sweeps/search_strategy_sweep.yaml
+# =============================================================================
+
+base_config: inference
+
+base_config_overrides:
+  - inputs=data/benchmarks/monomer
+  - subset_to_examples=monomer-short
+  - num_replicates=50
+
+output_dir: ./configs/sweep_configs/search_strategy_sweep
+run_name_prefix: search_cmp
+
+# Search strategy to use. Each preset carries the released 60-evaluation schedule.
+sweep_overrides:
+  - inference_experiment=inference_on_user_inputs
+  - inference_experiment=inference_beam_example
+
+sweep:
+  # Backbone TSR temperature.
+  generation.model.bb_ca.simulation_step_params.tsr_k:
+    - 8.0
+    - 16.0

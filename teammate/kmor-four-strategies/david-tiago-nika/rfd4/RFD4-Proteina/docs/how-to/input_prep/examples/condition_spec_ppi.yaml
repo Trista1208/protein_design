@@ -1,0 +1,17 @@
+# De-novo PD-L1 binder: target backbone internal geometry and sequence are given.
+# Target sidechains and global pose remain free; hotspots mark the binding site.
+pdl1_binder:
+  input: ../../../examples/inputs/5o45_cropped.cif.zst   # PD-L1, chain A, res 17-131
+  contig: "50-120, /0, A17-131"    # de-novo binder chain (its own run -> fresh chain id), then the whole target
+  conditions:
+    C_CRDGRP:                          # one rigid group, without absolute coordinates
+      1:
+        - select: "sel('A/*/*/[N,CA,C,O]') and not has_nan_coord()"
+    C_SEQ:                             # ...but the target's sequence is fully known
+      true:
+        - select: "sel('A')"           # whole target chain (chain field only; rest wildcard)
+    C_HOT:                             # atom-level hotspots: the PD-L1 sidechain atoms to engage
+      true:
+        - select: "sel('A/*/56/[CG,OH]')"    # TYR56
+        - select: "sel('A/*/115/[CG,SD]')"   # MET115
+        - select: "sel('A/*/123/[CD2,OH]')"  # TYR123

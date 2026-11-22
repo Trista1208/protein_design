@@ -1,0 +1,41 @@
+# =============================================================================
+# Inference Sweep Example
+# =============================================================================
+# 4-config sweep (2 backbone temperatures × 2 latent temperatures) over a validation dataset.
+# Generates all configs and submits them as separate SLURM jobs in one command.
+#
+# Usage:
+#   ./scripts/launch_sweep.sh \
+#       --sweep-config configs/sweeps/sweep_example.yaml --foldseek \
+#       --base-out-dir /path/to/out_dir --njobs 2 \
+#       ckpt_path=<CKPT_DIR> ckpt_name=<CKPT_NAME>.ckpt
+#
+# To sweep over regular inference instead of a val set, swap:
+#   - inference_experiment=inference_on_user_inputs
+#   - inputs=benchmarks/monomer
+# (remove the +datasets/val line)
+# =============================================================================
+
+base_config: inference
+
+base_config_overrides:
+  - inference_experiment=inference_on_val_set
+  - +datasets/val@generation=unconditional
+  # For regular inference, use instead:
+  # - inference_experiment=inference_on_user_inputs
+  # - inputs=benchmarks/monomer
+  - subset_to_examples=monomer-short
+  - num_replicates=4
+  - batch_size=2
+
+run_name_prefix: sweep_example
+
+sweep:
+  # Backbone TSR temperature: higher k means lower temperature.
+  generation.model.bb_ca.simulation_step_params.tsr_k:
+    - 8.0
+    - 16.0
+  # Latent TSR temperature.
+  generation.model.local_latents.simulation_step_params.tsr_k:
+    - 2.0
+    - 4.0

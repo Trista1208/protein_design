@@ -1,0 +1,7 @@
+defaults:
+  - default
+  - _self_
+
+dataset_task_stats_callback:
+  _target_: rfproteina.callbacks.dataset_task_logging.DatasetTaskStatsCallback
+  log_every_n: 1000

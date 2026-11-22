@@ -1,0 +1,16 @@
+{
+  "updated": "2026-11-22 11:53:30",
+  "n_designs": 418,
+  "n_bound": 230,
+  "n_scored_5seed": 66,
+  "n_nonzero": 15,
+  "best_official": 0.886562,
+  "best_reproducibility": "5/5",
+  "n_structures": 140,
+  "n_gifs": 12,
+  "plots": [
+    "dihedral_gap.png",
+    "distances.png",
+    "official_score.png"
+  ]
+}

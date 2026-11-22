@@ -1,0 +1,29 @@
+Ranking: pass first, then lower bond, clash and motif RMSD; higher adherence; lower violations, unmapped and mismatches.
+Missing values rank after known values. Structure paths are relative to the run directory.
+
+rank  example_id                 pass  bond  clash  motif_rmsd  adherence  violations  unmapped  mismatches  structure
+   1  M0732_1xs1_theozyme_rep2    1.0   0.0    0.0      0.2393        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep2/M0732_1xs1_theozyme_rep2_generated.cif
+   2  M0732_1xs1_theozyme_rep17   1.0   0.0    0.0      0.2571        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep17/M0732_1xs1_theozyme_rep17_generated.cif
+   3  M0732_1xs1_theozyme_rep20   1.0   0.0    0.0      0.2636        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep20/M0732_1xs1_theozyme_rep20_generated.cif
+   4  M0732_1xs1_theozyme_rep6    1.0   0.0    0.0      0.2824        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep6/M0732_1xs1_theozyme_rep6_generated.cif
+   5  M0732_1xs1_theozyme_rep8    1.0   0.0    0.0      0.2918        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep8/M0732_1xs1_theozyme_rep8_generated.cif
+   6  M0732_1xs1_theozyme_rep14   1.0   0.0    0.0      0.2944        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep14/M0732_1xs1_theozyme_rep14_generated.cif
+   7  M0732_1xs1_theozyme_rep0    1.0   0.0    0.0      0.3104        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep0/M0732_1xs1_theozyme_rep0_generated.cif
+   8  M0732_1xs1_theozyme_rep10   1.0   0.0    0.0      0.3177        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep10/M0732_1xs1_theozyme_rep10_generated.cif
+   9  M0732_1xs1_theozyme_rep12   1.0   0.0    0.0      0.3205        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep12/M0732_1xs1_theozyme_rep12_generated.cif
+  10  M0732_1xs1_theozyme_rep13   1.0   0.0    0.0      0.3409        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep13/M0732_1xs1_theozyme_rep13_generated.cif
+  11  M0732_1xs1_theozyme_rep22   1.0   0.0    0.0        0.36        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep22/M0732_1xs1_theozyme_rep22_generated.cif
+  12  M0732_1xs1_theozyme_rep19   1.0   0.0    0.0      0.3665        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep19/M0732_1xs1_theozyme_rep19_generated.cif
+  13  M0732_1xs1_theozyme_rep5    1.0   0.0    0.0      0.3724        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep5/M0732_1xs1_theozyme_rep5_generated.cif
+  14  M0732_1xs1_theozyme_rep1    1.0   0.0    0.0      0.3782        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep1/M0732_1xs1_theozyme_rep1_generated.cif
+  15  M0732_1xs1_theozyme_rep7    1.0   0.0    0.0      0.3819        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep7/M0732_1xs1_theozyme_rep7_generated.cif
+  16  M0732_1xs1_theozyme_rep3    1.0   0.0    0.0      0.3842        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep3/M0732_1xs1_theozyme_rep3_generated.cif
+  17  M0732_1xs1_theozyme_rep15   1.0   0.0    0.0      0.3908        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep15/M0732_1xs1_theozyme_rep15_generated.cif
+  18  M0732_1xs1_theozyme_rep23   1.0   0.0    0.0      0.4011        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep23/M0732_1xs1_theozyme_rep23_generated.cif
+  19  M0732_1xs1_theozyme_rep18   1.0   0.0    0.0      0.4139        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep18/M0732_1xs1_theozyme_rep18_generated.cif
+  20  M0732_1xs1_theozyme_rep16   1.0   0.0    0.0      0.4294        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep16/M0732_1xs1_theozyme_rep16_generated.cif
+  21  M0732_1xs1_theozyme_rep24   1.0   0.0    0.0      0.4537        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep24/M0732_1xs1_theozyme_rep24_generated.cif
+  22  M0732_1xs1_theozyme_rep21   1.0   0.0    0.0      0.4577        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep21/M0732_1xs1_theozyme_rep21_generated.cif
+  23  M0732_1xs1_theozyme_rep11   1.0   0.0    0.0      0.4767        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep11/M0732_1xs1_theozyme_rep11_generated.cif
+  24  M0732_1xs1_theozyme_rep9    1.0   0.0    0.0      0.4772        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep9/M0732_1xs1_theozyme_rep9_generated.cif
+  25  M0732_1xs1_theozyme_rep4    1.0   0.0    0.0      0.4818        1.0         0.0       0.0         0.0  inference_samples/M0732_1xs1_theozyme_rep4/M0732_1xs1_theozyme_rep4_generated.cif

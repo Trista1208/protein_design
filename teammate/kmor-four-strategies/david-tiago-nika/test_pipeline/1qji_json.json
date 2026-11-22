@@ -1,0 +1,22 @@
+{
+    "test1": {
+        "input": "/mnt/c/Users/tiago/Documents/ProteinDesignHackaton/enzyme-design-hackathon-2026/test_pipeline/PDB_1QJI_theozyme_HEHHMY.cif",
+        "ligand": "ZN,PKF",
+        "length": "120-150",
+        "unindex": "A92,A93,A96,A102,A147,A149",
+        "select_fixed_atoms": {
+            "A92": "NE2,CD2,CG,CB,ND1,CE1",
+            "A93": "OE1,OE2,CD,CG",
+            "A96": "NE2,CD2,CG,CB,ND1,CE1",
+            "A102": "NE2,CD2,CG,CB,ND1,CE1",
+            "A147": "SD,CE,CG",
+            "A149": "OH,CZ,CE1,CD1,CE2,CG,CB,CD2"
+        },
+        "ori_token": [
+            15.414421081542969,
+            25.94517707824707,
+            20.1755428314209
+        ],
+        "allow_ligand_on_existing_chain": true
+    }
+}

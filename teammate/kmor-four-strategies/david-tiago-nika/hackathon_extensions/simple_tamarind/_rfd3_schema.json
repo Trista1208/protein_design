@@ -1,0 +1,385 @@
+{
+  "name": "rfdiffusion3",
+  "displayName": "RFdiffusion3",
+  "finetune": false,
+  "github": "https://github.com/RosettaCommons/foundry",
+  "paper": "https://www.biorxiv.org/content/10.1101/2025.09.18.676967v2.full.pdf",
+  "settings": [
+    {
+      "name": "task",
+      "required": true,
+      "options": [
+        "protein-binder-design",
+        "enzyme-design",
+        "na-binder-design",
+        "small-molecule-binder-design",
+        "json"
+      ],
+      "default": "protein-binder-design",
+      "description": "Task to perform"
+    },
+    {
+      "name": "pdbFile",
+      "required": true,
+      "type": "pdb",
+      "extension": [
+        "pdb"
+      ],
+      "tasks": [
+        "protein-binder-design",
+        "enzyme-design",
+        "na-binder-design",
+        "small-molecule-binder-design"
+      ],
+      "description": "Pdb structure file to be designed - contains both protein and ligand"
+    },
+    {
+      "name": "jsonInputType",
+      "options": [
+        "file",
+        "string"
+      ],
+      "default": "file",
+      "required": true,
+      "tasks": [
+        "json"
+      ],
+      "description": "Choose whether to upload a JSON file or enter JSON config as a string"
+    },
+    {
+      "name": "jsonFile",
+      "type": "file",
+      "required": true,
+      "tasks": [
+        "json"
+      ],
+      "extension": [
+        "json"
+      ],
+      "description": "Foundry-style JSON config file (see https://github.com/RosettaCommons/foundry/blob/production/models/rfd3/docs/input.md for format)"
+    },
+    {
+      "name": "jsonConfig",
+      "type": "string",
+      "required": true,
+      "tasks": [
+        "json"
+      ],
+      "description": "Foundry-style JSON config as a string (see https://github.com/RosettaCommons/foundry/blob/production/models/rfd3/docs/input.md for format)"
+    },
+    {
+      "name": "inputFiles",
+      "type": "pdb",
+      "list": true,
+      "tasks": [
+        "json"
+      ],
+      "extension": [
+        "pdb",
+        "cif"
+      ],
+      "description": "PDB/CIF files referenced in your JSON config. Files are matched based on filename.",
+      "required": false
+    },
+    {
+      "name": "targetChains",
+      "type": "chains",
+      "list": true,
+      "tasks": [
+        "protein-binder-design",
+        "na-binder-design"
+      ],
+      "description": "Chain IDs of target",
+      "required": false
+    },
+    {
+      "name": "hotspots",
+      "tasks": [
+        "protein-binder-design"
+      ],
+      "description": "Residues to focus on on your target when designing a binder",
+      "required": false
+    },
+    {
+      "name": "binderLength",
+      "required": true,
+      "tasks": [
+        "protein-binder-design",
+        "enzyme-design",
+        "na-binder-design",
+        "small-molecule-binder-design"
+      ],
+      "default": "100,150",
+      "description": "Range of binder length to sample from"
+    },
+    {
+      "name": "ligands",
+      "list": true,
+      "tasks": [
+        "protein-binder-design",
+        "enzyme-design",
+        "small-molecule-binder-design"
+      ],
+      "description": "Select ligands to target from your pdb",
+      "required": false
+    },
+    {
+      "name": "smBinderConditions",
+      "list": true,
+      "tasks": [
+        "small-molecule-binder-design"
+      ],
+      "description": "Specify conditioning for ligand atoms (Fixed, Buried, Exposed).",
+      "required": false
+    },
+    {
+      "name": "scaffoldingMode",
+      "options": [
+        "Atom-level",
+        "Residue-level"
+      ],
+      "required": true,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "default": "Atom-level",
+      "description": "Choose atom-level scaffolding (fix individual atoms of motif residues) or residue-level scaffolding (specify interface residues and designed-region lengths, motif contigs assembled for you)."
+    },
+    {
+      "name": "fixAtoms",
+      "options": [
+        "all",
+        "custom"
+      ],
+      "required": true,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "default": "all"
+    },
+    {
+      "name": "fixAtomsSelection",
+      "list": true,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "required": false
+    },
+    {
+      "name": "interfaceChain",
+      "type": "chain",
+      "required": true,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Chain ID of chain with interface to be scaffolded"
+    },
+    {
+      "name": "interfaceResidues",
+      "required": true,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Select interface residues to be kept in your final protein. You can then select designed region lengths for 1 more than the number of contiguous interface ranges you select below."
+    },
+    {
+      "name": "designedLengths",
+      "list": true,
+      "required": true,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Length of the region to be designed between fixed residues - length (20) or range of lengths to sample uniformly (20-30)"
+    },
+    {
+      "name": "unindex",
+      "required": true,
+      "type": "string",
+      "default": "all",
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Whether residue index be inferred by the model instead of prespecified (all by default or comma separated list of residues e.g. A109,A114)"
+    },
+    {
+      "name": "classifierFreeGuidance",
+      "required": true,
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "enzyme-design"
+      ],
+      "description": "Enables classifier-free guidance to strictly enforce motif adherence. Increases computational cost by 2x."
+    },
+    {
+      "name": "oriToken",
+      "type": "string",
+      "tasks": [
+        "na-binder-design"
+      ],
+      "description": "[x,y,z] origin override to control center of mass placement",
+      "required": false
+    },
+    {
+      "name": "numDesigns",
+      "productionScale": 10000,
+      "type": "number",
+      "default": 8,
+      "description": "Total designs to generate across the run. A production campaign is ~10,000 designs.",
+      "required": false
+    },
+    {
+      "name": "diffusionBatchSize",
+      "type": "number",
+      "default": 8,
+      "description": "Designs per GPU pass (Foundry diffusion_batch_size). Defaults to 8. Designs in the same batch share sampled binder length. Extra designs may be generated if the leaf count does not divide evenly.",
+      "required": false
+    },
+    {
+      "name": "nonLoopy",
+      "type": "boolean",
+      "default": true,
+      "tasks": [
+        "protein-binder-design"
+      ],
+      "description": "Encourages the model to make more structured designs (recommended)",
+      "required": false
+    },
+    {
+      "name": "stepScale",
+      "type": "number",
+      "default": 1.5,
+      "description": "Controls the diffusion update size. The default (1.5) promotes stable, idealized, and 'designable' structures. Lowering towards 1.0 reduces helical bias, increasing diversity. Increasing (>1.5) forces stricter convergence.",
+      "required": false
+    },
+    {
+      "name": "gammaZero",
+      "type": "number",
+      "default": 0.6,
+      "description": "Controls how much extra noise is injected into the structure at every step of the reverse diffusion process. Decreasing tends to increase designability and decrease diversity.",
+      "required": false
+    },
+    {
+      "name": "runDesignability",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "protein-binder-design"
+      ],
+      "description": "After diffusion, redesign each backbone with ProteinMPNN and refold it with AlphaFold to report self-consistency RMSD, pLDDT, pTM and interface PAE. Adds runtime and cost. Single target chain only.",
+      "required": false
+    },
+    {
+      "name": "useSolubleMpnn",
+      "type": "boolean",
+      "default": false,
+      "tasks": [
+        "protein-binder-design"
+      ],
+      "description": "Use SolubleMPNN instead of ProteinMPNN when redesigning for the designability test. SolubleMPNN is trained only on soluble proteins, so it avoids exposed hydrophobic patches. Doesn't change the diffused backbones.",
+      "required": false
+    },
+    {
+      "name": "claude_inference_optimization",
+      "default": "off",
+      "options": [
+        "off",
+        "exact",
+        "fast"
+      ],
+      "description": "Enable Anthropic's optimized inference kernels for the diffusion step (https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling). Exact is bit-identical to stock and faster on L40S. Fast trades float tolerance for lower per-batch latency, but pays a one-time ~67s graph-compile penalty on the first batch \u2014 only pick it when generating many designs across multiple diffusion batches. Not available with classifier-free guidance.",
+      "required": false
+    }
+  ],
+  "description": "All atom protein design with atom-level and residue-level motif scaffolding",
+  "outputTypes": [
+    "json",
+    "pdb",
+    "sequence"
+  ],
+  "taskType": "generate",
+  "outputs": {
+    "produces": [
+      "pdb",
+      "sequence"
+    ],
+    "mainCSV": "rfdiffusion3_results.csv",
+    "columns": [
+      {
+        "name": "design_id",
+        "type": "string",
+        "displayName": "Design ID",
+        "description": "Identifier for the generated design (config_<name>_<i>_model_<j>)."
+      },
+      {
+        "name": "pdb_filepath",
+        "type": "pdb",
+        "displayName": "Structure",
+        "description": "Generated de novo all-atom design structure (PDB)."
+      },
+      {
+        "name": "Sequence_A",
+        "type": "sequence",
+        "displayName": "Chain A Sequence",
+        "description": "Amino-acid sequence of chain A of the generated design."
+      },
+      {
+        "name": "max_ca_deviation",
+        "type": "number",
+        "displayName": "Max CA Deviation",
+        "description": "Maximum C-alpha deviation of the design; a per-design geometry-quality metric. Lower is better.",
+        "scoringPropertyName": "Max CA Deviation",
+        "units": "\u00c5",
+        "recommendedRange": [
+          0,
+          0.75
+        ],
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "n_chainbreaks",
+        "type": "number",
+        "displayName": "Chain Breaks",
+        "description": "Number of backbone chain breaks in the generated design. Lower is better.",
+        "recommendedRange": [
+          0,
+          0
+        ],
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true,
+        "lowIsGood": true
+      },
+      {
+        "name": "radius_of_gyration",
+        "type": "number",
+        "displayName": "Radius of Gyration",
+        "description": "Radius of gyration of the generated backbone.",
+        "units": "\u00c5",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      },
+      {
+        "name": "num_residues",
+        "type": "number",
+        "displayName": "Residues",
+        "description": "Number of residues in the generated design.",
+        "validRange": [
+          0,
+          ""
+        ],
+        "filterable": true
+      }
+    ]
+  }
+}

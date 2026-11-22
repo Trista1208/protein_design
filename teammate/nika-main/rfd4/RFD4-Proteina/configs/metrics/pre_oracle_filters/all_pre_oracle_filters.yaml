@@ -1,0 +1,56 @@
+# Pre-oracle filters: only forward passing designs to the oracle. Tag-gated like other Metrics.
+# Rejected designs remain zero-pass attempts in per-example summaries.
+
+unknown_residue_filter:
+  _target_: rfproteina.metrics.oracles.pass_criterion_metric.PassCriterionMetric
+  metric_thresholds:
+    amino_acid_composition.n_generated_unknown_residues:
+      max: 0
+
+# Sequence conditioning is a hard constraint, so a design that breaks it is almost never worth folding.
+# Run these checks for every design, regardless of metric tags.
+sequence_adherence_filter:
+  _target_: rfproteina.metrics.oracles.pass_criterion_metric.PassCriterionMetric
+  metric_thresholds:
+    sequence_adherence.n_violations:
+      max: 0
+    sequence_probability_adherence.n_zero_violations:
+      max: 0
+    sequence_probability_adherence.n_one_violations:
+      max: 0
+
+# Likewise for unindexed conditioning: an unindexed token that was never inserted, or was inserted
+# onto a residue of the wrong identity, means the design does not contain the requested motif.
+unindexed_insertion_mapping_filter:
+  _target_: rfproteina.metrics.oracles.pass_criterion_metric.PassCriterionMetric
+  required_tags_all: ["unindexed"]
+  metric_thresholds:
+    unindexed_insertion_mapping.n_unmapped_tokens:
+      max: 0
+    unindexed_insertion_mapping.n_sequence_mismatches:
+      max: 0
+
+# Insertion RMSD includes only unindexed regions
+insertion_rmsd_filter:
+  _target_: rfproteina.metrics.oracles.pass_criterion_metric.PassCriterionMetric
+  metric_thresholds:
+    unindexed_metrics.insertion_rmsd:
+      max: 1.0
+  required_tags_all:
+    - unindexed
+    - insertion_rmsd_filter
+
+motif_rmsd_filter:
+  _target_: rfproteina.metrics.oracles.pass_criterion_metric.PassCriterionMetric
+  required_tags_all: [motif_rmsd_filter]
+  metric_thresholds:
+    motif_rmsd.rmsd:
+      max: 1.0
+
+ligand_clash_filter:
+  _target_: rfproteina.metrics.oracles.pass_criterion_metric.PassCriterionMetric
+  metric_thresholds:
+    clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A:
+      max: 0
+  required_tags_all: [ligand_clash_filter]
+  prohibited_tags: [no_ligand]

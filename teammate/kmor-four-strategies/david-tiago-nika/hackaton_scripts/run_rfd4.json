@@ -1,0 +1,9 @@
+{
+  "type": "rfd4-proteina",
+  "jobName": "rfd4_1qji",
+  "input": "../test_pipeline/1qji_json.json",
+  "settings": {
+    "task": "enzyme-design",
+    "numDesigns": 1
+  }
+}

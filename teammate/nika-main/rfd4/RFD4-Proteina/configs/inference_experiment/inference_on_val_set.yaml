@@ -1,0 +1,18 @@
+# @package _global_
+
+# Config for running generate.py on an existing val set config, e.g. mcsa/mcsa_subset
+# Usage: rfproteina/generate.py inference_experiment=inference_on_val_set +datasets/val@generation=mcsa/mcsa_subset ckpt_path=...
+defaults:
+  - /generation: inference_base
+  - /metrics: all_metrics # Will be subsetted according to metrics_tags
+  - _self_
+
+inputs: null # Not used when using val set
+run_name_: ??? # Demand an override to avoid collisions from offline validation launch script
+
+generation:
+  dataset: ???
+
+# These values are often present in the val dataset config
+num_replicates: ${generation.dataset.num_replicates}
+subset_to_keys: ${oc.select:generation.dataset.subset_to_keys,null}

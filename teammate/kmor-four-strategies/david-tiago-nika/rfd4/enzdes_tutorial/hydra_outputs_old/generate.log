@@ -1,0 +1,4 @@
+[2026-11-20 18:48:03,107][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 224 tokens (batch size 1). This may take a few minutes.
+This shape may need recompiling in later runs; set TORCH_COMPILE_CACHE_BLOB to a persistent file path to preserve the cache.
+[2026-11-20 18:48:18,416][rfproteina.nn.modules.openfold_modules.triangular_multiplicative_update][WARNING] - cuEquivariance has no fused compiled inference triangle multiplication for batch=1, n=224, c_z=384, c_hidden=256, bf16=False; using the torch backend.
+[2026-11-20 18:56:24,119][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /cluster/scratch/gomest/hackaton/enzyme-design-hackathon-2026/rfd4/enzdes_tutorial/runs/scaffold_n25

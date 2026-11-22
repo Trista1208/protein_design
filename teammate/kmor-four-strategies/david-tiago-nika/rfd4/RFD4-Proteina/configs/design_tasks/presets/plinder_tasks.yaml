@@ -1,0 +1,13 @@
+# Plinder training mix: heavy on pocket/partial-ligand and partial-ligand-only tasks.
+
+defaults:
+  - all_off
+  - _self_
+
+unconditional:    {frequency: 10.0}
+folding:          {frequency: 5.0}
+inverse_folding:  {frequency: 5.0}
+tip_atom_pocket:  {frequency: 30.0}
+partial_ligand:   {frequency: 20.0}
+
+tip_atom_partial_ligand: {frequency: 30.0}

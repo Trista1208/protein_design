@@ -1,0 +1,57 @@
+# ==============================================================================
+# Enzyme Design Hackathon 2026 - Master Pipeline Configuration
+# ==============================================================================
+# Defines default compute routing, physical gate cutoffs, and execution parameters.
+
+# Compute Routing Table
+# Assigns each pipeline stage and gate to its optimal execution environment.
+compute_routes:
+  # Stage 1: De Novo Generative Design
+  stage1_rfd4: "tamarind"         # RFD4-Proteina backbone diffusion (requires >= 24GB VRAM)
+  stage1_rfd3: "tamarind"         # RFD3 scaffolding
+  stage1_ligandmpnn: "eth_cluster" # LigandMPNN sequence redesign (runs within 8GB VRAM)
+
+  # Stage 2: Physical & Biophysical Verification Gates
+  gate1_cofolding: "tamarind"     # Boltz-2 / AlphaFold3 all-atom co-folding (high VRAM)
+  gate2_placer: "modal"           # PLACER catalytic preorganization (100 ensemble samples on A100)
+  gate3_thermo: "eth_cluster"     # ThermoMPNN stability filter (low VRAM)
+  gate3_esm3: "modal"             # ESM3 / SaProt evolutionary zero-shot scoring (high memory GPU)
+  gate4_openmm: "eth_cluster"     # OpenMM all-atom MD & NAC persistence (RTX 2080 GPU)
+  gate4_fieldtools: "eth_cluster" # FieldTools electric field projection & Stark alignment
+  gate4_orca: "eth_cluster"       # ORCA QM/MM transition-state activation barrier (Slurm CPU/GPU)
+
+  # Stage 3: Directed Evolution In Silico
+  stage3_aizymes: "eth_cluster"   # AIzymes epistatic mutational landscape exploration
+
+# Stage 2 Gate Cutoffs
+# Strict quantitative thresholds required for candidate survival.
+gate_cutoffs:
+  # Gate 1: Structure & Co-folding
+  rmsd_cutoff_angstrom: 1.2
+  attack_distance_cutoff_angstrom: 3.3
+  boltz2_affinity_prob_cutoff: 0.72
+  plddt_cutoff: 70.0
+  ipae_cutoff: 10.0
+
+  # Gate 2: PLACER Conformational Preorganization
+  placer_ensemble_size: 100
+  preorg_fraction_cutoff: 0.30
+
+  # Gate 3: Thermodynamic & Zero-shot Fitness
+  max_ddg_destabilization: 1.5     # kcal/mol
+  min_esm3_log_likelihood: -2.5
+
+  # Gate 4: Electric Field & QM/MM NAC Persistence
+  min_nac_persistence_fraction: 0.25
+  min_electric_field_projection_mv_per_cm: 10.0
+  require_dG_barrier_less_than_water: true
+
+# Thinking / Reasoning Budget ('low', 'medium', 'high')
+thinking_budget: "medium"
+
+# Pipeline Depth Mode ('fast_screen', 'balanced', 'deep_rigor')
+design_mode: "balanced"
+
+# Dry Run Flag
+# When true, pre-flight validates schema at $0 cost without submitting live GPU jobs.
+dry_run: false

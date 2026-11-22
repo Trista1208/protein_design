@@ -1,0 +1,80 @@
+# TMol block-pair interface metric presets.
+#
+# These are examples showing how to express interface energy metrics as Hydra
+# instantiations of the one general class in
+# `rfproteina.metrics.physics.tmol_block_pair_metric` — there are no
+# project-specific Python subclasses to maintain. Copy an entry into your metric
+# set and edit the `region_a` / `region_b` queries (any AtomWorks query string,
+# see `rfproteina.utils.mask_spec.resolve_mask`) for your system.
+#
+# NOTE: TMol scoring is heavy (GPU), so this file is intentionally NOT included in
+# `all_inline_metrics.yaml`; opt in explicitly where you want interface energies.
+# The `lpr` ligand resname and `chain_id == 'A'` partner below are just placeholders.
+#
+# By default each preset reuses one TMol build context (ligand prep + ligand-extended
+# parameter database) across the whole validation set — the fast path when every scored
+# structure shares the same ligand chemistry. Set `reuse_context: false` for a set whose
+# ligand differs from sample to sample, and/or set `ligand_params_files: [/path/to.tmol]`
+# to type a fixed, known ligand from tmol YAML params instead of RDKit/OpenBabel.
+
+# --- Ligand-partner presets (was LigandInterface*Metric) ---
+ligand_interface_ddg:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolBlockPairMetric
+  region_a: is_ligand
+  region_b: is_protein
+  required_tags_any: ["small_molecule_only"]
+
+ligand_interface_hbonds:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolBlockPairMetric
+  region_a: is_ligand
+  region_b: is_protein
+  term_names: ["hbond"]
+  term_cutoffs:
+    n_interface_hbonds: [hbond, -0.3]
+  required_tags_any: ["small_molecule_only"]
+
+ligand_interface_electrostatics:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolBlockPairMetric
+  region_a: is_ligand
+  region_b: is_protein
+  term_names: ["fa_elec"]
+  term_cutoffs:
+    n_interface_elec_interactions: [fa_elec, -0.2]
+  required_tags_any: ["small_molecule_only"]
+
+# --- Binder/target soft-repulsion ddG (was SoftDDGMetric) ---
+soft_ddg:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolBlockPairMetric
+  use_soft_rep: true
+
+# --- Protein-protein presets (was PPIInterface*Metric) ---
+# Omitting region_a/region_b makes the binder the chain of interest and the target
+# every other atom; set explicit regions when that is insufficient.
+ppi_interface_ddg:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolBlockPairMetric
+  region_a: "chain_id == 'A'"
+  region_b: "chain_id == 'B'"
+
+ppi_interface_coulomb:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolBlockPairMetric
+  region_a: "chain_id == 'A'"
+  region_b: "chain_id == 'B'"
+  term_names: ["fa_elec"]
+  term_cutoffs:
+    n_coulomb_interactions: [fa_elec, -0.2]
+
+# --- Point-mutation interface ddG (TMolMutationDdgMetric) ---
+mutation_interface_ddg:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolMutationDdgMetric
+  mutation_selection: "chain_id == 'A' and res_id == 50"
+  mutate_to: ALA
+  shell_radius: 8.0
+
+# Cross-product example: 2 sites x 3 substitutions -> 6 deltas, 8 relaxes/design (not 12).
+mutation_interface_ddg_scan:
+  _target_: rfproteina.metrics.physics.tmol_block_pair_metric.TMolMutationDdgMetric
+  mutation_selection:
+    - "chain_id == 'A' and res_id == 50"
+    - "chain_id == 'A' and res_id == 54"
+  mutate_to: [ALA, ARG, ASP]
+  shell_radius: 8.0

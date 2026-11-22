@@ -1,0 +1,73 @@
+/* Six molecular contexts in the reference latent instrument's visual language. */
+/* Manuscript sequential palette, scoped to this page's instrument and supporting plots. */
+[data-viz-page="expanded"], .expanded-information {
+  --viz-lat: #186c70;
+  --viz-lat-ink: #124f52;
+  --viz-lat-soft: #cff6ef;
+}
+html[data-theme="dark"] :is([data-viz-page="expanded"], .expanded-information) {
+  --viz-lat: #32b39b;
+  --viz-lat-ink: #cff6ef;
+  --viz-lat-soft: #124f52;
+}
+/* Match the site's rounded buttons; inherit typography and keyboard focus from arch.css. */
+:is([data-viz-page="expanded"], .expanded-information) .arch-tabs { gap: 8px; }
+:is([data-viz-page="expanded"], .expanded-information) :is(.arch-tabs > button, .expanded-walk) {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid var(--wf-ink-soft);
+  border-radius: 6px;
+  background: var(--wf-surface);
+  color: var(--wf-ink);
+}
+:is([data-viz-page="expanded"], .expanded-information) :is(.arch-tabs > button, .expanded-walk)[aria-pressed="true"] {
+  border-color: var(--viz-lat-ink);
+  background: var(--viz-lat-soft);
+  color: var(--viz-lat-ink);
+}
+:is([data-viz-page="expanded"], .expanded-information) :is(.arch-tabs > button, .expanded-walk):hover {
+  box-shadow: 0 0 0 1px currentColor;
+}
+.expanded-grid-scroll { overflow-x: auto; padding: 4px 2px; }
+.expanded-grid { position: relative; display: grid; grid-template-columns: 145px repeat(32, minmax(13px, 1fr)); gap: 3px; min-width: 710px; align-items: center; }
+/* One frame around the six cells; an absolute grid item preserves their gaps and fills. */
+.expanded-grid::after {
+  content: "";
+  position: absolute;
+  grid-column: var(--expanded-selected-column, 7) / span 1;
+  grid-row: 2 / 8;
+  inset: -2px;
+  border: 2px solid var(--wf-ink);
+  pointer-events: none;
+}
+.expanded-column { text-align: center; font: 12px var(--arch-mono); color: var(--wf-ink-soft); }
+.expanded-row-name { font-size: var(--arch-fs-small); }
+.expanded-cell { width: 100%; height: 22px; border: 0; border-radius: 0; padding: 0; cursor: pointer; }
+.viz-page .bd-main .expanded-cell:focus:not(:focus-visible) { outline: none; box-shadow: none; }
+.expanded-cell:focus-visible { outline: 2px solid var(--wf-focus); }
+.expanded-key { text-align: right; margin: 4px 0 14px; }
+[data-viz-page="expanded"] [hidden] { display: none !important; }
+[data-viz-page="expanded"] .latents-view-what { display: block; overflow-wrap: anywhere; }
+[data-viz-page="expanded"] .latents-view-value { margin-top: 8px; }
+[data-viz-page="expanded"] .latents-controls { margin-top: 20px; }
+
+[data-viz-page="expanded"] .latents-views { row-gap: 6px; }
+[data-viz-page="expanded"] .latents-molecule { height: 180px; }
+[data-viz-page="expanded"] .latents-view:nth-child(n+4) { padding-top: 16px; }
+.expanded-chart-panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.viz-page .bd-article .expanded-small-plot { margin: 0; min-width: 0; }
+.expanded-small-plot figcaption { font-size: var(--arch-fs-small); line-height: 1.5; }
+.expanded-small-plot figcaption span { display: block; color: var(--wf-ink-soft); }
+.expanded-information svg { display: block; width: 100%; font: 12px var(--arch-sans); }
+.expanded-information circle[role="button"] { cursor: pointer; }
+.expanded-information circle:focus-visible { outline: 2px solid var(--wf-focus); }
+.expanded-information .viz-caption { margin-top: 8px; }
+.expanded-information .arch-controls { margin-bottom: 24px; }
+@media (max-width: 719px) {
+  .expanded-chart-panels { grid-template-columns: 1fr; }
+  [data-viz-page="expanded"] .latents-view:nth-child(n+4) { padding-top: 0; }
+}
+
+[data-viz-page="expanded"] button.expanded-walk { justify-content: center; min-width: 156px; }
+[data-viz-page="expanded"] .expanded-noise-controls { max-width: 960px; }

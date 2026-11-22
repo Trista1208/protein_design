@@ -1,0 +1,72 @@
+[
+  {
+    "design_id": "L2_pair_I23V_M45Y",
+    "gif": "L2_pair_I23V_M45Y.gif",
+    "best": 0.886562,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_pair_I23V_M45Y/seed5/folded.pdb"
+  },
+  {
+    "design_id": "L2_pair_I23L_V84L",
+    "gif": "L2_pair_I23L_V84L.gif",
+    "best": 0.88391,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_pair_I23L_V84L/seed5/folded.pdb"
+  },
+  {
+    "design_id": "L2_pair_I23L_V84I",
+    "gif": "L2_pair_I23L_V84I.gif",
+    "best": 0.87603,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_pair_I23L_V84I/seed5/folded.pdb"
+  },
+  {
+    "design_id": "L2_triple_I23L_M88F_V84L",
+    "gif": "L2_triple_I23L_M88F_V84L.gif",
+    "best": 0.874841,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_triple_I23L_M88F_V84L/seed5/folded.pdb"
+  },
+  {
+    "design_id": "L_E_shell_I23L",
+    "gif": "L_E_shell_I23L.gif",
+    "best": 0.86167,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L_E_shell_I23L/seed5/folded.pdb"
+  },
+  {
+    "design_id": "L2_pair_V84I_M45Y",
+    "gif": "L2_pair_V84I_M45Y.gif",
+    "best": 0.859225,
+    "reproducibility": "4/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_pair_V84I_M45Y/seed3/folded.pdb"
+  },
+  {
+    "design_id": "L2_pair_V84I_I23V",
+    "gif": "L2_pair_V84I_I23V.gif",
+    "best": 0.853574,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_pair_V84I_I23V/seed3/folded.pdb"
+  },
+  {
+    "design_id": "L2_triple_I23L_V84I_M88F",
+    "gif": "L2_triple_I23L_V84I_M88F.gif",
+    "best": 0.850842,
+    "reproducibility": "4/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_triple_I23L_V84I_M88F/seed4/folded.pdb"
+  },
+  {
+    "design_id": "L2_pair_M88F_M45Y",
+    "gif": "L2_pair_M88F_M45Y.gif",
+    "best": 0.848685,
+    "reproducibility": "5/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L2_pair_M88F_M45Y/seed1/folded.pdb"
+  },
+  {
+    "design_id": "L_E_shell_V84I",
+    "gif": "L_E_shell_V84I.gif",
+    "best": 0.835871,
+    "reproducibility": "4/5",
+    "rendered_from": "/home/mandalorian/Hackathons/Enzymes-BSSE2026/outputs/finalists/L_E_shell_V84I/seed1/folded.pdb"
+  }
+]

@@ -1,0 +1,20 @@
+# Antibody/antigen interfaces from the Protein Data Bank
+# Annotated with ig_region mmCIF annotations for downstream sampling of conditions
+
+defaults:
+  - pdb_interface_common
+  - _self_
+
+name: antibody_interfaces_pdb
+data: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/pdb/2026_10_04_tmol_plip_cath/sampling/immune_interfaces.parquet
+
+filters:
+  mapping:
+    involves_ig: "involves_ig"
+    ig_type: "ig_type == 'antibody'"
+
+columns_to_load:
+  mapping:
+    immune:
+      - involves_ig
+      - ig_type

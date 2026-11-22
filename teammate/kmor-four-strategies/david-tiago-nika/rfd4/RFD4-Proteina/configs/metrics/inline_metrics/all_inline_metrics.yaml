@@ -1,0 +1,6 @@
+defaults:
+  - design_metrics
+  - structure_prediction_metrics
+  - developability_metrics
+  - antibody_metrics
+  # - ipa_metrics # Disabled until the backend compatibility issue is resolved

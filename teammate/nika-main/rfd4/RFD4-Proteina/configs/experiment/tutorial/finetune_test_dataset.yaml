@@ -1,0 +1,49 @@
+# @package _global_
+# Continue training the released denoiser on the tiny test_dataset, validating by unconditional
+# monomer generation (the checked-in val/unconditional set, with the AF3 refolding tag dropped so
+# no container is needed). Single GPU, short. See docs/contributing/developer-guide.md.
+
+defaults:
+  - /datasets/train/test_dataset@datasets.train.test_dataset
+  - /datasets/val/unconditional@datasets.val.unconditional
+  - _self_
+
+run_name_: finetune_test_dataset
+
+datasets:
+  train:
+    test_dataset:
+      probability: 1.0
+  val:
+    unconditional:
+      compute_loss: false      # length-only specs have no ground truth -> generation-based val
+      dataset:
+        num_replicates: 2      # small for a smoke run
+        transform:
+          metrics_tags: [design]   # drop `unconditional_refolding` -> no AF3 oracle
+
+dataloaders:
+  batch_size: 4
+  num_workers: 0               # no multiprocessing for the tiny set
+  prefetch_factor: null
+  multiprocessing_context: null
+  train:
+    dataloader_params:
+      persistent_workers: false
+  val:
+    dataloader_params:
+      num_workers: 0
+      prefetch_factor: null
+      persistent_workers: false
+
+opt:
+  max_epochs: 3
+  steps_per_epoch: 50
+  val_every_n_epochs: 1
+
+# Compilation is off for a fast first run
+nn:
+  use_torch_compile: false
+
+# Initialize from a local/HF bundle with hf_ckpt_path, or use
+# pretrain_ckpt_path for a native checkpoint (see docs/contributing/developer-guide.md).

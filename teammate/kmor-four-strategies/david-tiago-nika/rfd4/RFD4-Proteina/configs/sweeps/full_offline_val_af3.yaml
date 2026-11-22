@@ -1,0 +1,44 @@
+# Validation debug sweep — 200 replicates of each online val set.
+# Intended to quickly verify that changes to validation logic (metrics,
+# scoring, output parsing, etc.) work correctly end-to-end across all
+# val datasets used during training.
+#
+# Run command:
+#   cd projects/rfproteina
+#   ./scripts/launch_sweep.sh \
+#       --sweep-config configs/sweeps/full_offline_val_af3.yaml \
+#       ckpt_path=<CKPT_PATH> ckpt_name=<CKPT_NAME>.ckpt
+
+base_config: inference
+
+base_config_overrides:
+  - inference_experiment=inference_on_val_set
+  - num_replicates=200
+  - metrics/refolding_oracles=af3
+
+run_name_prefix: offline_val_af3
+
+sweep_overrides:
+  # Bulk motif scaffolding
+  - "+datasets/val@generation=motif_scaffolding/indexed_motif_scaffold_full"
+  - "+datasets/val@generation=motif_scaffolding/unindexed_motif_scaffold_full"
+  - "+datasets/val@generation=motif_scaffolding/indexed_motif_scaffold_internal_coords"
+
+  # Tip-atom scaffolding
+  - "+datasets/val@generation=mcsa/mcsa_full"
+  # - "+datasets/val@generation=mcsa/mcsa_full_internal_coords"
+
+  # Small molecule and metal binding
+  - "+datasets/val@generation=small_molecule_binder/disco_figure_2c"
+
+  # Protein binder design
+  - "+datasets/val@generation=ppi/ppi_all_atom_subset_12"
+
+  # Non-refolding datasets (tracking condition adherence)
+  - "+datasets/val@generation=adherence/rasa_IAI"
+  # - "+datasets/val@generation=adherence/ss_conditioned"
+
+# Dummy sweep key (required by sweep.py)
+sweep:
+  generation.args.nsteps:
+    - 60

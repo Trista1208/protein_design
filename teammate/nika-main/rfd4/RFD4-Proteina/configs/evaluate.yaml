@@ -1,0 +1,29 @@
+verbose: true # Include routine warnings and detailed diagnostic output.
+
+defaults:
+  - /metrics: all_metrics
+  - _self_
+
+inputs: ???        # Directory of CIF files for designed structures
+metrics_tags: ???  # Required: tags controlling which metrics activate (e.g. [unconditional_refolding])
+
+# Optional CSV with columns 'designed_structure_path' and 'task' mapping each input file to a task label.
+# A per_example_metrics.csv with a 'task' column can be passed directly.
+# Useful for computing foldseek clusters only within a given task.
+task_csv: null
+
+out_dir: ???   # Output directory for metrics results 
+job_id: null       # Chunk index for parallel evaluation
+gen_njobs: 1       # Total number of parallel jobs (used when chunk_size is null)
+
+run_name_: evaluate
+compress_outputs: false # Applies to new refolds and chain exports; input structures are unchanged.
+
+
+# Only applies when a pre-oracle design filter is active (i.e. its tag gate matched).
+# Determines whether to delete structure files for designs that fail this filter
+delete_failing_pre_oracle: False # False here to avoid deleting input structures
+
+hydra:
+  run:
+    dir: ./hydra_outputs

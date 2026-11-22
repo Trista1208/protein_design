@@ -1,0 +1,6 @@
+# Opt-in: the CDR torsion reference data is downloaded from Hugging Face (nvidia/RFD4-Proteina) on first use and
+# is not part of the git repository or the PyPI package. Enable with
+#   metrics/inline_metrics=all_inline_metrics_with_cdr_torsion
+cdr_torsion_naturalness:
+  _target_: rfproteina.metrics.cdr_torsions.CDRTorsionNaturalness
+  required_tags_any: [antibody]

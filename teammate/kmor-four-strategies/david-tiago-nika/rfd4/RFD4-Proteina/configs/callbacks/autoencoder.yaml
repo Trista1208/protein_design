@@ -1,0 +1,6 @@
+defaults:
+  - default
+  - _self_
+
+skip_nan_grad_callback:
+    _target_: rfproteina.utils.training_analysis.SkipNanGradCallback

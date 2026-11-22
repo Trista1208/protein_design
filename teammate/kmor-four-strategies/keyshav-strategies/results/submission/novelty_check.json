@@ -1,0 +1,1582 @@
+[
+  {
+    "rank": 1,
+    "design_id": "L3_I23V_M45Y_V84I",
+    "reproducibility": "5/5",
+    "official_median": 0.84213,
+    "official_best": 0.882282,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1699,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1331,
+            "ttmscore": 0.08251
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1323,
+            "ttmscore": 0.08313
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1471,
+            "ttmscore": 0.1601
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1091,
+            "ttmscore": 0.07086
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1265,
+            "ttmscore": 0.08108
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1189,
+            "ttmscore": 0.08451
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1484,
+            "ttmscore": 0.1699
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.148,
+            "ttmscore": 0.1657
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07668,
+            "ttmscore": 0.03917
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.07721,
+            "ttmscore": 0.04048
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 2,
+    "design_id": "L_E_shell_I23L",
+    "reproducibility": "5/5",
+    "official_median": 0.832968,
+    "official_best": 0.86167,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1696,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.133,
+            "ttmscore": 0.08305
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1322,
+            "ttmscore": 0.08313
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1468,
+            "ttmscore": 0.1598
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1061,
+            "ttmscore": 0.06853
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1482,
+            "ttmscore": 0.1696
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1206,
+            "ttmscore": 0.07664
+          },
+          {
+            "target": "6TU6_N",
+            "qtmscore": 0.1332,
+            "ttmscore": 0.07142
+          },
+          {
+            "target": "3NYD_A",
+            "qtmscore": 0.1303,
+            "ttmscore": 0.06978
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1186,
+            "ttmscore": 0.08506
+          },
+          {
+            "target": "7K4Q_A",
+            "qtmscore": 0.1118,
+            "ttmscore": 0.06054
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 3,
+    "design_id": "L2_triple_I23L_M88F_V84L",
+    "reproducibility": "5/5",
+    "official_median": 0.831596,
+    "official_best": 0.874841,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1738,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1359,
+            "ttmscore": 0.08658
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1367,
+            "ttmscore": 0.08612
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1501,
+            "ttmscore": 0.1636
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1287,
+            "ttmscore": 0.08592
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1205,
+            "ttmscore": 0.07661
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1234,
+            "ttmscore": 0.08797
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1516,
+            "ttmscore": 0.1738
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.1512,
+            "ttmscore": 0.1696
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07672,
+            "ttmscore": 0.03918
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.0773,
+            "ttmscore": 0.04052
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 4,
+    "design_id": "L2_pair_V84I_I23V",
+    "reproducibility": "5/5",
+    "official_median": 0.831248,
+    "official_best": 0.853574,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1697,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1353,
+            "ttmscore": 0.08546
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.136,
+            "ttmscore": 0.08568
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1282,
+            "ttmscore": 0.08552
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1193,
+            "ttmscore": 0.07634
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1238,
+            "ttmscore": 0.08818
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.147,
+            "ttmscore": 0.16
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1483,
+            "ttmscore": 0.1697
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09685,
+            "ttmscore": 0.05034
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07663,
+            "ttmscore": 0.03916
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09476,
+            "ttmscore": 0.105
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 5,
+    "design_id": "L2_pair_M88F_M45Y",
+    "reproducibility": "5/5",
+    "official_median": 0.825073,
+    "official_best": 0.848685,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.144,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1328,
+            "ttmscore": 0.0832
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.132,
+            "ttmscore": 0.08323
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1204,
+            "ttmscore": 0.07678
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.106,
+            "ttmscore": 0.06836
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1185,
+            "ttmscore": 0.08484
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1256,
+            "ttmscore": 0.1363
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09653,
+            "ttmscore": 0.05024
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1262,
+            "ttmscore": 0.144
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09303,
+            "ttmscore": 0.1049
+          },
+          {
+            "target": "6TU6_C",
+            "qtmscore": 0.09623,
+            "ttmscore": 0.05028
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 6,
+    "design_id": "L3_M45Y_V84I_M88F",
+    "reproducibility": "5/5",
+    "official_median": 0.824908,
+    "official_best": 0.863004,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1741,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1332,
+            "ttmscore": 0.08335
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1324,
+            "ttmscore": 0.08319
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1197,
+            "ttmscore": 0.07667
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1503,
+            "ttmscore": 0.1638
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.119,
+            "ttmscore": 0.08512
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1257,
+            "ttmscore": 0.08321
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1519,
+            "ttmscore": 0.1741
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09683,
+            "ttmscore": 0.05034
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09934,
+            "ttmscore": 0.1103
+          },
+          {
+            "target": "7K4Q_A",
+            "qtmscore": 0.1328,
+            "ttmscore": 0.0723
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 7,
+    "design_id": "L2_pair_I23V_M45Y",
+    "reproducibility": "5/5",
+    "official_median": 0.810589,
+    "official_best": 0.886562,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.169,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.132,
+            "ttmscore": 0.08301
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1328,
+            "ttmscore": 0.08294
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1464,
+            "ttmscore": 0.1593
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1477,
+            "ttmscore": 0.169
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1062,
+            "ttmscore": 0.06854
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1205,
+            "ttmscore": 0.07657
+          },
+          {
+            "target": "6TU6_N",
+            "qtmscore": 0.1332,
+            "ttmscore": 0.07147
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1186,
+            "ttmscore": 0.08514
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.07728,
+            "ttmscore": 0.04051
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09301,
+            "ttmscore": 0.1049
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 8,
+    "design_id": "L2_pair_I23L_V84L",
+    "reproducibility": "5/5",
+    "official_median": 0.804401,
+    "official_best": 0.88391,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1365,
+        "target": "9HVH_A",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1365,
+            "ttmscore": 0.0859
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1357,
+            "ttmscore": 0.08567
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1285,
+            "ttmscore": 0.08572
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1202,
+            "ttmscore": 0.0765
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1242,
+            "ttmscore": 0.08808
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1255,
+            "ttmscore": 0.1362
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09693,
+            "ttmscore": 0.05037
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07671,
+            "ttmscore": 0.03918
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09303,
+            "ttmscore": 0.1049
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.09304,
+            "ttmscore": 0.1073
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 9,
+    "design_id": "L2_pair_I23L_V84I",
+    "reproducibility": "5/5",
+    "official_median": 0.769877,
+    "official_best": 0.87603,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.16,
+        "target": "7EPN_B",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1357,
+            "ttmscore": 0.08563
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1365,
+            "ttmscore": 0.08585
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1124,
+            "ttmscore": 0.07163
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1203,
+            "ttmscore": 0.07652
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1469,
+            "ttmscore": 0.16
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1234,
+            "ttmscore": 0.08798
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.07708,
+            "ttmscore": 0.04044
+          },
+          {
+            "target": "6TU6_N",
+            "qtmscore": 0.1331,
+            "ttmscore": 0.07137
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09305,
+            "ttmscore": 0.1049
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07669,
+            "ttmscore": 0.03918
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 10,
+    "design_id": "L2_pair_V84I_M45Y",
+    "reproducibility": "4/5",
+    "official_median": 0.826256,
+    "official_best": 0.859225,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1734,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1497,
+            "ttmscore": 0.163
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.133,
+            "ttmscore": 0.08309
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1323,
+            "ttmscore": 0.08316
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1513,
+            "ttmscore": 0.1734
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1199,
+            "ttmscore": 0.07659
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1063,
+            "ttmscore": 0.06856
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.151,
+            "ttmscore": 0.1693
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1188,
+            "ttmscore": 0.08517
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09693,
+            "ttmscore": 0.05037
+          },
+          {
+            "target": "6TU6_N",
+            "qtmscore": 0.1332,
+            "ttmscore": 0.07143
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 11,
+    "design_id": "L2_triple_I23L_V84I_M88F",
+    "reproducibility": "4/5",
+    "official_median": 0.823516,
+    "official_best": 0.850842,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1362,
+        "target": "7EPN_B",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1357,
+            "ttmscore": 0.08561
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.135,
+            "ttmscore": 0.0855
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1279,
+            "ttmscore": 0.08543
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1195,
+            "ttmscore": 0.07649
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.124,
+            "ttmscore": 0.0883
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1255,
+            "ttmscore": 0.1362
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.09308,
+            "ttmscore": 0.1074
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07662,
+            "ttmscore": 0.03915
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.07659,
+            "ttmscore": 0.03902
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09349,
+            "ttmscore": 0.105
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 12,
+    "design_id": "L3_I23V_M45Y_V84L",
+    "reproducibility": "4/5",
+    "official_median": 0.820484,
+    "official_best": 0.896651,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1699,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1334,
+            "ttmscore": 0.08346
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1326,
+            "ttmscore": 0.08334
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1471,
+            "ttmscore": 0.1602
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1209,
+            "ttmscore": 0.07678
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1062,
+            "ttmscore": 0.0685
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1191,
+            "ttmscore": 0.08496
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1484,
+            "ttmscore": 0.1699
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.07733,
+            "ttmscore": 0.04052
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07663,
+            "ttmscore": 0.03916
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.148,
+            "ttmscore": 0.1657
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 13,
+    "design_id": "L_E_shell_V84I",
+    "reproducibility": "4/5",
+    "official_median": 0.790692,
+    "official_best": 0.835871,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1441,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1352,
+            "ttmscore": 0.08551
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1343,
+            "ttmscore": 0.08547
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1285,
+            "ttmscore": 0.08518
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1192,
+            "ttmscore": 0.07641
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1239,
+            "ttmscore": 0.08824
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1254,
+            "ttmscore": 0.1364
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1262,
+            "ttmscore": 0.1441
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09304,
+            "ttmscore": 0.1049
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09696,
+            "ttmscore": 0.05038
+          },
+          {
+            "target": "6TU6_C",
+            "qtmscore": 0.09668,
+            "ttmscore": 0.05043
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 14,
+    "design_id": "L2_pair_I23L_M88A",
+    "reproducibility": "4/5",
+    "official_median": 0.638684,
+    "official_best": 0.808959,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1696,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1356,
+            "ttmscore": 0.08557
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1364,
+            "ttmscore": 0.08577
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1122,
+            "ttmscore": 0.07154
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1194,
+            "ttmscore": 0.07641
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.147,
+            "ttmscore": 0.16
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1235,
+            "ttmscore": 0.08802
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09655,
+            "ttmscore": 0.05025
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1482,
+            "ttmscore": 0.1696
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07663,
+            "ttmscore": 0.03916
+          },
+          {
+            "target": "4BS0_A",
+            "qtmscore": 0.1338,
+            "ttmscore": 0.07221
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 15,
+    "design_id": "L_E_shell_I23V",
+    "reproducibility": "3/5",
+    "official_median": 0.826288,
+    "official_best": 0.872968,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.17,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1353,
+            "ttmscore": 0.08629
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1361,
+            "ttmscore": 0.08584
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1123,
+            "ttmscore": 0.07152
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1473,
+            "ttmscore": 0.1603
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1197,
+            "ttmscore": 0.07629
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1233,
+            "ttmscore": 0.0879
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1485,
+            "ttmscore": 0.17
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09684,
+            "ttmscore": 0.05034
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.1481,
+            "ttmscore": 0.1659
+          },
+          {
+            "target": "6TU6_A",
+            "qtmscore": 0.09654,
+            "ttmscore": 0.05022
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 16,
+    "design_id": "L2_triple_V84I_I23V_M88F",
+    "reproducibility": "3/5",
+    "official_median": 0.81056,
+    "official_best": 0.865695,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1602,
+        "target": "7EPN_B",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1348,
+            "ttmscore": 0.08611
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1355,
+            "ttmscore": 0.08568
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1293,
+            "ttmscore": 0.08637
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1194,
+            "ttmscore": 0.0764
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1235,
+            "ttmscore": 0.08802
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1472,
+            "ttmscore": 0.1602
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09671,
+            "ttmscore": 0.0503
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.09297,
+            "ttmscore": 0.1072
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.0766,
+            "ttmscore": 0.03915
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09298,
+            "ttmscore": 0.1048
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 17,
+    "design_id": "L2_pair_V84I_M88F",
+    "reproducibility": "3/5",
+    "official_median": 0.731993,
+    "official_best": 0.767639,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.144,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1354,
+            "ttmscore": 0.0856
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1347,
+            "ttmscore": 0.08603
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1301,
+            "ttmscore": 0.08628
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1193,
+            "ttmscore": 0.07637
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1239,
+            "ttmscore": 0.08823
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1257,
+            "ttmscore": 0.1363
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1261,
+            "ttmscore": 0.144
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09312,
+            "ttmscore": 0.1046
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.0767,
+            "ttmscore": 0.03918
+          },
+          {
+            "target": "6TU6_P",
+            "qtmscore": 0.09656,
+            "ttmscore": 0.05041
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 18,
+    "design_id": "L2_pair_I23V_R127G",
+    "reproducibility": "3/5",
+    "official_median": 0.511716,
+    "official_best": 0.772285,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1732,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1351,
+            "ttmscore": 0.08537
+          },
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.136,
+            "ttmscore": 0.08559
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1496,
+            "ttmscore": 0.1629
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1303,
+            "ttmscore": 0.08541
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1199,
+            "ttmscore": 0.07632
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1247,
+            "ttmscore": 0.08837
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1512,
+            "ttmscore": 0.1732
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.1509,
+            "ttmscore": 0.1691
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.07709,
+            "ttmscore": 0.04045
+          },
+          {
+            "target": "6TU6_D",
+            "qtmscore": 0.07665,
+            "ttmscore": 0.03916
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 19,
+    "design_id": "L_E_shell_V84M",
+    "reproducibility": "2/5",
+    "official_median": 0.0,
+    "official_best": 0.846513,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1441,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1356,
+            "ttmscore": 0.08552
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1348,
+            "ttmscore": 0.08544
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1278,
+            "ttmscore": 0.08537
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1196,
+            "ttmscore": 0.07638
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.1238,
+            "ttmscore": 0.0882
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1254,
+            "ttmscore": 0.1364
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1262,
+            "ttmscore": 0.1441
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.09304,
+            "ttmscore": 0.1049
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09688,
+            "ttmscore": 0.05035
+          },
+          {
+            "target": "6TU6_C",
+            "qtmscore": 0.0966,
+            "ttmscore": 0.0504
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  },
+  {
+    "rank": 20,
+    "design_id": "L_E_shell_V84L",
+    "reproducibility": "2/5",
+    "official_median": 0.0,
+    "official_best": 0.82584,
+    "length": 150,
+    "base": 102,
+    "oxy": 46,
+    "novelty": {
+      "eligible": true,
+      "reasons": [],
+      "identity": {
+        "max": 0.0,
+        "target": "",
+        "threshold": 0.7
+      },
+      "tm": {
+        "max": 0.1441,
+        "target": "7EPO",
+        "threshold": 0.7,
+        "n_hits": 31,
+        "hits": [
+          {
+            "target": "9HVH_A",
+            "qtmscore": 0.1352,
+            "ttmscore": 0.08551
+          },
+          {
+            "target": "9HVH_B",
+            "qtmscore": 0.1343,
+            "ttmscore": 0.08594
+          },
+          {
+            "target": "1A53",
+            "qtmscore": 0.1302,
+            "ttmscore": 0.08596
+          },
+          {
+            "target": "9HVG",
+            "qtmscore": 0.1192,
+            "ttmscore": 0.07642
+          },
+          {
+            "target": "9HVB",
+            "qtmscore": 0.124,
+            "ttmscore": 0.08831
+          },
+          {
+            "target": "7EPN_B",
+            "qtmscore": 0.1258,
+            "ttmscore": 0.1363
+          },
+          {
+            "target": "7EPO",
+            "qtmscore": 0.1262,
+            "ttmscore": 0.1441
+          },
+          {
+            "target": "7EPN_A",
+            "qtmscore": 0.0864,
+            "ttmscore": 0.09741
+          },
+          {
+            "target": "3NYD_B",
+            "qtmscore": 0.09712,
+            "ttmscore": 0.05043
+          },
+          {
+            "target": "6TU6_C",
+            "qtmscore": 0.1324,
+            "ttmscore": 0.07171
+          }
+        ],
+        "note": "value is max(qtmscore, ttmscore) - the conservative direction (handover 4.3.8)"
+      },
+      "verdict": "NOVEL"
+    }
+  }
+]

@@ -1,0 +1,10 @@
+# We include all non-oracle Metrics since they can be easily
+# controlled via tags. For simplicity, only one oracle is allowed at a time
+
+defaults:
+  - inline_metrics: all_inline_metrics
+  - refolding_oracles: af3
+  - refolding_metrics: all_refolding_metrics
+  - pass_criteria: all_pass_criteria
+  - pre_oracle_filters: all_pre_oracle_filters
+  - optional custom_metrics: all_custom_metrics  # git-ignored user extensions

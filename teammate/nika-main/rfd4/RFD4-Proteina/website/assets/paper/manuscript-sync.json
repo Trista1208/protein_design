@@ -1,0 +1,1176 @@
+{
+  "source_repository": "kierandidi/RFD4-Proteina-paper",
+  "source_commit": "47d6a4d648e33b91d0a5f1626bc98eaeb8e87ecb",
+  "source_hashes": {
+    "authors.tex": "67148c0421e79d99088d51169815bbd6c0da39459d0e289cc0cec1166b4465ec",
+    "figures_raw/figure_1_concept.svg": "451d1aa2768af34828d182488720be0925d83bb18ef5f24b460b810461e3b205",
+    "drafting/figure4_cam/updated_20261016/selected_complex.cif": "481ac3ab9e268b4cc278138d5e548121773077edb923dd02b64531d70aaec3e4",
+    "drafting/figure5_hbonds/updated_20261020/approved-style/H3T11_hit09.cif": "cb38ebc758f7385f98ce5468852a4d89d511dbf92a69b5bb0bf1f2cee06a4712",
+    "figures_raw/figure_1_concept.pdf": "da946211e729d06e6033873c3b375a0c0cac990bcee05705c6884f4de86c37c3",
+    "figures_tex/figure_1_concept.tex": "853e01c97a8c7348547bda7bf803f0ab6cb21cf5d0ec304038b025f09ce944a7",
+    "figures_raw/figure_2_in_silico.pdf": "01febe4de463f8e074eb57208aa4b9354de0cabd1e419478e260155a7da7ad74",
+    "figures_tex/figure_2_in_silico.tex": "417da733cb244a26d48e9cbbdb29f114be8772825ab44814b3aff00bde358c94",
+    "figures_raw/figure_4_specificity.pdf": "27c7d38161fb663f766151ae9014ba971be9e67cf56b63e8f984d57e9a46225a",
+    "figures_tex/figure_4_wetlab_overview.tex": "62d549a42130f67b704601b71c612b524ccb6f39dd907aa4a3250a9ae7f33693",
+    "figures_raw/figure_5_ptm_glycosylation.pdf": "044b7cd9dff60a4d9869cd119d8df0afde272eb505047a76d86c9bc74268e611",
+    "figures_tex/figure_5_ptm_glycosylation.tex": "73a921499db5ecee2194a801662edcdd6a19b1b2c7aa3cd10b2e33f2800d6acc",
+    "figures_raw/figure_6_enzymes.pdf": "ad00c3645716b039feac984de5f804b6265de6a638b765ddd869bd266d2d8e89",
+    "figures_tex/figure_6_enzymes.tex": "d8b23ee97aa8d7872bda15cbba6d1bbb40759917431dc3d3cbbb29cdea0acd48",
+    "figures_tex/supplementary_figure_enzyme_kinetics.tex": "7ce938918259713c862dbcf38f8b9371e977e71c43c12c77d3d61833de3cb816",
+    "appendices/wet_lab_methods/pte.tex": "3702ee5b7595ad1fcc45b990b3bcd857426d7e8533abc93b3767a75322bdee8d"
+  },
+  "dpi": 300,
+  "authors": [
+    {
+      "name": "Nathaniel Corley",
+      "affiliations": [
+        1,
+        2,
+        3
+      ],
+      "equal_first": true,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Kieran Didi",
+      "affiliations": [
+        1,
+        4,
+        5
+      ],
+      "equal_first": true,
+      "equal_second": false,
+      "corresponding": true,
+      "email": "kdidi@nvidia.com"
+    },
+    {
+      "name": "Maxwell W. Kazman",
+      "affiliations": [
+        1,
+        2,
+        6
+      ],
+      "equal_first": true,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Rafael I. Brent",
+      "affiliations": [
+        1,
+        2,
+        7
+      ],
+      "equal_first": true,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Magnus S. Bauer",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Riti Biswas",
+      "affiliations": [
+        1,
+        2,
+        7
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Julia E. Bonzanini",
+      "affiliations": [
+        1,
+        2,
+        3
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Adam M. Chazin-Gray",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Jie Chen",
+      "affiliations": [
+        1,
+        2,
+        10
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Andrew Favor",
+      "affiliations": [
+        1,
+        2,
+        7
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Maximilian Gantz",
+      "affiliations": [
+        1,
+        23
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Henry A. Jones",
+      "affiliations": [
+        11,
+        12
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Paul Kim",
+      "affiliations": [
+        1,
+        2,
+        7
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Margaret C. Lunn-Halbert",
+      "affiliations": [
+        1,
+        2,
+        6
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Nora K. McNamara-Bordewick",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Saman Salike",
+      "affiliations": [
+        1,
+        2,
+        19
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "D\u00e9Jena\u00e9 L. See",
+      "affiliations": [
+        1,
+        2,
+        3
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Shajesh Sharma",
+      "affiliations": [
+        1,
+        2,
+        3
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Eric Sun",
+      "affiliations": [
+        1,
+        15
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Preetham Venkatesh",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Seth M. Woodbury",
+      "affiliations": [
+        1,
+        2,
+        3
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Kejia Wu",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Yuyang Zhang",
+      "affiliations": [
+        1,
+        8,
+        9
+      ],
+      "equal_first": false,
+      "equal_second": true,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Joel D. Allen",
+      "affiliations": [
+        13
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Jasper Butcher",
+      "affiliations": [
+        1,
+        2,
+        10
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Lemuel Chang",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Yehlin Cho",
+      "affiliations": [
+        4
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Alexis Courbet",
+      "affiliations": [
+        1,
+        2,
+        15
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Brian Coventry",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Christian Dallago",
+      "affiliations": [
+        4,
+        17
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Elliot S. Delfosse",
+      "affiliations": [
+        1,
+        2,
+        6
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Helen E. Eisenach",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Mariana Garcia Sanchez",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Tomas Geffner",
+      "affiliations": [
+        4
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Inna Goreshnik",
+      "affiliations": [
+        1,
+        2,
+        15
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Per Greisen",
+      "affiliations": [
+        18
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Andrew C. Hunt",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "David E. Kim",
+      "affiliations": [
+        1,
+        2,
+        15
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Donghyo Kim",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Brianne R. King",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Rohith Krishna",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Yanjing Li",
+      "affiliations": [
+        1,
+        2,
+        10
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Zi Ming Li",
+      "affiliations": [
+        1,
+        3
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Aiko Muraishi",
+      "affiliations": [
+        1,
+        2,
+        10
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Edin Muratspahi\u0107",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Oliver Nagl",
+      "affiliations": [
+        1,
+        16
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Griffin H. Rangel",
+      "affiliations": [
+        1,
+        14
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Antonia Ruder",
+      "affiliations": [
+        1,
+        16
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Hojeong Shin",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Zefei Xu",
+      "affiliations": [
+        11,
+        12
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Yuwei Yang",
+      "affiliations": [
+        4
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Max Crispin",
+      "affiliations": [
+        13
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Neil P. King",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Frank DiMaio",
+      "affiliations": [
+        1,
+        2
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Gaurav Bhardwaj",
+      "affiliations": [
+        1,
+        14,
+        22
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Michael Bronstein",
+      "affiliations": [
+        5,
+        20
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Karsten Kreis",
+      "affiliations": [
+        4
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Donald Hilvert",
+      "affiliations": [
+        21
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Anthony P. Green",
+      "affiliations": [
+        11,
+        12
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "Arash Vahdat",
+      "affiliations": [
+        4
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": false,
+      "email": null
+    },
+    {
+      "name": "David Baker",
+      "affiliations": [
+        1,
+        2,
+        15
+      ],
+      "equal_first": false,
+      "equal_second": false,
+      "corresponding": true,
+      "email": "dabaker@uw.edu"
+    }
+  ],
+  "affiliations": [
+    {
+      "id": 1,
+      "name": "Institute for Protein Design, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 2,
+      "name": "Department of Biochemistry, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 3,
+      "name": "Department of Bioengineering, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 4,
+      "name": "NVIDIA Corporation, Santa Clara, CA, USA"
+    },
+    {
+      "id": 5,
+      "name": "Department of Computer Science, University of Oxford, Oxford, UK"
+    },
+    {
+      "id": 6,
+      "name": "Graduate Program in Biological Physics, Structure and Design, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 7,
+      "name": "Graduate Program in Molecular Engineering, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 8,
+      "name": "MOE Key Laboratory of Bioinformatics, School of Life Sciences, Tsinghua University, Beijing, China"
+    },
+    {
+      "id": 9,
+      "name": "Beijing Frontier Research Center for Biological Structure, Tsinghua University, Beijing, China"
+    },
+    {
+      "id": 10,
+      "name": "Paul G. Allen School of Computer Science and Engineering, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 11,
+      "name": "Manchester Institute of Biotechnology, The University of Manchester, Manchester, UK"
+    },
+    {
+      "id": 12,
+      "name": "Department of Chemistry, The University of Manchester, Manchester, UK"
+    },
+    {
+      "id": 13,
+      "name": "School of Biological Sciences, University of Southampton, Southampton, UK"
+    },
+    {
+      "id": 14,
+      "name": "Department of Medicinal Chemistry, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 15,
+      "name": "Howard Hughes Medical Institute, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 16,
+      "name": "Department of Biosystems Science and Engineering, ETH Zurich, Basel, Switzerland"
+    },
+    {
+      "id": 17,
+      "name": "Department of Biostatistics and Bioinformatics, Duke University, Durham, NC, USA"
+    },
+    {
+      "id": 18,
+      "name": "BioMap Research, Palo Alto, CA, USA"
+    },
+    {
+      "id": 19,
+      "name": "Department of Chemical Engineering, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 20,
+      "name": "AITHYRA, Research Institute for Biomedical Artificial Intelligence, Austrian Academy of Sciences, Vienna, Austria"
+    },
+    {
+      "id": 21,
+      "name": "Laboratory of Organic Chemistry, ETH Zurich, Zurich, Switzerland"
+    },
+    {
+      "id": 22,
+      "name": "Institute for Innovations in Drug Disposition and Delivery, University of Washington, Seattle, WA, USA"
+    },
+    {
+      "id": 23,
+      "name": "Max Planck Institute for Terrestrial Microbiology, Marburg, Germany"
+    }
+  ],
+  "figures": [
+    {
+      "path": "assets/paper/figure1a-latent-callouts.png",
+      "source": "figures_raw/figure_1_concept.svg",
+      "caption": "figures_tex/figure_1_concept.tex",
+      "crop_pdf_points": null,
+      "selected_svg_span": [
+        "g35",
+        "panelA_GLC-selected-point-1"
+      ],
+      "svg_viewbox": [
+        124,
+        16,
+        342,
+        211
+      ],
+      "pixels": [
+        1600,
+        987
+      ],
+      "sha256": "b81c756e70dd535d24f6650aaf3f72f795bd58ac2cfdb88cd1cd49f9ce3a468d",
+      "source_snapshot": "november-working-tree",
+      "source_sha256": "451d1aa2768af34828d182488720be0925d83bb18ef5f24b460b810461e3b205",
+      "caption_sha256": "853e01c97a8c7348547bda7bf803f0ab6cb21cf5d0ec304038b025f09ce944a7"
+    },
+    {
+      "path": "assets/paper/figure1d-trajectory.png",
+      "source": "figures_raw/figure_1_concept.pdf",
+      "caption": "figures_tex/figure_1_concept.tex",
+      "crop_pdf_points": [
+        16,
+        334,
+        494,
+        164
+      ],
+      "pixels": [
+        2058,
+        683
+      ],
+      "sha256": "0d7ad93cb13ea2e61a0b8fa93d820b07956e0daafa940c76210faa99056a976c",
+      "source_snapshot": "november-working-tree",
+      "source_sha256": "da946211e729d06e6033873c3b375a0c0cac990bcee05705c6884f4de86c37c3",
+      "caption_sha256": "853e01c97a8c7348547bda7bf803f0ab6cb21cf5d0ec304038b025f09ce944a7"
+    },
+    {
+      "path": "assets/paper/figure1f-search.png",
+      "source": "figures_raw/figure_1_concept.pdf",
+      "caption": "figures_tex/figure_1_concept.tex",
+      "crop_pdf_points": [
+        85,
+        593.4,
+        335,
+        61.6
+      ],
+      "pixels": [
+        1396,
+        257
+      ],
+      "sha256": "ec1781baded99f64be79bb8d8418ae70e9941b1fb2ae7e828c7c571c6cc52cbb",
+      "source_snapshot": "november-working-tree",
+      "source_sha256": "da946211e729d06e6033873c3b375a0c0cac990bcee05705c6884f4de86c37c3",
+      "caption_sha256": "853e01c97a8c7348547bda7bf803f0ab6cb21cf5d0ec304038b025f09ce944a7"
+    },
+    {
+      "path": "assets/paper/fig2-in-silico.webp",
+      "source": "figures_raw/figure_2_in_silico.pdf",
+      "caption": "figures_tex/figure_2_in_silico.tex",
+      "crop_pdf_points": null,
+      "pixels": [
+        2162,
+        2871
+      ],
+      "sha256": "2128cb9038461ead6596f3ee43b5a80550cc360953d81c678e7749090a6ab15f",
+      "source_commit": "18b7fc2cdbb14e71ab69935ca835c13cb0e82eb6",
+      "source_sha256": "6f2574b7a7eabd0b0ab8e0374469e9d7912c397b4dce953980caa579276952c4",
+      "caption_sha256": "417da733cb244a26d48e9cbbdb29f114be8772825ab44814b3aff00bde358c94"
+    },
+    {
+      "path": "assets/paper/fig4-specificity-full.webp",
+      "source": "figures_raw/figure_4_specificity.pdf",
+      "caption": "figures_tex/figure_4_wetlab_overview.tex",
+      "crop_pdf_points": null,
+      "pixels": [
+        2162,
+        2918
+      ],
+      "sha256": "a65e537ad0f54b3352203d0f8282f4b64e0c5bc8d1c57b4c2132111552779627",
+      "source_commit": "92403e82ec162a380e21a05b6b4cc51669550cfa",
+      "source_sha256": "494cadff0ffc792fa59bb26f2bbaa92d195284189bdca9686201f493e8bcab8b",
+      "caption_sha256": "e57e0dbff7a33efa159d6233c65a7ab64c82648e726bbc4efab82ed2d5704442"
+    },
+    {
+      "path": "assets/paper/fig4a-calmodulin.webp",
+      "source": "figures_raw/figure_4_specificity.pdf",
+      "caption": "figures_tex/figure_4_wetlab_overview.tex",
+      "crop_pdf_points": [
+        0,
+        0,
+        216,
+        249
+      ],
+      "pixels": [
+        900,
+        1038
+      ],
+      "sha256": "c48c54b9f5a26e12ede1506381b295acb8f425d67799038d481f5120923f69c1",
+      "source_commit": "92403e82ec162a380e21a05b6b4cc51669550cfa",
+      "source_sha256": "494cadff0ffc792fa59bb26f2bbaa92d195284189bdca9686201f493e8bcab8b",
+      "caption_sha256": "e57e0dbff7a33efa159d6233c65a7ab64c82648e726bbc4efab82ed2d5704442"
+    },
+    {
+      "path": "assets/paper/fig4b-pmhc.webp",
+      "source": "figures_raw/figure_4_specificity.pdf",
+      "caption": "figures_tex/figure_4_wetlab_overview.tex",
+      "crop_pdf_points": [
+        216,
+        0,
+        302.740157,
+        249
+      ],
+      "pixels": [
+        1261,
+        1038
+      ],
+      "sha256": "07253501fa33e25dbb73b1e925e9161e7fd48d8adbc8ee4b5655b2d4b739d409",
+      "source_commit": "92403e82ec162a380e21a05b6b4cc51669550cfa",
+      "source_sha256": "494cadff0ffc792fa59bb26f2bbaa92d195284189bdca9686201f493e8bcab8b",
+      "caption_sha256": "e57e0dbff7a33efa159d6233c65a7ab64c82648e726bbc4efab82ed2d5704442"
+    },
+    {
+      "path": "assets/paper/fig4cd-idr.webp",
+      "source": "figures_raw/figure_4_specificity.pdf",
+      "caption": "figures_tex/figure_4_wetlab_overview.tex",
+      "crop_pdf_points": [
+        0,
+        249,
+        518.740157,
+        211
+      ],
+      "pixels": [
+        2161,
+        879
+      ],
+      "sha256": "7bd6686611f169fee8ee165a92bf589e52f5acea1546d974ce84f0e8efe6175c",
+      "source_commit": "92403e82ec162a380e21a05b6b4cc51669550cfa",
+      "source_sha256": "494cadff0ffc792fa59bb26f2bbaa92d195284189bdca9686201f493e8bcab8b",
+      "caption_sha256": "e57e0dbff7a33efa159d6233c65a7ab64c82648e726bbc4efab82ed2d5704442"
+    },
+    {
+      "path": "assets/paper/fig4ef-trka.webp",
+      "source": "figures_raw/figure_4_specificity.pdf",
+      "caption": "figures_tex/figure_4_wetlab_overview.tex",
+      "crop_pdf_points": [
+        0,
+        460,
+        518.740157,
+        240.15748
+      ],
+      "pixels": [
+        2161,
+        1000
+      ],
+      "sha256": "bd35d12b678399465efd936b31723344470121aecc150d880d4f7f823708e10d",
+      "source_commit": "92403e82ec162a380e21a05b6b4cc51669550cfa",
+      "source_sha256": "494cadff0ffc792fa59bb26f2bbaa92d195284189bdca9686201f493e8bcab8b",
+      "caption_sha256": "e57e0dbff7a33efa159d6233c65a7ab64c82648e726bbc4efab82ed2d5704442"
+    },
+    {
+      "path": "assets/paper/fig5-ptm-glycosylation-full.webp",
+      "source": "figures_raw/figure_5_ptm_glycosylation.pdf",
+      "caption": "figures_tex/figure_5_ptm_glycosylation.tex",
+      "crop_pdf_points": null,
+      "pixels": [
+        2162,
+        1459
+      ],
+      "sha256": "8f9dba43e06e75574bbd419b4ad485303ded929d52619df2f2fdb77f4429d6f8"
+    },
+    {
+      "path": "assets/paper/fig5abc-glycan.webp",
+      "source": "figures_raw/figure_5_ptm_glycosylation.pdf",
+      "caption": "figures_tex/figure_5_ptm_glycosylation.tex",
+      "crop_pdf_points": [
+        0,
+        0,
+        518.740157,
+        165
+      ],
+      "pixels": [
+        2161,
+        688
+      ],
+      "sha256": "a053abd1b7f0df95bfefeb12363c887f406ecbc0a8e80a044f245ad122c41ed4"
+    },
+    {
+      "path": "assets/paper/fig5def-phospho.webp",
+      "source": "figures_raw/figure_5_ptm_glycosylation.pdf",
+      "caption": "figures_tex/figure_5_ptm_glycosylation.tex",
+      "crop_pdf_points": [
+        0,
+        165,
+        518.740157,
+        185.07874
+      ],
+      "pixels": [
+        2161,
+        771
+      ],
+      "sha256": "26454add5a25c93a18d3f0c47f67acc834f7c2349a9863b94713e2de6c687608"
+    },
+    {
+      "path": "assets/paper/fig6-enzymes-full.webp",
+      "source": "figures_raw/figure_6_enzymes.pdf",
+      "caption": "figures_tex/figure_6_enzymes.tex",
+      "crop_pdf_points": null,
+      "pixels": [
+        2162,
+        3209
+      ],
+      "sha256": "6b9086b41966490172eec108e7d4df3fc7e0faa72ff9ef123f72939902549b14",
+      "source_snapshot": "november-working-tree",
+      "source_sha256": "ad00c3645716b039feac984de5f804b6265de6a638b765ddd869bd266d2d8e89",
+      "caption_sha256": "d8b23ee97aa8d7872bda15cbba6d1bbb40759917431dc3d3cbbb29cdea0acd48"
+    },
+    {
+      "path": "assets/paper/fig6a-h-pte.webp",
+      "source": "figures_raw/figure_6_enzymes.pdf",
+      "caption": "figures_tex/figure_6_enzymes.tex",
+      "crop_pdf_points": [
+        0,
+        0,
+        518.74,
+        443
+      ],
+      "pixels": [
+        2161,
+        1846
+      ],
+      "sha256": "5df41959ff677b200b51a697343d6665acd76ff7a0ec1374b67cf1f46af7e9ff",
+      "source_snapshot": "november-working-tree",
+      "source_sha256": "ad00c3645716b039feac984de5f804b6265de6a638b765ddd869bd266d2d8e89",
+      "caption_sha256": "d8b23ee97aa8d7872bda15cbba6d1bbb40759917431dc3d3cbbb29cdea0acd48"
+    },
+    {
+      "path": "assets/paper/fig6i-n-ligase.webp",
+      "source": "figures_raw/figure_6_enzymes.pdf",
+      "caption": "figures_tex/figure_6_enzymes.tex",
+      "crop_pdf_points": [
+        0,
+        445,
+        518.74,
+        325
+      ],
+      "pixels": [
+        2161,
+        1354
+      ],
+      "sha256": "ec75417676ef2aea3c9c30fcb20b7146a54e5b0136a06d244c7da68b69a3ac4a",
+      "source_snapshot": "november-working-tree",
+      "source_sha256": "ad00c3645716b039feac984de5f804b6265de6a638b765ddd869bd266d2d8e89",
+      "caption_sha256": "d8b23ee97aa8d7872bda15cbba6d1bbb40759917431dc3d3cbbb29cdea0acd48"
+    },
+    {
+      "path": "../docs/_static/benchmark-figure.webp",
+      "source": "figures_raw/figure_2_in_silico.pdf",
+      "caption": "figures_tex/figure_2_in_silico.tex",
+      "crop_pdf_points": null,
+      "pixels": [
+        2162,
+        2871
+      ],
+      "sha256": "2128cb9038461ead6596f3ee43b5a80550cc360953d81c678e7749090a6ab15f",
+      "source_commit": "18b7fc2cdbb14e71ab69935ca835c13cb0e82eb6",
+      "source_sha256": "6f2574b7a7eabd0b0ab8e0374469e9d7912c397b4dce953980caa579276952c4",
+      "caption_sha256": "417da733cb244a26d48e9cbbdb29f114be8772825ab44814b3aff00bde358c94"
+    }
+  ],
+  "structures": [
+    {
+      "path": "assets/structures/cam_selected.cif.gz",
+      "source": "drafting/figure4_cam/updated_20261016/selected_complex.cif",
+      "source_sha256": "481ac3ab9e268b4cc278138d5e548121773077edb923dd02b64531d70aaec3e4",
+      "export": "Unmodified source CIF, gzip compressed"
+    },
+    {
+      "path": "assets/structures/h3pt11_hit09.cif.gz",
+      "source": "drafting/figure5_hbonds/updated_20261020/approved-style/H3T11_hit09.cif",
+      "source_sha256": "cb38ebc758f7385f98ce5468852a4d89d511dbf92a69b5bb0bf1f2cee06a4712",
+      "export": "Unmodified source CIF, gzip compressed"
+    },
+    {
+      "path": "assets/structures/cam_resolved.cif.gz",
+      "source": "drafting/figure4_cam/second_hit.cif",
+      "source_commit": "670fc371b2e4bab2fe88f7ec066e0ee27ac5f3f0",
+      "source_sha256": "67ec78d5d19432b70b3f02321e2adbcbe9f98b9958d67f903bd6d71d63df74b9",
+      "export": "Unmodified source CIF, gzip compressed",
+      "design": "tss_beam_manifest_c09_31860910_1_bsfinal_11",
+      "binder_chain": "B",
+      "target_chain": "A",
+      "binder_sequence_matches_assay": true,
+      "assay_source": "drafting/figure4_cam/updated_20261016/holo_summary.csv",
+      "assay_source_sha256": "b56c068449eefad6850138d5d45a60258648f388f53af204daa003f10711703d",
+      "apparent_kd_M": 2.4766942934349233e-09,
+      "fit_quality": "Good",
+      "koff_s_inv": 0.00024882057593875043
+    }
+  ],
+  "notes": [
+    "Reviewed manuscript PDFs are rendered and cropped; latent callouts use the corresponding native SVG elements. Scientific content is not redrawn.",
+    "Surrounding captions and numerical statements were reviewed separately against the recorded caption sources."
+  ],
+  "latest_review": {
+    "source_snapshot": "november-working-tree",
+    "updated_figure_exports": [
+      "figure1a-latent-callouts.png",
+      "figure1d-trajectory.png",
+      "figure1f-search.png",
+      "fig6-enzymes-full.webp",
+      "fig6a-h-pte.webp",
+      "fig6i-n-ligase.webp"
+    ],
+    "unchanged_figure_sources": {
+      "figures_raw/figure_2_in_silico.pdf": "6f2574b7a7eabd0b0ab8e0374469e9d7912c397b4dce953980caa579276952c4",
+      "figures_raw/figure_4_specificity.pdf": "494cadff0ffc792fa59bb26f2bbaa92d195284189bdca9686201f493e8bcab8b",
+      "figures_raw/figure_5_ptm_glycosylation.pdf": "044b7cd9dff60a4d9869cd119d8df0afde272eb505047a76d86c9bc74268e611"
+    },
+    "notes": [
+      "Figure 6 layout reviewed and recropped to panels a\u2013h and i\u2013n.",
+      "Figure 1 native artwork refreshed; original isolated latent callouts and trajectory/search crops reviewed.",
+      "Phosphorylated peptide copy aligned to pS10 and pT11; PTE and ligase captions and kinetic values aligned to current manuscript.",
+      "BLITZ aliases are explicit in supplementary_figure_enzyme_kinetics.tex; existing structure identities and files are preserved."
+    ]
+  },
+  "benchmark_review": {
+    "source_commit": "18b7fc2cdbb14e71ab69935ca835c13cb0e82eb6",
+    "source_pull_request": "https://github.com/kierandidi/RFD4-Proteina-paper/pull/113",
+    "figure": "figures_raw/figure_2_in_silico.pdf",
+    "methods": "appendices/in_silico_methods/benchmarks.tex",
+    "methods_sha256": "2a3e6cba80db639766c3ffd6b060e89e6f638aff072d305f4ece2cde404c7864",
+    "cohort_receipt": "figure_sources/figure_02/data/rfd3-dna-refresh.json",
+    "cohort_receipt_sha256": "28dee69abfc807dbdb0642be63755c652f26e310b26b601fcdccd118c67f6212",
+    "rfd3_dna": {
+      "condition": "dna_fixed",
+      "attempts": 600,
+      "passes": 5,
+      "clusters": 3,
+      "clustered_percent": 0.5,
+      "targets_solved": 2,
+      "targets": 3,
+      "generation_timing": "Transferred from prior fixed-DNA cohort"
+    }
+  },
+  "source_snapshots": {
+    "november-working-tree": {
+      "source_repository": "kierandidi/RFD4-Proteina-paper",
+      "base_commit": "d6ef3362efa58a8f2ff57fc2cb95f9d4c0fc5796",
+      "dirty": true,
+      "description": "Reviewed current working-tree artwork, captions, author list, and enzyme kinetics. File hashes identify the snapshot; these files are not asserted to match the base commit. Earlier source_commit fields describe unchanged historical exports.",
+      "source_hashes": {
+        "figures_raw/figure_1_concept.svg": "451d1aa2768af34828d182488720be0925d83bb18ef5f24b460b810461e3b205",
+        "figures_tex/figure_1_concept.tex": "853e01c97a8c7348547bda7bf803f0ab6cb21cf5d0ec304038b025f09ce944a7",
+        "figures_raw/figure_1_concept.pdf": "da946211e729d06e6033873c3b375a0c0cac990bcee05705c6884f4de86c37c3",
+        "figures_raw/figure_6_enzymes.pdf": "ad00c3645716b039feac984de5f804b6265de6a638b765ddd869bd266d2d8e89",
+        "figures_tex/figure_6_enzymes.tex": "d8b23ee97aa8d7872bda15cbba6d1bbb40759917431dc3d3cbbb29cdea0acd48",
+        "authors.tex": "67148c0421e79d99088d51169815bbd6c0da39459d0e289cc0cec1166b4465ec",
+        "figures_tex/figure_5_ptm_glycosylation.tex": "73a921499db5ecee2194a801662edcdd6a19b1b2c7aa3cd10b2e33f2800d6acc",
+        "figures_tex/supplementary_figure_enzyme_kinetics.tex": "7ce938918259713c862dbcf38f8b9371e977e71c43c12c77d3d61833de3cb816",
+        "appendices/wet_lab_methods/pte.tex": "3702ee5b7595ad1fcc45b990b3bcd857426d7e8533abc93b3767a75322bdee8d"
+      }
+    }
+  }
+}

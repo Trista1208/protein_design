@@ -1,0 +1,9 @@
+# Unconditional pretraining: 90% unconditional, 5% folding, 5% inverse folding.
+
+defaults:
+  - all_off
+  - _self_
+
+unconditional:    {frequency: 90.0}
+folding:          {frequency: 5.0}
+inverse_folding:  {frequency: 5.0}

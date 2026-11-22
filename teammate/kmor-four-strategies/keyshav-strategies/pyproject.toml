@@ -1,0 +1,52 @@
+[project]
+name = "kemp-design"
+version = "0.1.0"
+description = "Scoring, gating and optimisation pipeline for de novo Kemp eliminase design (DBSSE Protein Design Hackathon, Basel 2026)"
+readme = "README.md"
+requires-python = ">=3.12"
+
+# The ANALYSIS side of the pipeline: scoring, gates, literature filters,
+# plots and the PDF. These are the versions actually used for every number
+# in docs/, verified with importlib.metadata rather than typed by hand.
+#
+# The MODEL side is deliberately NOT here. Boltz-2, RFdiffusion3,
+# LigandMPNN and Rosetta each need their own environment (CUDA builds,
+# pinned torch, a compiled Rosetta tree), and forcing them into one
+# resolver is how a working setup gets broken. Those live in envs/*.yml;
+# kemp/config.py points at the interpreter for each.
+dependencies = [
+    "numpy==2.5.5",
+    "biopython==1.88",
+    "rdkit==2026.9.2",
+    "matplotlib==3.11.2",
+    "reportlab==5.1.0",
+    "freesasa==2.2.1",
+]
+
+[project.optional-dependencies]
+# Restrained minimisation and rotamer-stability work. Only the two
+# packages below are on PyPI; openmm, openmmforcefields, openff-toolkit
+# and pdbfixer are conda-forge only, so `uv lock` cannot resolve them and
+# pinning them here would make the lock unbuildable for everyone.
+#
+#   conda env create -f envs/mm.yml      # openmm 8.6.1, openff 0.19.0,
+#                                        # openmmforcefields 0.16.0,
+#                                        # pdbfixer 1.12.0
+md = [
+    "parmed==4.3.1",
+    "mdtraj==1.11.2",
+]
+dev = [
+    "pytest==9.2.0",
+]
+
+[tool.uv]
+# resolve for this machine's platform; the CUDA stacks are conda-managed
+environments = ["sys_platform == 'linux'"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["kemp"]

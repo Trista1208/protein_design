@@ -1,0 +1,15 @@
+defaults:
+  # package reference needed for validation using `+datasets/val@generation=motif_scaffolding/indexed_motif_scaffold_subset`
+  - /datasets/val/motif_scaffolding@_here_: unindexed_motif_scaffold_full
+  - _self_
+
+dataset:
+  subset_to_keys:
+    - 3IXT_AA
+    - 1YCR_AA
+    - 1QJG_AA
+    - 5TPN_AA
+    - 1PRW_AA
+    - 4ZYP_AA
+  
+  num_replicates: 100

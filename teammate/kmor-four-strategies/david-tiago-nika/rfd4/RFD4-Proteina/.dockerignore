@@ -1,0 +1,23 @@
+# Two images are built from this repository and this file must serve both:
+#   Dockerfile                      the public application image; installs from PyPI only,
+#                                   needs the project source, configs and benchmark inputs.
+**
+!pyproject.toml
+!README.md
+!LICENSE
+!.project-root
+!src/
+!src/**
+!configs/
+!configs/**
+!data/
+!data/cath_label_mapping.pkl
+!data/benchmarks/
+!data/benchmarks/**
+!deploy/
+!deploy/api/
+!deploy/api/app/
+!deploy/api/app/**
+**/__pycache__
+**/*.pyc
+**/.DS_Store

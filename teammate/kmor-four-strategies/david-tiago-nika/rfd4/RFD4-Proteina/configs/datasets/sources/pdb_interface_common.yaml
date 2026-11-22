@@ -1,0 +1,24 @@
+# Loader, filters, and columns shared by all PDB-derived interface datasets
+
+defaults:
+  - pdb_common
+  - _self_
+
+loader:
+  blob_dir: ${oc.env:DATASET_STORE_ROOT}/train_datasets/streaming-latest/pdb/2026_10_04_tmol_plip_cath/blob
+  column_mapping:
+    query_pn_unit_iids: ["pn_unit_1_iid", "pn_unit_2_iid"]
+
+filters:
+  mapping:
+    interface_cluster: "interface_cluster.notnull()"
+    inter_molecule: "is_inter_molecule"
+
+columns_to_load:
+  mapping:
+    interface:
+      - interface_cluster
+      - pn_unit_1_iid
+      - pn_unit_2_iid
+      - is_inter_molecule
+      - involves_loi

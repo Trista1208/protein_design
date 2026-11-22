@@ -1,0 +1,4 @@
+# @package generation
+
+defaults:
+  - /recycle_strategy/high/front_loaded@_here_
