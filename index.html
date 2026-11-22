@@ -122,6 +122,34 @@ p{font-size:22px;line-height:1.45;color:var(--dim)}
 .sdl{display:flex;gap:22px;margin-top:14px}
 .sdl span{flex:1;text-align:center;font-family:var(--mono);font-size:15px;letter-spacing:.16em;color:var(--faint)}
 
+/* --- mechanism inset (slide 2) --- */
+.mx{display:flex;flex-direction:column;gap:0}
+.mxfloat{position:absolute;left:1058px;top:372px;width:396px}
+.mxfloat .mx-cap{font-size:13px;letter-spacing:.07em;min-height:30px;margin-top:10px}
+.mxfloat .mx-dots i{width:26px}
+.mxfloat .mx-atom{font-size:28px}
+.mxfloat .mx-lbl{font-size:16px}
+.mxfloat .mx-bond{stroke-width:3.8}
+
+.mx svg{display:block;width:100%;height:auto}
+.mx-bond{stroke:var(--fg);stroke-width:3.4;stroke-linecap:round;fill:none}
+.mx-thin{stroke-width:2.8}
+.mx-atom{font-family:var(--body);font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central;fill:var(--fg)}
+.mx-o{fill:#A94B5D}.mx-n{fill:#3A5FA8}
+.mx-lbl{font-family:var(--mono);font-size:15px;letter-spacing:.12em;fill:var(--dim)}
+.mx-dash{stroke:var(--kiwi);stroke-width:2.8;stroke-dasharray:5 7;fill:none;stroke-linecap:round}
+.mx-arrow{stroke:var(--kiwi-bright);stroke-width:3.6;fill:none;marker-end:url(#m2arrowhead);stroke-linecap:round}
+.mx-chg{font-family:var(--body);font-size:21px;font-weight:700;fill:#A94B5D;text-anchor:middle;dominant-baseline:central}
+.mx-g{opacity:0;transition:opacity .5s var(--ease)}
+.mx-g.on{opacity:1}
+.mx-halo{fill:rgba(126,118,212,.16);opacity:0;transition:opacity .5s var(--ease)}
+.mx-halo.on{opacity:1}
+.mx-pulse{animation:mxpulse 1.5s ease-in-out infinite}
+@keyframes mxpulse{0%,100%{opacity:1}50%{opacity:.35}}
+.mx-cap{margin:4px 0 0;font-family:var(--mono);font-size:15px;letter-spacing:.09em;color:var(--kiwi-bright);min-height:34px;line-height:1.3}
+.mx-dots{display:flex;gap:8px;margin-top:8px}
+.mx-dots i{width:34px;height:3px;border-radius:2px;background:rgba(74,64,124,.18);transition:background .4s var(--ease)}
+.mx-dots i.on{background:var(--kiwi)}
 .chip{display:inline-block;font-family:var(--mono);font-size:16px;letter-spacing:.14em;padding:9px 18px;border-radius:999px;border:1px solid var(--line2);color:var(--kiwi-bright);background:rgba(126,118,212,.06)}
 .chip.todo{border-color:rgba(255,200,87,.45);color:var(--amber);background:rgba(255,200,87,.06)}
 
@@ -167,6 +195,98 @@ p{font-size:22px;line-height:1.45;color:var(--dim)}
       <span class="names">Jiaqi · Dejvid · Keyshav · Tiago · Nora</span>
     </div>
   </div>
+    <div class="mx mxfloat reveal" style="--d:.5">
+        <svg viewBox="122 100 538 424">
+          <defs><marker id="m2arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#564CAE"/></marker></defs>
+            <circle class="mx-halo" id="m2halo" cx="432" cy="330" r="92"/>
+
+            <!-- benzene -->
+            <path class="mx-bond" d="M300 228 L353.7 259 L353.7 321 L300 352 L246.3 321 L246.3 259 Z"/>
+            <path class="mx-bond mx-thin" d="M304.2 240.8 L341.8 262.5"/>
+            <path class="mx-bond mx-thin" d="M340.3 318.4 L302.7 340.1"/>
+            <path class="mx-bond mx-thin" d="M255.3 311.7 L255.3 268.3"/>
+
+            <!-- nitro at C5 -->
+            <path class="mx-bond" d="M246.3 321 L204.2 345"/>
+            <text class="mx-atom mx-n" x="192" y="352">N</text>
+            <path class="mx-bond" d="M182.9 340.4 L153.1 320.2"/>
+            <path class="mx-bond" d="M177.9 347.8 L148.1 327.6"/>
+            <text class="mx-atom mx-o" x="139" y="316">O</text>
+            <path class="mx-bond" d="M194 366 L199 394"/>
+            <text class="mx-atom mx-o" x="201" y="408">O</text>
+            <text class="mx-chg" x="221" y="398">&#8211;</text>
+
+            <!-- fused isoxazole: C7a-O1-N2-C3-C3a -->
+            <path class="mx-bond" d="M353.7 259 L398.6 245"/>
+            <text class="mx-atom mx-o" x="412" y="241">O</text>
+            <path class="mx-bond" id="m2bon" d="M420.6 252 L441.2 278.4"/>
+            <text class="mx-atom mx-n" x="451" y="291">N</text>
+            <path class="mx-bond" d="M421.2 325.4 L441.8 301.6"/>
+            <path class="mx-bond" d="M414.4 319.5 L435.0 295.7"/>
+            <text class="mx-atom" x="412" y="337">C</text>
+            <path class="mx-bond" d="M353.7 321 L398.4 332.5"/>
+
+            <!-- the C3 proton -->
+            <g id="m2h" class="mx-g on">
+              <path class="mx-bond" d="M421.7 346.1 L446.3 371.9"/>
+              <text class="mx-atom" x="456" y="382">H</text>
+            </g>
+
+            <!-- Asp102 -->
+            <g transform="translate(26,18)">
+              <path class="mx-bond" d="M527 428 L507 413"/>
+              <text class="mx-atom mx-o" x="496" y="404">O</text>
+              <path class="mx-bond" d="M535.5 438.7 L559.5 450.1"/>
+              <path class="mx-bond" d="M539.3 430.5 L563.3 441.9"/>
+              <text class="mx-atom mx-o" x="574" y="452">O</text>
+              <path class="mx-bond" d="M532 432 L524 482"/>
+              <text class="mx-lbl" x="536" y="496" text-anchor="start">ASP102</text>
+            </g>
+            <g id="m2am" class="mx-g on"><text class="mx-chg" x="536" y="410">&#8211;</text></g>
+            <g id="m2ah" class="mx-g"><path class="mx-bond" d="M508 414 L486 400"/><text class="mx-atom" x="474" y="392">H</text></g>
+
+            <!-- Gln46 -->
+            <text class="mx-atom mx-n" x="486" y="180">N</text>
+            <path class="mx-bond" d="M478 188 L460 203"/>
+            <text class="mx-atom" x="450" y="212">H</text>
+            <path class="mx-dash" d="M441 222 L423 236"/>
+            <path class="mx-bond" d="M496 172 L524 160"/>
+            <path class="mx-bond" d="M540 152 L566 132"/>
+            <path class="mx-bond" d="M535 145 L561 125"/>
+            <text class="mx-atom mx-o" x="576" y="122">O</text>
+            <path class="mx-bond" d="M534 156 L574 186"/>
+            <text class="mx-lbl" x="586" y="196" text-anchor="start">GLN46</text>
+
+            <!-- stage 2: arrows -->
+            <g id="m2ar" class="mx-g">
+              <path class="mx-arrow" d="M520 412 Q 506 372 472 380"/>
+              <path class="mx-arrow" d="M434 362 Q 470 338 446 312"/>
+              <path class="mx-arrow" d="M436 270 Q 458 236 426 236"/>
+            </g>
+
+            <!-- stage 3: transition state -->
+            <g id="m2ts" class="mx-g">
+              <path class="mx-dash" d="M421.7 346.1 L446.3 371.9"/>
+              <path class="mx-dash" d="M468 389 L510 413"/>
+              <path class="mx-dash" d="M420.6 252 L441.2 278.4"/>
+              <text class="mx-chg" x="396" y="210">&#948;&#8211;</text>
+              <text class="mx-chg" x="534" y="452">&#948;&#8211;</text>
+            </g>
+
+            <!-- stage 4: product -->
+            <g id="m2pr" class="mx-g">
+              <text class="mx-chg" x="396" y="210">&#8211;</text>
+              <path class="mx-bond" d="M428.0 331.3 L448.6 307.5"/>
+            </g>
+
+            <!-- the contact we actually score -->
+            <g id="m2co" class="mx-g on">
+              <path class="mx-dash" d="M468 389 L510 413"/>
+              <text class="mx-lbl" x="538" y="384" text-anchor="start" style="fill:#564CAE">2.5 &#197;</text>
+            </g>        </svg>
+        <p class="mx-cap" id="mxcap">Resting state — the geometry we score</p>
+        <div class="mx-dots" id="mxdots"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
   <div class="hud">
     <div class="reveal" style="--d:.2"><div class="num">0.887</div><div class="sub">Official score · 5 of 5 seeds</div></div>
     <div class="reveal" style="--d:.3"><div class="num">150<small>aa</small></div><div class="sub">pLDDT 0.978</div></div>
@@ -424,5 +544,36 @@ p{font-size:22px;line-height:1.45;color:var(--dim)}
     var h = (location.hash || '').match(/^#slide-(\d+)$/);
     if (h) { go(parseInt(h[1], 10) - 1); }
   });
+})();
+</script>
+<script>
+(function(){
+  var cap=document.getElementById('mxcap'); if(!cap) return;
+  var dots=[].slice.call(document.querySelectorAll('#mxdots i'));
+  var id=function(x){return document.getElementById(x)};
+  var H=id('m2h'),AM=id('m2am'),AH=id('m2ah'),AR=id('m2ar'),TS=id('m2ts'),PR=id('m2pr'),CO=id('m2co'),
+      HALO=id('m2halo'),BON=id('m2bon');
+  var caps=['Resting state — the geometry we score',
+            'Asp102 takes the proton; a triple bond forms',
+            'Transition state — what 6NT stands in for',
+            'Product — 2-cyano-4-nitrophenolate, yellow at 380 nm'];
+  var i=0;
+  function show(n){
+    i=n; cap.textContent=caps[n];
+    dots.forEach(function(d,j){d.classList.toggle('on',j===n)});
+    H.classList.toggle('on',n<2);
+    AM.classList.toggle('on',n<3);
+    AH.classList.toggle('on',n===3);
+    AR.classList.toggle('on',n===1);
+    AR.classList.toggle('mx-pulse',n===1);
+    TS.classList.toggle('on',n===2);
+    PR.classList.toggle('on',n===3);
+    CO.classList.toggle('on',n===0);
+    HALO.classList.toggle('on',n===1||n===2);
+    BON.style.transition='opacity .5s';
+    BON.style.opacity=(n>=2)?0:1;
+  }
+  show(0);
+  setInterval(function(){show((i+1)%4)},2600);
 })();
 </script>
