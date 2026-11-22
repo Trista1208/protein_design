@@ -1,0 +1,11 @@
+{
+  "name": "E52Q",
+  "model": 2,
+  "sequence": "AVMTLTQLAPDLAAGTNPANGDLQVLVGLTGQSPLLVRIRSNPNDPSIDILQNTSDEELTVLHINLSGVSTEEAVAIARELAARREELRAYEVDGRDTVDTSPENIVQGRRAVVDGHEIRYIVARLAPGQSLSVAA",
+  "closer_Asp_O_to_N3": 2.6823108196258545,
+  "GLN_NE2_to_N1": 2.762539863586426,
+  "under_3_5": true,
+  "complex_plddt": 0.8138254880905151,
+  "complex_ipde": 2.74971866607666,
+  "cif": "/mnt/work/projects/dejvid_ori/results/kemp-point-65/E52Q/boltz/boltz_results_kemp/predictions/kemp/kemp_model_2.cif"
+}
